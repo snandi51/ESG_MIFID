@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import ipdb
+# import ipdb
 
 
 # Create your views here.
