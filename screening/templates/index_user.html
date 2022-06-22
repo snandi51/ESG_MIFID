@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<link href="static/assets/css/style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div style="height: 55px">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</div>
+<main id="main">
+
+    <div class="float-container text-black" style="height: 700px; margin-top:10; padding-top:50px">
+<!--        <div class="float-container text-black" style="height: 800px; margin-left: 420px">-->
+            <div class="float-child1" >
+                <h5 class="text-black"><strong>ESG- Mifid II Appropriateness Toolkit</strong></h5>
+                <hr>
+                <p class="p_title">Objective of the toolkit:  This toolkit is intended to enable the Investment firms/fund managers to identify and assess client's ESG preferences in their assessments as envisaged in the EU’s proposed changes to the MiFID II suitability rules and recommend investment in investee companies accordingly.</p>
+                <hr>
+                <hr>
+                <p class="p_title">Target Audience:  Firms providing MIFID II investment advice and portfolio management, i.e.advisory investment management firms, including independent financial advisers, wealth managers and asset
+                    managers more generally and in particular, heads of proposition/product, compliance officers, COOs,
+                    CROs and heads of regulatory change. This will also be of interest to board members looking to scrutinise their firms’ approach to ESG issues.</p>
+                <hr>
+                <hr>
+                <p class="p_title">How should the toolkit be used?</p>
+                <p class="p_title">Users should follow these steps to use the toolkit:</p>
+                <hr>
+                <p><strong>Instructions: </strong></p>
+                <hr>
+                <p><strong>User: </strong></p>
+                <hr>
+                <p class="instruction">
+                <ol class="instruction">
+                    <li>
+                        User has to select appropriate field from the dropdown menu.
+                    </li>
+                    <li>
+                        If user selects "ESG Disclosures and Scoring", user has to start first with the "Information Sheet" and enter the required information in the appropriate fields.
+                    </li>
+                    <li>
+                        As a next step, user has to fill the ESG Disclosures Page and assign a scoring to each of the items filled.
+                    </li>
+                </ol>
+        </div>
+        <div class="float-child2" style="padding-top:10px">
+            <h5 class="text-black"><strong>Investment Firm Details</strong></h5>
+            <hr>
+            <form method="POST" action="index_user">
+                {% csrf_token %}
+                <div style="height:480px">
+                <div class="form-group row space1" >
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Investment Firm Name: *</label>
+                    <div class="col-sm-9" >
+                        <input type="text" name="investment_name" class="form-control form-control-sm" id="investment_name" placeholder="eg: Jack Cena" required>
+                    </div>
+                </div>
+                <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Prepared by:*</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="prepare_by" class="form-control form-control-sm" id="prepare_by" placeholder="eg: prepared by" required>
+                    </div>
+                </div>
+                <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Date:*</label>
+                    <div class="col-sm-9">
+                        <input type="date" name="date" class="form-control form-control-sm" id="date" placeholder="eg: date" required>
+                    </div>
+                </div>
+                <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Investment Firm Address:*</label>
+                    <div class="col-sm-9">
+                            <input type="text" name="firm_address" class="form-control form-control-sm" id="firm_address" placeholder="eg: address" required>
+                    </div>
+                </div>
+                <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Brief project description: *</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="brief_project" class="form-control form-control-sm" id="brief_project" placeholder="eg: project about " required>
+                    </div>
+                </div>
+                    <div style="margin-top: 30px">
+                        <center><button type="submit" class="btn btn-success"><i class="fa fa-address-card"></i> Submit </button></center>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+</body>
+
+</html>

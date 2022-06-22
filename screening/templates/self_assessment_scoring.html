@@ -1,0 +1,480 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>Self-Assessment Scoring</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Section</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="self_assessment_scoring">
+            {% csrf_token %}
+                <div class="form-group" style="padding:10px">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements and Recommendations</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Requirements_and_Recommendations" name="Requirements_and_Recommendations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The Investment Manager  does not comply with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement</option>
+                                <option value="1">The Investment Manager complies with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement the but does not obtain independent assurance on its ESG disclosure statements</option>
+                                <option value="2">The Investment Manager complies with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statementthe and also obtains independent assurance on its ESG disclosure statements</option>
+                                <option value="3">The Investment Manager complies with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statementthe and also obtains independent assurance on its ESG disclosure statements.  The investment manager suitably integrates and documents the applicable provisions of relevant laws and Regulations in its various organisational activities, trains its staff on the same and takes prompt action on suggested action points on its ESG disclosure statements.</option>
+                                <option value="4">The Investment Manager complies with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement and also obtains independent assurance on its ESG disclosure statements.  The investment manager suitably integrates and documents the applicable provisions of relevant laws and Regulations in its various organisational activities, trains its staff on the same and takes prompt action on suggested action points on its ESG disclosure statements. The investement firm updates its organisational policies based on the prevalent laws and Regulations on a continual basis and ensures that they their policies reflect international best practice. Employees are also given regular training.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception1" placeholder="Exceptions if any" name="Exception1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- General</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Requirements_General" name="Requirements_General" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment manager does not choose to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product</option>
+                                <option value="1">The investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product. The investment manager is prohibited by law or regulation from making a required disclosure in the ESG disclosure statement. The investment product’s investment process, stewardship activities, or objectives systematically do not address one or more specific ESG issues.  </option>
+                                <option value="2">The investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product and it provide details like :<br>
+                                                    a. the name of the investment product;<br>
+                                                    b. the name of the investment manager;<br>
+                                                    c. the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, except for any disclosures prohibited by law or regulation.<br>
+                                                    d. the period covered by the ESG disclosure statement. <br>
+                                                    e. a description of any changes made during the period covered by the ESG disclosure statement that are relevant to the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, along with the effective dates of those changes <br>
+                                                    f. a description of any changes made to the ESG disclosure statement within the past year to correct a significant error</option>
+                                <option value="3">The investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product and it provide all the necessary details wrt the investment product.  Where the investment manager is prohibited by law or Regulations from making a required disclosure in the ESG disclosure statement, the investment manager discloses a description of the required disclosure that cannot be included and explains why it cannot be included. It also discloses a summary description of the ESG approaches used in the investment product.</option>
+                                <option value="4">The investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product and it provide all the necessary details wrt the investment product.  Where the investment manager is prohibited by law or Regulations from making a required disclosure in the ESG disclosure statement, the investment manager discloses a description of the required disclosure that cannot be included and explains why it cannot be included. It also discloses a summary description of the ESG approaches used in the investment product. Where the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues, the investment manager discloses a summary description of those specific ESG issues and also discloses any third-party ESG-related labels and certifications with which the investment product complies</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception2" placeholder="Exceptions if any" name="Exception2">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Sources and Types</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Requirements_Sources_and_Types" name="Requirements_Sources_and_Types" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The  ESG information is not used in an investment product’s investment process or stewardship activities.</option>
+                                <option value="1">The  ESG information is used in an investment product’s investment process or stewardship activities.</option>
+                                <option value="2">The investment firm systematically considers financially material ESG information in investment decisions.The  ESG information is used in an investment product’s investment process or stewardship activities and the investment manager discloses:<br>
+                                                    a. the elements of the investment process or stewardship activities that use ESG information <br>
+                                                    b. how the ESG information is used;<br>
+                                                    c. a description of the type of ESG information used<br>
+                                                    d. a description of the sources from which that ESG information is obtained <br>
+                                                    e. the risks and limitations of the ESG information used and <br>
+                                                    f. how those risks and limitations are managed.     </option>
+                                <option value="3">The  ESG information is used in an investment product’s investment process or stewardship activities and the investment manager discloses all the necessary information wrt elements of the investment process or stewardship activities using ESG information, how the ESG information is used, description of types of ESG information used, sources of ESG information, risks, limitations of using ESG information and managing those risks and limitations.  The investment firm continually reviews this information to identify any new risks and limitations and make an action plan to work on the risks and limitations.  </option>
+                                <option value="4">The  ESG information is used in an investment product’s investment process or stewardship activities and the investment manager discloses all the necessary information wrt elements of the investment process or stewardship activities using ESG information, how the ESG information is used, description of types of ESG information used, sources of ESG information, risks, limitations of using ESG information and managing those risks and limitations.  The investment firm continually reviews this information to identify any new risks and limitations and works efficiently towards the action plan for mitigating the risks and limitations with the use of ESG information.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception3" placeholder="Exceptions if any" name="Exception3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Systematic Consideration of Financially Material Information</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Financially_Material_Information" name="Financially_Material_Information" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not systematically consier financially material ESG information in investment decisions.</option>
+                                <option value="1">The investment firm systematically considers financially material ESG information in investment decisions.</option>
+                                <option value="2">The investment firm systematically considers financially material ESG information in investment decisions and evaluates on how the financially material ESG information can be identified, incorporated in investment decisions and exceptions. makes necessry  disclosures such as:<br>
+                                                  a. how financially material ESG information is typically identified <br>
+                                                  b. how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary  and <br>
+                                                  c. exceptions in which financially material ESG information is not considered in investment decisions, if any. </option>
+                                <option value="3">The investment firm systematically considers financially material ESG information in investment decisions and evaluates on how the financially material ESG information can be identified, incorporated in investment decisions and exceptions. makes necessry  disclosures such as: <br>
+                                                  a. how financially material ESG information is typically identified <br>
+                                                  b. how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary  and  <br>
+                                                  c. exceptions in which financially material ESG information is not considered in investment decisions, if any. </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception4" placeholder="Exceptions if any" name="Exception4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- ESG Investment Universe</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="ESG_Investment_Universe" name="ESG_Investment_Universe" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment product does not use an ESG index as an investment universe</option>
+                                <option value="1">The investment product uses an ESG index as an investment universe but does not make necessary disclosures </option>
+                                <option value="2">If the investment product uses an ESG index as an investment universe, then the investment manager  discloses : <br>
+                                                  a.  either the significant ESG characteristics of the index or, if the index is a readily recognized index, the name of the index</option>
+                                <option value="3">If the investment product uses an ESG index as an investment universe, then the investment manager  discloses : <br>
+                                                  a.  either the significant ESG characteristics of the index or, if the index is a readily recognized index, the name of the index and <br>
+                                                  b. how an investor can obtain information about the index construction methodology.</option>
+                                <option value="4">If the investment product uses an ESG index as an investment universe, then the investment manager  discloses : <br>
+                                                  a.  either the significant ESG characteristics of the index or, if the index is a readily recognized index, the name of the index and<br>
+                                                  b. how an investor can obtain information about the index construction methodology. It also gives more detailed information on the index construction methodology.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception5" placeholder="Exceptions if any" name="Exception5">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Screening</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Screening" name="Screening" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment product does not have criteria that systematically excludes certain investments or does not have criteria that need to be met in order for an investment to be considered for inclusion in the portfolio</option>
+                                <option value="1">The investment product has criteria that systematically excludes certain investments or has  criteria that need to be met in order for an investment to be considered for inclusion in the portfolio but the investment manager does not make necessary disclosures</option>
+                                <option value="2">The investment product has criteria that systematically excludes certain investments or has  criteria that need to be met in order for an investment to be considered for inclusion in the portfolio and the investment manager discloses for each criterion:<br>
+                                                    a. the characteristic of the investment that is evaluated;<br>
+                                                    b. the threshold or condition against which the characteristic is compared;<br>
+                                                    c. whether the investment is excluded from, or is eligible for inclusion in, the portfolio when the threshold or condition is met.<br>
+                                                    d. reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used in the establishment or evaluation of the criterion.</option>
+                                <option value="3">The investment product has criteria that systematically excludes certain investments or has  criteria that need to be met in order for an investment to be considered for inclusion in the portfolio and the investment manager discloses for each criterion:<br>
+                                                    a. the characteristic of the investment that is evaluated;<br>
+                                                    b. the threshold or condition against which the characteristic is compared;<br>
+                                                    c. whether the investment is excluded from, or is eligible for inclusion in, the portfolio when the threshold or condition is met. <br>                                                                          d. reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used in the establishment or evaluation of the criterion. <br>                      In addition to the above, the investment manager also discloses: <br>                                                                                        a. where the criteria are applied in the investment process; and <br>                                               b. the exceptions to the application of the criteria, if any</option>
+                                <option value="4">The investment product has criteria that systematically excludes certain investments or has  criteria that need to be met in order for an investment to be considered for inclusion in the portfolio and the investment manager discloses for each criterion:<br>
+                                                    a. the characteristic of the investment that is evaluated;<br>
+                                                    b. the threshold or condition against which the characteristic is compared;<br>
+                                                    c. whether the investment is excluded from, or is eligible for inclusion in, the portfolio when the threshold or condition is met.  <br>                                                                         d. reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used in the establishment or evaluation of the criterion. <br>                      In addition to the above, the investment manager also discloses:  <br>                                                                                       a. where the criteria are applied in the investment process; and  <br>                                              b. the exceptions to the application of the criteria, if any. <br>                       The investment manager also rates the investment product </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception6" placeholder="Exceptions if any" name="Exception6">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Portfolio-Level ESG Characteristics</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="ESG_Characteristics" name="ESG_Characteristics" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment product does not have targets for portfolio-level ESG characteristics or does not use an ESG index as a point of comparison for portfolio-level ESG characteristics</option>
+                                <option value="1">The investment product has targets for portfolio-level ESG characteristics or uses an ESG index as a point of comparison for portfolio-level ESG characteristics but the investment manager does not make necessary disclosures</option>
+                                <option value="2">If the investment product has targets for portfolio-level ESG characteristics, the investment manager discloses for each target:<br>
+                                                    a. the portfolio-level ESG characteristic that is evaluated;<br>
+                                                    b. how the portfolio-level ESG characteristic is measured;<br>
+                                                    c. the target value or range for the portfolio-level ESG characteristic;<br>
+                                                    d. how the target portfolio-level ESG characteristic is expected to be attained;<br>
+                                                    e. the risks that could significantly hinder the attainment of the target portfolio-level ESG characteristic, should they occur; and<br>
+                                                    f. a reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used to measure the portfolio-level ESG characteristic or set the target.</option>
+                                <option value="3">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, the investment manager discloses:<br>
+                                                    a. the portfolio-level ESG characteristics that are compared with the ESG index;<br>
+                                                    b. either the significant ESG characteristics of the ESG index or, if the ESG index is a readily recognized index, the name of the ESG index; and<br>
+                                                    c. how an investor can obtain information about the definitions of and calculation methodologies for the ESG characteristics of the ESG index.</option>
+                                <option value="4">If the investment product has targets for portfolio-level ESG characteristics, the investment manager discloses for each target:<br>
+                                                    a. the portfolio-level ESG characteristic that is evaluated;<br>
+                                                    b. how the portfolio-level ESG characteristic is measured;<br>
+                                                    c. the target value or range for the portfolio-level ESG characteristic;<br>
+                                                    d. how the target portfolio-level ESG characteristic is expected to be attained;<br>
+                                                    e. the risks that could significantly hinder the attainment of the target portfolio-level ESG characteristic, should they occur; and<br>
+                                                    f. a reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used to measure the portfolio-level ESG characteristic or set the target.  If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, the investment manager discloses:<br>
+                                                    a. the portfolio-level ESG characteristics that are compared with the ESG index;<br>
+                                                    b. either the significant ESG characteristics of the ESG index or, if the ESG index is a readily recognized index, the name of the ESG index; and<br>
+                                                    c. how an investor can obtain information about the definitions of and calculation methodologies for the ESG characteristics of the ESG index.   If the investment product has targets for portfolio-level ESG characteristics, the investment manager discloses how progress towards, or attainment of, those targets is reported to investors.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception7" placeholder="Exceptions if any" name="Exception7">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Portfolio-Level Allocation Targets</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="allocation_targets" name="allocation_targets" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment product does not have portfolio-level allocation targets for investments that have specific ESG characteristics</option>
+                                <option value="1">The investment product has portfolio-level allocation targets for investments that have specific ESG characteristics but the investment manager does not make necessary disclosures</option>
+                                <option value="2">The investment product has portfolio-level allocation targets for investments that have specific ESG characteristics and the investment manager makes necessary disclosures</option>
+                                <option value="3">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, the investment manager  discloses for each allocation target: a. the specific ESG characteristics of the investments for which there is an allocation target; and b. the allocation target value or range.</option>
+                                <option value="4">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, the investment manager  discloses for each allocation target: a. the specific ESG characteristics of the investments for which there is an allocation target; and b. the allocation target value or range. In addition to the above, the investment manager also discloses how progress towards, or attainment of, those targets is reported to investors</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception8" placeholder="Exceptions if any" name="Exception8">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Portfolio-Stewardship Activities</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Stewardship_Activities" name="Stewardship_Activities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment manager does not disclose how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities.</option>
+                                <option value="1">The investment manager discloses how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities.</option>
+                                <option value="2">The investment manager discloses how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities and how ESG issues are typically considered when undertaking stewardship activities.</option>
+                                <option value="3">If ESG issues are typically considered when undertaking stewardship activities, the investment manager discloses:<br>
+                                                    a. the types of stewardship activities typically undertaken for the investment product, differentiated by type of investment where necessary;<br>
+                                                    b. the ESG issues typically considered when undertaking those stewardship activities;<br>
+                                                    c. how those stewardship activities and ESG issues are relevant to the investment product’s objectives and investment process and d. the processes and systems that support the stewardship activities undertaken for the investment product.</option>
+                                <option value="4">If ESG issues are typically considered when undertaking stewardship activities, the investment manager discloses:<br>
+                                                    a. the types of stewardship activities typically undertaken for the investment product, differentiated by type of investment where necessary;<br>
+                                                    b. the ESG issues typically considered when undertaking those stewardship activities;<br>
+                                                    c. how those stewardship activities and ESG issues are relevant to the investment product’s objectives and investment process and d. the processes and systems that support the stewardship activities undertaken for the investment product. In addtion to the above, the  investment manager discloses how stewardship activities for the investment product are reported to investors. </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception9" placeholder="Exceptions if any" name="Exception9">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Requirements- Environmental and Social Impact Objectives </strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Social_Impact_Objectives" name="Social_Impact_Objectives" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment manager does not have financial products with positive, measurable social and environmental impact</option>
+                                <option value="1">The investment manager has financial products with positive, measurable social and environmental impact </option>
+                                <option value="2">The investment manager recommends financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.</option>
+                                <option value="3">The investment manager recommends financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.  The investment manager gives detailed criteria based on which the financial products are recommended</option>
+                                <option value="4">The investment manager recommends financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.  The investment manager gives detailed criteria based on which the financial products are recommended along with rating them.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception10" placeholder="Exceptions if any" name="Exception10">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Organisational Requirements</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Organisational_Requirements" name="Organisational_Requirements" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not take into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business</option>
+                                <option value="1">The investment firm takes into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business </option>
+                                <option value="2">The investment firm takes into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business and also takes ESG considerations into account only where they are relevant.</option>
+                                <option value="3">The investment firm takes into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business and also takes ESG considerations into account only where they are relevant. The investment firm also considers principal adverse impacts of investment decisions on sustainability factors, a statement on due diligence policies with respect to those impacts, taking due account of their size, the nature and scale of their activities and the types of financial products they make available</option>
+                                <option value="4">The investment firm takes into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business and also takes ESG considerations into account only where they are relevant. The investment firm also considers principal adverse impacts of investment decisions on sustainability factors, a statement on due diligence policies with respect to those impacts, taking due account of their size, the nature and scale of their activities and the types of financial products they make available. Where the investment firm does not consider adverse impacts of investment decisions on sustainability factors, the investment firm provides clear reasons for why they do not do so, including, where relevant, information as to whether and when they intend to consider such adverse impacts.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment11" placeholder="Comments / Risks / Opportunities identified" name="comment11">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception11" placeholder="Exceptions if any" name="Exception11">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Risk Management</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Risk_Management" name="Risk_Management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The Compliance function and Internal Audit function of the investment firm do not consider issues related to sustainability risks</option>
+                                <option value="1">The Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks</option>
+                                <option value="2">The Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks  and also document the issues related to sustainability risks.  The management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties which is documented in their risk management policies and procedures.</option>
+                                <option value="3">The Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks  and also document the issues related to sustainability risks.  The management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties which is documented in their risk management policies and procedures. The investment firm alos establishes, implements and maintains adequate risk management policies and procedures which identify the risks relating to the firm's activities, processes and systems.</option>
+                                <option value="4">The Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks  and also document the issues related to sustainability risks.  The management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties which is documented in their risk management policies and procedures. The investment firm alos establishes, implements and maintains adequate risk management policies and procedures which identify the risks relating to the firm's activities, processes and systems. Where appropriate, the investment firm sets the level of risk tolerated by the firm. In doing so,  the investment firms take into account sustainability risk.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment12" placeholder="Comments / Risks / Opportunities identified" name="comment12">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception12" placeholder="Exceptions if any" name="Exception12">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Conflicts of Interest</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Conflicts_of_Interest" name="Conflicts_of_Interest" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not identify conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments</option>
+                                <option value="1">The investment firm identifies conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments.</option>
+                                <option value="2">The investment firm identifies conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments and provides a detailed explanation as to how it manages the same.</option>
+                                <option value="3">The investment firm identifies conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments and provides a detailed explanation as to how it manages the same. The investment firm also ensures that the inclusion of ESG considerations in the advisory process and portfolio management does not lead to mis-selling practices and is not considered as an excuse to sell own-products or more costly ones.</option>
+                                <option value="4">The investment firm identifies conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments and provides a detailed explanation as to how it manages the same. The investment firm also ensures that the inclusion of ESG considerations in the advisory process and portfolio management does not lead to mis-selling practices and is not considered as an excuse to sell own-products or more costly ones. The investment firm also ensures that the inclusion of ESG considerations in the advisory process and portfolio management is also not considered as an excuse to generate churning of clients’ portfolios or misrepresent products or strategies as fulfilling ESG preferences where they do not.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment13" placeholder="Comments / Risks / Opportunities identified" name="comment13">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception13" placeholder="Exceptions if any" name="Exception13">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Product Governance</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Product_Governance" name="Product_Governance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not identify and document the potential target market for each financial instrument. The investment firm does not specify and document the type of client for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible. The investment firm also does not identify and document any group of clients for whose needs, characteristics and objectives, the financial instrument is not compatible</option>
+                                <option value="1">The investment firm identifies and documents the potential target market for each financial instrument. The investment firm  specifies and documents the type of client for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible. The investment firm also identifies and document any group of clients for whose needs, characteristics and objectives, the financial instrument is not compatible.</option>
+                                <option value="2">The investment firm identifies and documents the potential target market for each financial instrument, specifies and documents the type of client for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible. The investment firm also identifies and document any group of clients for whose needs, characteristics and objectives, the financial instrument is not compatible. The investment firm determines whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining whether the financial instrument's risk/reward profile is consistent with the target market, whether the financial instrument's ESG characteristics (where relevant) are consistent with the target market, whether the financial instrument design is driven by features that benefit the client and not by a business model that relies on poor client outcomes to be profitable</option>
+                                <option value="3">The investment firm identifies and documents the potential target market for each financial instrument, specifies and documents the type of client / group of clients for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible / not compatible.  The investment firm determines whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining whether the financial instrument's risk/reward profile is consistent with the target market, whether the financial instrument's ESG characteristics (where relevant) are consistent with the target market, whether the financial instrument design is driven by features that benefit the client and not by a business model that relies on poor client outcomes to be profitable. In addition, the investment firm reviews and documents the investment products they offer or recommend and the services they provide on a regular basis, taking into account any event that could materially affect the potential risk to the identified target market, assesses whether the product or service remains consistent with the needs, characteristics and objectives and ESG preferences (where relevant), of the identified target market and also assesses whether the intended distribution strategy remains appropriate. The investment firm reconsiders the target market and/or updates the product governance arrangements in case of wrong idenfication of target market for a specific product or service or in case the product or service no longer meets the circumstances of the identified target market (in cases where product becomes illiquid or very volatile due to market volatility.</option>
+                                <option value="4">The investment firm identifies and documents the potential target market for each financial instrument, specifies and documents the type of client / group of clients for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible / not compatible.  The investment firm determines whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining whether the financial instrument's risk/reward profile is consistent with the target market, whether the financial instrument's ESG characteristics (where relevant) are consistent with the target market, whether the financial instrument design is driven by features that benefit the client and not by a business model that relies on poor client outcomes to be profitable. In addition, the investment firm reviews and documents the investment products they offer or recommend and the services they provide on a regular basis, taking into account any event that could materially affect the potential risk to the identified target market, assesses whether the product or service remains consistent with the needs, characteristics and objectives and ESG preferences (where relevant), of the identified target market and also assesses whether the intended distribution strategy remains appropriate. The investment firm reconsiders the target market and/or updates the product governance arrangements in case of wrong idenfication of target market for a specific product or service or in case the product or service no longer meets the circumstances of the identified target market (in cases where product becomes illiquid or very volatile due to market volatility. In order to capture sustainability preferences, the investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR and rank in advance and group financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment14" placeholder="Comments / Risks / Opportunities identified" name="comment14">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception14" placeholder="Exceptions if any" name="Exception14">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Costs involved</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Costs_involved" name="Costs_involved" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm has not assessed various costs involved in the integration of ESG data in its internal policies, procedures and processes</option>
+                                <option value="1">The investment firm has assessed various costs involved in the integration of ESG data in its internal policies, procedures and processes but not identified the various cost outliers</option>
+                                <option value="2">The investment firm has assessed various costs involved in the integration of ESG data in its internal policies, procedures and processes and identified the various cost outliers. The investment firm has identified the sources / third party vendors for buying ESG data and cost involved (depending on current arrangements of relevant firms), has identified methods of systematic integration of ESG data in the investment decision process and risk assessment, has  identified direct costs linked to the update/review of the existing procedural and organisational requirements (e.g. the review or update of the arrangements for the identification of the target market) but has not identified other related cost areas. </option>
+                                <option value="3">The investment firm has assessed various costs involved in the integration of ESG data in its internal policies, procedures and processes and identified the various cost outliers. The investment firm has identified the sources / third party vendors for buying ESG data and cost involved (depending on current arrangements of relevant firms), has identified methods of systematic integration of ESG data in the investment decision process and risk assessment, has  identified direct costs linked to the update/review of the existing procedural and organisational requirements (e.g. the review or update of the arrangements for the identification of the target market). It has also identified other related cost areas such as direct initial and ongoing IT costs to update current structures and programmes, direct organisational and HR costs linked to the qualification of firm staff (in particular compliance function staff and staff devoted to the definition of the target market) or training for board members, initial and on-going costs for reviewing and updating existing risk-management and compliance arrangements and costs for research and data on ESG (depending on the size and nature of the organisation).</option>
+                                <option value="4">The investment firm has assessed various costs involved in the integration of ESG data in its internal policies, procedures and processes and identified the various cost outliers. The investment firm has identified the sources / third party vendors for buying ESG data and cost involved (depending on current arrangements of relevant firms), has identified methods of systematic integration of ESG data in the investment decision process and risk assessment, has  identified direct costs linked to the update/review of the existing procedural and organisational requirements (e.g. the review or update of the arrangements for the identification of the target market). It has also identified other related cost areas such as direct initial and ongoing IT costs to update current structures and programmes, direct organisational and HR costs linked to the qualification of firm staff (in particular compliance function staff and staff devoted to the definition of the target market) or training for board members, initial and on-going costs for reviewing and updating existing risk-management and compliance arrangements and costs for research and data on ESG (depending on the size and nature of the organisation). The investment firm has also started working efficiently towards an action plan to attain best way forward with reduction in costs.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment15" placeholder="Comments / Risks / Opportunities identified" name="comment15">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception15" placeholder="Exceptions if any" name="Exception15">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Information to be provided to the client</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="provided_to_the_client" name="provided_to_the_client" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Before providing investment advice to the client,  the investment firm does not provide necessary information to the client</option>
+                                <option value="1">Before providing investment advice to the client,  the investment firm  provides necessary information to the client such as whether or not the advice is provided on an independent basis, whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments, Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided</option>
+                                <option value="2">Before providing investment advice to the client,  the investment firm  provides necessary information to the client such as whether or not the advice is provided on an independent basis, whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments, Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided. In addition, the investment firm also provides information on whether it will provide the client with a periodic assessment of the suitability of the financial instruments recommended to that client, whether appropriate guidance on and warnings of the risks associated with investments in financial instruments and proposed investment strategies is provided to the clients</option>
+                                <option value="3">Before providing investment advice to the client,  the investment firm  provides necessary information to the client such as whether or not the advice is provided on an independent basis, whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments, Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided. In addition, the investment firm also provides information on whether it will provide the client with a periodic assessment of the suitability of the financial instruments recommended to that client, whether appropriate guidance on and warnings of the risks associated with investments in financial instruments and proposed investment strategies is provided to the clients. The investment firm also provides information on all costs and associated charges include information relating to both investment and ancillary services. </option>
+                                <option value="4">Before providing investment advice to the client,  the investment firm  provides necessary information to the client such as whether or not the advice is provided on an independent basis, whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments, Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided. In addition, the investment firm also provides information on whether it will provide the client with a periodic assessment of the suitability of the financial instruments recommended to that client, whether appropriate guidance on and warnings of the risks associated with investments in financial instruments and proposed investment strategies is provided to the clients. The investment firm also provides information on all costs and associated charges including information relating to both investment and ancillary services, including the cost of advice, where relevant, the cost of the financial instrument recommended or marketed to the client and how the client may pay for it, also encompassing any third-party payments.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment16" placeholder="Comments / Risks / Opportunities identified" name="comment16">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception16" placeholder="Exceptions if any" name="Exception16">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Information to be gathered from the client</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="gathered_from_the_client" name="gathered_from_the_client" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not gather necessary information from the client regarding its prospective investment</option>
+                                <option value="1">The investment firm gathers necessary information from the client regarding its prospective investment</option>
+                                <option value="2">The investment firm gathers necessary information from the client regarding its prospective investment such as client's experience and knowledge in the investment field,timeframe client is looking to hold the investment, risk appetite and risk profile of the client but not captured the sustainability preferences of the client</option>
+                                <option value="3">The investment firm gathers necessary information from the client regarding its prospective investment such as client's experience and knowledge in the investment field,timeframe client is looking to hold the investment, risk appetite and risk profile of the client and also captured the sustainability preferences of the client such as whether the investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR, ensured no greenwashing or misselling has happened and groups financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts.</option>
+                                <option value="4">The investment firm gathers necessary information from the client regarding its prospective investment such as client's experience and knowledge in the investment field,timeframe client is looking to hold the investment, risk appetite and risk profile of the client and also captured the sustainability preferences of the client such as whether the investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR, ensured no greenwashing or misselling has happened and groups financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts.  Also certain other important information is gathered from the client such as the International Securities Identification Numbers (ISINs) identifying the securities where applicable and legal entity identifiers (LEIs) identifying the entities, is mentioned where available.The investment firm is working efficiently towards integrating sustainability into all its relevant policies, procedures and processes</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment17" placeholder="Comments / Risks / Opportunities identified" name="comment17">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception17" placeholder="Exceptions if any" name="Exception17">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Capture sustainability preferences</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="Capture_sustainability_preferences" name="Capture_sustainability_preferences" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The investment firm does not capture sustainability preferences of its clients</option>
+                                <option value="1">The investment firm captures sustainability preferences of its clients</option>
+                                <option value="2">The investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR</option>
+                                <option value="3">The investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR. It also ensures that no greenwashing or misselling has happened.</option>
+                                <option value="4">The investment firm recommends financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR. It also ensures that no greenwashing or misselling has happened. The investment firm groups financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts.</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment18" placeholder="Comments / Risks / Opportunities identified" name="comment18">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception18" placeholder="Exceptions if any" name="Exception18">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom:4px">
+                    <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

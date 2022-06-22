@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body >
+<main id="main">
+    <style>
+        .form-select {
+            width: 600px;
+            height: 60px;
+          }
+    </style>
+    <center>
+        <div style="padding-top:180px">
+            <form method="POST" class="form-horizontal" >
+                {% csrf_token %}
+                <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:30px ">Select within Environment, Social , and Governance</Governance> </strong></label>
+                <select type="select" class="form-select" id="s1" name="s1" >
+                    <option value="0"></option>
+                    <option value="1"><a href="{% url 'environment1_1' %}">Environment</a></option>
+                    <option value="2"><a href="{% url 'social_1' %}">Social</a></option>
+                    <option value="3"><a href="{% url 'governance' %}">Governance</a></option>
+                            <option value="4">Environment and Social</option>
+                            <option >Environment and Governance</option>
+                            <option >Social and Governance</option>
+                            <option >Environment and Social and Governance</option>
+                </select>
+                <div style="padding:10px">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </center>
+    </div>
+
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

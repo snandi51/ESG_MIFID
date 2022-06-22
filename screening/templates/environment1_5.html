@@ -1,0 +1,132 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>ENVIRONMENT 1</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Waste</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="environment1_5">
+            {% csrf_token %}
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the waste generation?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="set_policies_waste" name="set_policies_waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5.1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5.1" placeholder="Exceptions if any" name="exception5_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company evaluate the kind of waste it generates and whether in large quantities and document its outcome?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="waste_generates" name="waste_generates" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5.2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5.2" placeholder="Exceptions if any" name="exception5_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company also evaluate if the waste generated is toxic and whether such waste can be treated adequately and document outcome of its evaluation exercise?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="waste_generated_toxic" name="waste_generated_toxic" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5.3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5.3" placeholder="Exceptions if any" name="exception5_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have an action plan to use appropriate method to reduce waste not impacting the ecosystem?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="method_reduce_waste" name="method_reduce_waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5.4" placeholder="Comments / Risks / Opportunities identified" name="comment5_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5.4" placeholder="Exceptions if any" name="exception5_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company recycle the waste generated and provide calculation of recycled waste vis-à-vis total waste generated?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="total_waste_generated" name="total_waste_generated" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5.5" placeholder="Comments / Risks / Opportunities identified" name="comment5_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5.5" placeholder="Exceptions if any" name="exception5_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>
