@@ -1,0 +1,186 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>Governance Scoring</b></h2></center>
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+
+        </div>
+
+
+    <!-- Form Name -->
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Sector</strong><strong  style="color:Black; margin-left:300px">Score</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="governance_scoring">
+            {% csrf_token %}
+                <div class="form-group" style="padding:10px">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Employee Relations</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="employee_relations" name="employee_relations" style="width:100%;"><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee  company does not have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion</option>
+                                <option value="1">Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors</option>
+                                <option value="2">Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has a grievance redressal mechanism for its employees</option>
+                                <option value="3">Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has grievance redressal mechanism for its employees- and had no serious violation incidents by employees reported during last 5 years. </option>
+                                <option value="4">Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has grievance redressal mechanism for its employees- and had no serious violation incidents by employees reported during last 5 years. Further, the investee  company has conducted various employee health programmes and welfare activities and have good safety record</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Sound Management Structures</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="sound_management_structure" name="sound_management_structure" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee company does not have sound remuneration and reimburesement policy for its staff. </option>
+                                <option value="1">The investee company have formal policies and systems to manage ESG and pro-actively identifies opportunities for ESG improvements</option>
+                                <option value="2">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations.
+There were no incidents of remuneration issues reported by employees during last 5 years.</option>
+                                <option value="3">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. Company promoters, management, staff or Board members of the investee company were not being  associated with money laundering activities.</option>
+                                <option value="4">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. Company promoters, management, staff or Board members of the investee company were not being  associated with money laundering activities.
+Investee company has a Rewards & Recognition policy as part of  empoyee welfare and recongition for exceptional talent.</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Remuneration of Staff</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="remuneration_staff" name="remuneration_staff" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee company does not have sound remuneration and reimburesement policy for its staff. </option>
+                                <option value="1">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations.</option>
+                                <option value="2">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations.
+There were no incidents of remuneration issues reported by employees during last 5 years.</option>
+                                <option value="3">Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. Company promoters, management, staff or Board members of the investee company were not being  associated with money laundering activities.</option>
+                                <option value="4"> Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. Company promoters, management, staff or Board members of the investee company were not being  associated with money laundering activities.
+Investee company has a Rewards & Recognition policy as part of  empoyee welfare and recongition for exceptional talent.</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Tax Compliance</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="tax_compliance" name="tax_compliance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee  company does not follow local laws and regulations with respect to payment of taxes and they do not provide complete information to the tax authorities.</option>
+                                <option value="1">Investee  company follows local laws and regulations with respect to payment of taxes and provides complete information to the tax authorities.</option>
+                                <option value="2">Investee  company follows local laws and regulations with respect to payment of taxes and provides complete information to the tax authorities. No instances reported for tax evasion by the investee company during the last 5 years.</option>
+                                <option value="3">Investee  company follows local laws and regulations with respect to payment of taxes and provide complete information to the tax authorities. No instances reported for tax evasion by the investee company during the last 5 years. The investee company reports ESG performance to investors at least annually.</option>
+                                <option value="4">Investee  company follows local laws and regulations with respect to payment of taxes and provide complete information to the tax authorities. No instances reported for tax evasion by the investee company during the last 5 years. The investee company reports ESG performance investors at least annually.
+Board Member staff, company promoters, management of the investee company are not being under legal scrutiny by regulators or law enforcement authorities.</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Commitment to Good Corporate Governance</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="corporate_governance" name="corporate_governance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee conpany does not have formal action plans drawn up to address ESG issues.</option>
+                                <option value="1">Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring.</option>
+                                <option value="2">Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders.</option>
+                                <option value="3">Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders. Investee  company has a whistleblower policy and procedures in place.</option>
+                                <option value="4">Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders. Investee  company has a whistleblower policy and procedures in place and a designated official entrusted with the responsibility for ensuring compliance with the company's corporate governance policy</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Governance Other</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="governance_other" name="governance_other" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Investee company does not follow transparency of activities undertaken by the company and disclosure information for investors.</option>
+                                <option value="1">Investee company follows transparency of activities undertaken by the company and disclosure information for investors. There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board.</option>
+                                <option value="2">Investee company follows transparency of activities undertaken by the company and disclosure information for investors. There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board. There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years. </option>
+                                <option value="3">Investee company follows transparency of activities undertaken by the company and disclosure information for investors.
+There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board.
+There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years.
+Investee company has key performance indicators in place to measure and track ESG performance</option>
+                                <option value="4">Investee company follows transparency of activities undertaken by the company and disclosure information for investors.
+There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board. There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years. Investee company has key performance indicators in place to measure and track ESG performance and have an allocated
+ESG professional on staff. </option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div style="margin-bottom:4px">
+                    <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

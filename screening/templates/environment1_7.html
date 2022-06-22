@@ -1,0 +1,132 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>ENVIRONMENT 1</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Biodiversity</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="environment1_7">
+            {% csrf_token %}
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the Biodiversity across the organization?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="set_policies_biodiversity" name="set_policies_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7.1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7.1" placeholder="Exceptions if any" name="exception7_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company assess the negative impact of its business operations on biodiversity?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="operations_biodiversity" name="operations_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7.2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7.2" placeholder="Exceptions if any" name="exception7_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Invested company has documented the negative impact on local flora and fauna, different types of species, pests and pathogens due to its operations?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="different_types_species" name="different_types_species" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7.3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7.3" placeholder="Exceptions if any" name="exception7_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If so, does the Invested company have an action plan to mitigate/control the biodiversity loss due to its operations?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="control_biodiversity" name="control_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7.4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7.4" placeholder="Exceptions if any" name="exception7_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If mitigation measures are already undertaken, whether there is a positive effect on biodiversity in terms of habitat conservation and restoration?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="positive_biodiversity" name="positive_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7.5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7.5" placeholder="Exceptions if any" name="exception7_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

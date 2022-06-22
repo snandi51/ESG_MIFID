@@ -36,14 +36,20 @@
 
             <a class="navbar-brand text-black"><img src="static/assets/img/cg_logo.png" height=50>|<strong>ESG- Mifid II Appropriateness Toolkit</strong></a>
             <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <!-- <a href="index_client.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar">
                 <ul>
                     {% if user.is_authenticated %}
-                    <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#environment_1">environment_1</a></li>
+                    <li><a class="nav-link scrollto active" href="{% url 'index_user' %}">Home</a></li>
+<!--                    <li><a class="nav-link scrollto active" href="{% url 'index_client' %}">home2</a></li>-->
+<!--                    <li><a class="nav-link scrollto" href="#environment_1">environment_1</a></li>-->
+                    <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
 <!--                    <li><a class="nav-link scrollto" href="#environment_2">environment_2</a></li>-->
+                    {% else %}
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'login_user' %}">Login User</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'login_client' %}">Login Client</a></li>
                     {% endif %}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -53,7 +59,7 @@
     </header><!-- End Header -->
     <!-- Page Content -->
 
-    <main id="main" style="background-image: url('/media/template13.jpg');
+    <main id="main" style="background-image: url('static/assets/img/template13.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -73,7 +79,6 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container d-md-flex py-4">
-
             <div class="me-md-auto text-center text-md-start text-black">
                 <div class="copyright" style="margin-left: 420px ">
                     &copy; Copyright <strong><span>Capgemini</span></strong>. All Rights Reserved.

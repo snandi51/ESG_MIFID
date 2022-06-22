@@ -1,0 +1,191 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>Social Scoring</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Sector</strong><strong  style="color:Black; margin-left:300px">Score</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="social_screening">
+            {% csrf_token %}
+                <div class="form-group" style="padding:10px">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Inequality</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="inequality" name="inequality" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No company does not consider Non-discrimination as a material topic</option>
+                                <option value="1">Yes, it does consider Non-discrimination as a material topic but does not have set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="2">Yes, it does consider Non-discrimination as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="3">Yes, it does consider Non-discrimination as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination and is apprpriately recorded and reported as per local laws</option>
+                                <option value="4">Yes, it does consider Non-discrimination as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination and is apprpriately recorded and reported as per local laws and  has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Social cohesion</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="social_cohesion" name="social_cohesion" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No company does not consider Social Cohesion as a material topic</option>
+                                <option value="1">Yes, it does consider Social cohesion as a material topic but does not have set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="2">Yes, it does consider Social cohesion as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="3">Yes, it does consider Social cohesion as a material topic and has set policies/strategies/goals/responsibilities for handling Social Cohesion and is appropriately recorded and reported as per local laws</option>
+                                <option value="4">Yes, it does consider Social cohesion as a material topic and has set policies/strategies/goals/responsibilities for handling the Social cohesionand is appropriately recorded and reported as per local laws and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Social integration</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="social_integration" name="social_integration" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No, company does not consider Social integration as a material topic</option>
+                                <option value="1">Yes, it does consider Social integration as a material topic but does not have set policies/strategies/goals/responsibilities for handling Social Cohesion</option>
+                                <option value="2">Yes, it does consider Social integration as a material topic and has set policies/strategies/goals/responsibilities for handling Social Cohesion</option>
+                                <option value="3">Yes, it does consider Social integration as a material topic and has set policies/strategies/goals/responsibilities for Social integration and is appropriately recorded and reported as per local laws</option>
+                                <option value="4">Yes, it does consider Social integration as a material topic and has set policies/strategies/goals/responsibilities for handling the Social integration and is appropriately recorded and reported as per local laws and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Labour relations</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="labour_relations" name="labour_relations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No, company does not consider Labour relations as a material topic</option>
+                                <option value="1">Yes, it does consider Labour relations as a material topic but does not have set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="2">Yes, it does considerLabour relations as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="3"> Yes, it does consider Labour relations as a material topic and has set policies/strategies/goals/responsibilities for handling Labour relations and is appropriately recorded and reported as per  laws</option>
+                                <option value="4">Yes, it does consider Labour relations as a material topic and has set policies/strategies/goals/responsibilities for handling Labour relations and is appropriately recorded and reported as per  laws and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Investment in human capital</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="investment_human_capital" name="investment_human_capital" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">The company considers Human Rights as a material topic but does not have any set policies/strategies/goals/responsibilities for it.</option>
+                                <option value="1">The company has set policies/strategies/goals/responsibilities and formally trains employees in organization’s human rights policies, Or, includes human right clauses in significant investment agreements and contracts.</option>
+                                <option value="2">The company has set policies/strategies/goals/responsibilities and formally trains employees in organization’s human rights policies, and, includes human right clauses in significant investment agreements & contracts.</option>
+                                <option value="3">The company has set policies/strategies/goals/responsibilities and formally trains employees in organization’s human rights policies, and, includes human right clauses in significant investment agreements & contracts, and, has strategic and quantifiable target goals which they have achieved in previous period.</option>
+                                <option value="4">The company has set policies/strategies/goals/responsibilities and formally trains employees in organization’s human rights policies, and, includes human right clauses in significant investment agreements & contracts, and, has strategic and quantifiable target goals which they have achieved in previous period and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Economically or socially disadvantaged communities</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="economically_socially_communities" name="economically_socially_communities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No, company does not consider working for Economically or socially disadvantaged communities as a material topic</option>
+                                <option value="1">Yes, it does consider working for Economically or socially disadvantaged communities as a material topic but does not have set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="2">Yes, it does consider working for Economically or socially disadvantaged communities as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="3">Yes, it does consider working for Economically or socially disadvantaged communities as a material topic and has set policies/strategies/goals/responsibilities for handling working for Economically or socially disadvantaged communities and is appropriately recorded and reported as per  laws</option>
+                                <option value="4">Yes, it does consider working for Economically or socially disadvantaged communities as a material topic and has set policies/strategies/goals/responsibilities for handling working for Economically or socially disadvantaged communities and is appropriately recorded and reported as per  laws and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Others - Supply chain management</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="other_supply_chain" name="other_supply_chain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">No, company does not consider keeping tab on Others - Supply chain management counterparties as a material topic</option>
+                                <option value="1">Yes, it does consider tab on Others - Supply chain management counterpartie as a material topic but does not have set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="2">Yes, it does consider tab on Others - Supply chain management counterpartie as a material topic and has set policies/strategies/goals/responsibilities for handling the Non-discrimination</option>
+                                <option value="3">Yes, it does consider tab on Others - Supply chain management counterpartie as a material topic and has set policies/strategies/goals/responsibilities for handling tab on Others - Supply chain management counterpartie and is appropriately recorded and reported as per  laws</option>
+                                <option value="4">Yes, it does consider tab on Others - Supply chain management counterpartie as a material topic and has set policies/strategies/goals/responsibilities for handling tab on Others - Supply chain management counterpartie and is appropriately recorded and reported as per  laws and has started yielding results in terms of evolution of efficient methods and processes</option>
+                            </select>
+                        </div>
+                         <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea  rows="3" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:4px">
+                    <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1000px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

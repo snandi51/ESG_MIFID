@@ -1,0 +1,2036 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <center><h2 style="color:black;"><b>ESG GLOBAL STANDARDS</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Requirements</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="self_assessment_1">
+            {% csrf_token %}
+                <div class="form-group" style="padding:10px">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investment Manager  comply with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement</strong></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="laws_and_regulations" name="laws_and_regulations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="Exception1.1" placeholder="Exceptions if any" name="Exception1_1">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Recommendations</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager obtain independent assurance on its ESG disclosure statements</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_manager_obtain_independent_assurance" name="investment_manager_obtain_independent_assurance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment2.1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception2.1" placeholder="Exceptions if any" name="Exception2_1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-General</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">General:If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide details like name of the investment product and name of the investment manager
+</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="General_If_the_investment_manager" name="General_If_the_investment_manager" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.1" placeholder="Exceptions if any" name="Exception3_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, except for any disclosures prohibited by law or regulation</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="applicable_disclosures_required" name="applicable_disclosures_required" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.2" placeholder="Exceptions if any" name="Exception3_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the period covered by the ESG disclosure statement</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="apply_the_Global_ESG_Disclosure_Standards" name="apply_the_Global_ESG_Disclosure_Standards" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.3" placeholder="Exceptions if any" name="Exception3_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made during the period covered by the ESG disclosure statement that are relevant to the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, along with the effective dates of those changes</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_effective_dates_of_those_changes" name="the_effective_dates_of_those_changes" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.4" placeholder="Exceptions if any" name="Exception3_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made to the ESG disclosure statement within the past year to correct a significant error</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="correct_a_significant_error" name="correct_a_significant_error" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.5" placeholder="Exceptions if any" name="Exception3_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is an investment manager prohibited by law or regulation from making a required disclosure in the ESG disclosure statement. </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="prohibited_by_law" name="prohibited_by_law" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.6" placeholder="Comments / Risks / Opportunities identified" name="comment3_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.6" placeholder="Exceptions if any" name="Exception3_6">
+                    </div>
+                </div>
+            </div>
+           <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager is prohibited by law or regulation from making a required disclosure in the ESG disclosure statement, then does the investment manager disclose a description of the required disclosure that cannot be included and explain why it cannot be included </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="cannot_be_included_and_explain" name="cannot_be_included_and_explain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.7" placeholder="Comments / Risks / Opportunities identified" name="comment3_7">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.7" placeholder="Exceptions if any" name="Exception3_7">
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose a summary description of the ESG approaches used in the investment product. </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="a_summary_description" name="a_summary_description" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.8" placeholder="Comments / Risks / Opportunities identified" name="comment3_8">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.8" placeholder="Exceptions if any" name="Exception3_8">
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="stewardship_activities_or" name="stewardship_activities_or" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.9" placeholder="Comments / Risks / Opportunities identified" name="comment3_9">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.9" placeholder="Exceptions if any" name="Exception3_9">
+                    </div>
+                </div>
+           </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues, then does the investment manager disclose a summary description of those specific ESG issues</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_manager_disclose" name="investment_manager_disclose" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.10" placeholder="Comments / Risks / Opportunities identified" name="comment3_10">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.10" placeholder="Exceptions if any" name="Exception3_10">
+                    </div>
+                </div>
+           </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose any third-party ESG-related labels and certifications with which the investment product complies</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="related_labels_and_certifications" name="related_labels_and_certifications" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment3.11" placeholder="Comments / Risks / Opportunities identified" name="comment3_11">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception3.11" placeholder="Exceptions if any" name="Exception3_11">
+                    </div>
+                </div>
+           </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-Sources and Types</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the  ESG information is used in an investment product’s investment process or stewardship activities, then does the investment manager disclose the elements of the investment process or stewardship activities that use ESG information</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_process_or_stewardship_activities" name="investment_process_or_stewardship_activities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment4.1" placeholder="Comments / Risks / Opportunities identified" name="comment4_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception4.1" placeholder="Exceptions if any" name="Exception4_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the  ESG information is used in an investment product’s investment process or stewardship activities, then does the investment manager disclose how the ESG information is used</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="how_the_ESG_information_is_used" name="how_the_ESG_information_is_used" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment4.2" placeholder="Comments / Risks / Opportunities identified" name="comment4_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception4.2" placeholder="Exceptions if any" name="Exception4_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the  ESG information is used in an investment product’s investment process or stewardship activities, then does the investment manager disclose a description of the type of ESG information used</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="manager_disclose_a_description" name="manager_disclose_a_description" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment4.3" placeholder="Comments / Risks / Opportunities identified" name="comment4_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception4.3" placeholder="Exceptions if any" name="Exception4_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the  ESG information is used in an investment product’s investment process or stewardship activities, then does the investment manager disclose a description of the sources from which that ESG information is obtained</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_product’s" name="investment_product’s" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment4.4" placeholder="Comments / Risks / Opportunities identified" name="comment4_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception4.4" placeholder="Exceptions if any" name="Exception4_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the  ESG information is used in an investment product’s investment process or stewardship activities, then does the investment manager disclose the risks and limitations of the ESG information used and  how these are managed</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="risks_and_limitations" name="risks_and_limitations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment4.5" placeholder="Comments / Risks / Opportunities identified" name="comment4_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception4.5" placeholder="Exceptions if any" name="Exception4_5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-Systematic Consideration of Financially Material Information</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically identified</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="material_ESG_information" name="material_ESG_information" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment5.1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception5.1" placeholder="Exceptions if any" name="Exception5_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="If_financially_material" name="If_financially_material" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment5.2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception5.2" placeholder="Exceptions if any" name="Exception5_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose exceptions in which financially material ESG information is not considered in investment decisions, if any. </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="systematically_considered" name="systematically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment5.3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception5.3" placeholder="Exceptions if any" name="Exception5_3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-ESG Investment Universe</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product uses an ESG index as an investment universe, then does the investment manager  disclose either the significant ESG characteristics of the index or, if the index is a readily recognized index, the name of the index</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="an_ESG_index" name="an_ESG_index" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment6.1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception6.1" placeholder="Exceptions if any" name="Exception6_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product uses an ESG index as an investment universe, then does the investment manager  disclose how an investor can obtain information about the index construction methodology</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_universe" name="investment_universe" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment6.2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception6.2" placeholder="Exceptions if any" name="Exception6_2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-Screening</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the characteristic of the investment that is evaluated</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="criteria_that_systematically" name="criteria_that_systematically" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.1" placeholder="Exceptions if any" name="Exception7_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the threshold or condition against which the characteristic is compared</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="systematically_exclude" name="systematically_exclude" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.2" placeholder="Exceptions if any" name="Exception7_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion whether the investment is excluded from, or is eligible for inclusion in, the portfolio when the threshold or condition is met   </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="has_criteria_that" name="has_criteria_that" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.3" placeholder="Exceptions if any" name="Exception7_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used in the establishment or evaluation of the criterion.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="inclusion_in_the_portfolio" name="inclusion_in_the_portfolio" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.4" placeholder="Exceptions if any" name="Exception7_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then the does investment manager disclose where the criteria are applied in the investment process</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="If_an_investment" name="If_an_investment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.5" placeholder="Exceptions if any" name="Exception7_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then the does investment manager disclose  the exceptions to the application of the criteria, if any</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="product_has_criteria" name="product_has_criteria" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment7.6" placeholder="Comments / Risks / Opportunities identified" name="comment7_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception7.6" placeholder="Exceptions if any" name="Exception7_6">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-Portfolio-Level ESG Characteristics</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the portfolio-level ESG characteristic that is evaluated</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="targets_for_portfolio" name="targets_for_portfolio" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.1" placeholder="Comments / Risks / Opportunities identified" name="comment8_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.1" placeholder="Exceptions if any" name="Exception8_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, how the portfolio-level ESG characteristic is measured</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="level_ESG_characteristics" name="level_ESG_characteristics" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.2" placeholder="Comments / Risks / Opportunities identified" name="comment8_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.2" placeholder="Exceptions if any" name="Exception8_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the target value or range for the portfolio-level ESG characteristic</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_target_value" name="the_target_value" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.3" placeholder="Comments / Risks / Opportunities identified" name="comment8_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.3" placeholder="Exceptions if any" name="Exception8_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, how the target portfolio-level ESG characteristic is expected to be attained</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="ESG_characteristics" name="ESG_characteristics" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.4" placeholder="Comments / Risks / Opportunities identified" name="comment8_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.4" placeholder="Exceptions if any" name="Exception8_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the risks that could significantly hinder the attainment of the target portfolio-level ESG characteristic, should they occur</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="level_ESG" name="level_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.5" placeholder="Comments / Risks / Opportunities identified" name="comment8_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.5" placeholder="Exceptions if any" name="Exception8_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, a reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used to measure the portfolio-level ESG characteristic or set the target</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="manager_disclose" name="manager_disclose" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.6" placeholder="Comments / Risks / Opportunities identified" name="comment8_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.6" placeholder="Exceptions if any" name="Exception8_6">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose the portfolio-level ESG characteristics that are compared with the ESG index</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="uses_an_ESG" name="uses_an_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.7" placeholder="Comments / Risks / Opportunities identified" name="comment8_7">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.7" placeholder="Exceptions if any" name="Exception8_7">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose either the significant ESG characteristics of the ESG index or, if the ESG index is a readily recognized index, the name of the ESG index</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="product_uses" name="product_uses" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.8" placeholder="Comments / Risks / Opportunities identified" name="comment8_8">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.8" placeholder="Exceptions if any" name="Exception8_8">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose how an investor can obtain information about the definitions of and calculation methodologies for the ESG characteristics of the ESG index</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="point_of_comparison" name="point_of_comparison" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.9" placeholder="Comments / Risks / Opportunities identified" name="comment8_9">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.9" placeholder="Exceptions if any" name="Exception8_9">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose how progress toward, or attainment of, those targets is reported to investors.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="does_the_investment" name="does_the_investment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment8.10" placeholder="Comments / Risks / Opportunities identified" name="comment8_10">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception8.10" placeholder="Exceptions if any" name="Exception8_10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements- Portfolio-Level Allocation Targets</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the specific ESG characteristics of the investments for which there is an allocation target</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="allocation_targets" name="allocation_targets" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment9.1" placeholder="Comments / Risks / Opportunities identified" name="comment9_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception9.1" placeholder="Exceptions if any" name="Exception9_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the allocation target value or range</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investments_that" name="investments_that" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment9.2" placeholder="Comments / Risks / Opportunities identified" name="comment9_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception9.2" placeholder="Exceptions if any" name="Exception9_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager disclose how progress towards, or attainment of, those targets is reported to investors</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="specific_ESG" name="specific_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment9.3" placeholder="Comments / Risks / Opportunities identified" name="comment9_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception9.3" placeholder="Exceptions if any" name="Exception9_3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements-Portfolio-Stewardship Activities</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager  disclose how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="current_copy" name="current_copy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.1" placeholder="Exceptions if any" name="Exception10_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the types of stewardship activities typically undertaken for the investment product, differentiated by type of investment where necessary;</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="ESG_issues" name="ESG_issues" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.2" placeholder="Exceptions if any" name="Exception10_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the ESG issues typically considered when undertaking those stewardship activities</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="typically_considered" name="typically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.3" placeholder="Exceptions if any" name="Exception10_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose how those stewardship activities and ESG issues are relevant to the investment product’s objectives and investment process </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="typically_considere" name="typically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.4" placeholder="Comments / Risks / Opportunities identified" name="comment10_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.4" placeholder="Exceptions if any" name="Exception10_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose  the processes and systems that support the stewardship activities undertaken for the investment product</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="stewardship_activities" name="stewardship_activities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.5" placeholder="Comments / Risks / Opportunities identified" name="comment10_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.5" placeholder="Exceptions if any" name="Exception10_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose how stewardship activities for the investment product are reported to investors.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="disclose_how_stewardship" name="disclose_how_stewardship" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment10.6" placeholder="Comments / Risks / Opportunities identified" name="comment10_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception10.6" placeholder="Exceptions if any" name="Exception10_6">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Requirements- Environmental and Social Impact Objectives</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager recommend financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="financial_products" name="financial_products" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment11.1" placeholder="Comments / Risks / Opportunities identified" name="comment11_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception11.1" placeholder="Exceptions if any" name="Exception11_1">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Organisational Requirements</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm take into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="account_the_nature" name="account_the_nature" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment12.1" placeholder="Comments / Risks / Opportunities identified" name="comment12_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception12.1" placeholder="Exceptions if any" name="Exception12_1">
+                    </div>
+                </div>
+            </div>
+             <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm take ESG considerations into account only where they are relevant</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="take_ESG_considerations" name="take_ESG_considerations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment12.2" placeholder="Comments / Risks / Opportunities identified" name="comment12_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception12.2" placeholder="Exceptions if any" name="Exception12_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm consider principal adverse impacts of investment decisions on sustainability factors, a statement on due diligence policies with respect to those impacts, taking due account of their size, the nature and scale of their activities and the types of financial products they make available</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="principal_adverse" name="principal_adverse" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment12.3" placeholder="Comments / Risks / Opportunities identified" name="comment12_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception12.3" placeholder="Exceptions if any" name="Exception12_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Where the investment firm does not consider adverse impacts of investment decisions on sustainability factors, does the investment firm provide clear reasons for why they do not do so, including, where relevant, information as to whether and when they intend to consider such adverse impacts.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="adverse_impacts" name="adverse_impacts" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment12.4" placeholder="Comments / Risks / Opportunities identified" name="comment12_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception12.4" placeholder="Exceptions if any" name="Exception12_4">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Risk Management</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Compliance_function" name="Compliance_function" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.1" placeholder="Comments / Risks / Opportunities identified" name="comment13_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.1" placeholder="Exceptions if any" name="Exception13_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Do the compliance and internal audit functions of the investment firm document the issues related to sustainability risks</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="audit_functions" name="audit_functions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.2" placeholder="Comments / Risks / Opportunities identified" name="comment13_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.2" placeholder="Exceptions if any" name="Exception13_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="body_and_senior" name="body_and_senior" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.3" placeholder="Comments / Risks / Opportunities identified" name="comment13_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.3" placeholder="Exceptions if any" name="Exception13_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties, whether it is documented in their risk management policies and procedures</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="senior_management" name="senior_management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.4" placeholder="Comments / Risks / Opportunities identified" name="comment13_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.4" placeholder="Exceptions if any" name="Exception13_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm establish, implement and maintain adequate risk management policies and procedures which identify the risks relating to the firm's activities, processes and systems.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_firm" name="investment_firm" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.5" placeholder="Comments / Risks / Opportunities identified" name="comment13_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.5" placeholder="Exceptions if any" name="Exception13_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Where appropriate, does the investment firm set the level of risk tolerated by the firm and in doing so, do they take into account sustainability risk</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_fim" name="investment_firm" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment13.6" placeholder="Comments / Risks / Opportunities identified" name="comment13_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception13.6" placeholder="Exceptions if any" name="Exception13_6">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Conflicts of Interest</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm identify conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_firm_identify" name="investment_firm_identify" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.1" placeholder="Comments / Risks / Opportunities identified" name="comment14_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.1" placeholder="Exceptions if any" name="Exception14_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">How does the investment firm identify conflicts of interest and manage the same. Explain.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="interest_and_manage" name="interest_and_manage" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.2" placeholder="Comments / Risks / Opportunities identified" name="comment14_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.2" placeholder="Exceptions if any" name="Exception14_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management lead to mis-selling practices</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="inclusion_of_ESG" name="inclusion_of_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.3" placeholder="Comments / Risks / Opportunities identified" name="comment14_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.3" placeholder="Exceptions if any" name="Exception14_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to sell own-products or more costly ones</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="ESG_considerations" name="ESG_considerations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.4" placeholder="Comments / Risks / Opportunities identified" name="comment14_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.4" placeholder="Exceptions if any" name="Exception14_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to generate churning of clients’ portfolios</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_advisory_process" name="the_advisory_process" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.5" placeholder="Comments / Risks / Opportunities identified" name="comment14_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.5" placeholder="Exceptions if any" name="Exception14_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to misrepresent products or strategies as fulfilling ESG preferences where they do not.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="process_and_portfolio" name="process_and_portfolio" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment14.6" placeholder="Comments / Risks / Opportunities identified" name="comment14_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception14.6" placeholder="Exceptions if any" name="Exception14_6">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Product Governance</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm identify and document the potential target market for each financial instrument </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identify_and_document" name="identify_and_document" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.1" placeholder="Comments / Risks / Opportunities identified" name="comment15_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.1" placeholder="Exceptions if any" name="Exception15_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm specify and document the type of client for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="specify_and_document" name="specify_and_document" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.2" placeholder="Comments / Risks / Opportunities identified" name="comment15_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.2" placeholder="Exceptions if any" name="Exception15_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm also identify and document any group of clients for whose needs, characteristics and objectives, the financial instrument is not compatible </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_also_identify" name="firm_also_identify" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.3" placeholder="Comments / Risks / Opportunities identified" name="comment15_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.3" placeholder="Exceptions if any" name="Exception15_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument's risk/reward profile is consistent with the target market </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_determine" name="firm_determine" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.4" placeholder="Comments / Risks / Opportunities identified" name="comment15_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.4" placeholder="Exceptions if any" name="Exception15_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument's ESG characteristics (where relevant) are consistent with the target market </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_determine_whether" name="firm_determine_whether" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.5" placeholder="Comments / Risks / Opportunities identified" name="comment15_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.5" placeholder="Exceptions if any" name="Exception15_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument design is driven by features that benefit the client and not by a business model that relies on poor client outcomes to be profitable </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="financial_instrument" name="financial_instrument" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.6" placeholder="Comments / Risks / Opportunities identified" name="comment15_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.6" placeholder="Exceptions if any" name="Exception15_6">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm review and document the investment products they offer or recommend and the services they provide on a regular basis, taking into account any event that could materially affect the potential risk to the identified target market </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_review" name="firm_review" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.7" placeholder="Comments / Risks / Opportunities identified" name="comment15_7">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.7" placeholder="Exceptions if any" name="Exception15_7">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm assess whether the product or service remains consistent with the needs, characteristics and objectives and ESG preferences (where relevant), of the identified target market </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_assess" name="firm_assess" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.8" placeholder="Comments / Risks / Opportunities identified" name="comment15_8">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.8" placeholder="Exceptions if any" name="Exception15_8">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm assess whether the intended distribution strategy remains appropriate. </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="management_approach_environmental_assessment" name="management_approach_environmental_assessment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.9" placeholder="Comments / Risks / Opportunities identified" name="comment15_9">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.9" placeholder="Exceptions if any" name="Exception15_9">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm reconsider the target market and/or update the product governance arrangements in case of wrong idenfication of target market for a specific product or service </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_reconsider" name="firm_reconsider" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.10" placeholder="Comments / Risks / Opportunities identified" name="comment15_10">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.10" placeholder="Exceptions if any" name="Exception15_10">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm reconsider the target market and/or update the product governance arrangements in case the product or service no longer meets the circumstances of the identified target market (in cases where product becomes illiquid or very volatile due to market volatility)</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_target_market" name="the_target_market" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.11" placeholder="Comments / Risks / Opportunities identified" name="comment15_11">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.11" placeholder="Exceptions if any" name="Exception15_11">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">In order to capture sustainability preferences, does the investment firm recommend financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="capture_sustainability" name="capture_sustainability" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.12" placeholder="Comments / Risks / Opportunities identified" name="comment15_12">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.12" placeholder="Exceptions if any" name="Exception15_12">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">In order to capture sustainability preferences, does the investment firm rank in advance and group financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="sustainability_preferences" name="sustainability_preferences" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment15.13" placeholder="Comments / Risks / Opportunities identified" name="comment15_13">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception15.13" placeholder="Exceptions if any" name="Exception15_13">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Costs involved</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified the sources / third party vendors for buying ESG data and cost involved (depending on current arrangements of relevant firms) </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_the_sources" name="identified_the_sources" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.1" placeholder="Comments / Risks / Opportunities identified" name="comment16_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.1" placeholder="Exceptions if any" name="Exception16_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified methods of systematic integration of ESG data in the investment decision process and risk assessment</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_methods" name="identified_methods" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.2" placeholder="Comments / Risks / Opportunities identified" name="comment16_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.2" placeholder="Exceptions if any" name="Exception16_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct costs linked to the update/review of the existing procedural and organisational requirements (e.g. the review or update of the arrangements for the identification of the target market)</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_costs" name="direct_costs" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.3" placeholder="Comments / Risks / Opportunities identified" name="comment16_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.3" placeholder="Exceptions if any" name="Exception16_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct initial and ongoing IT costs to update current structures and programmes</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_initial" name="direct_initial" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.4" placeholder="Comments / Risks / Opportunities identified" name="comment16_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.4" placeholder="Exceptions if any" name="Exception16_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct organisational and HR costs linked to the qualification of firm staff (in particular compliance function staff and staff devoted to the definition of the target market) or training for board members</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_organisational" name="direct_organisational" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.5" placeholder="Comments / Risks / Opportunities identified" name="comment16_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.5" placeholder="Exceptions if any" name="Exception16_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified initial and on-going costs for reviewing and updating existing risk-management and compliance arrangements</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_initial" name="identified_initial" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.6" placeholder="Comments / Risks / Opportunities identified" name="comment16_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.6" placeholder="Exceptions if any" name="Exception16_6">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified costs for research and data on ESG (depending on the size and nature of the organisation)</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_costs" name="identified_costs" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment16.7" placeholder="Comments / Risks / Opportunities identified" name="comment16_7">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception16.7" placeholder="Exceptions if any" name="Exception16_7">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Information to be provided to the client</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <h4>Before providing investment advice to the client, does the investment firm provide following information to the client:</h4>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">a. Whether or not the advice is provided on an independent basis</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="advice_is_provided" name="advice_is_provided" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.1" placeholder="Comments / Risks / Opportunities identified" name="comment17_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.1" placeholder="Exceptions if any" name="Exception17_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">b. Whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="restricted_analysis" name="restricted_analysis" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.2" placeholder="Comments / Risks / Opportunities identified" name="comment17_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.2" placeholder="Exceptions if any" name="Exception17_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">c. Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Whether_the_range" name="Whether_the_range" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.3" placeholder="Comments / Risks / Opportunities identified" name="comment17_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.3" placeholder="Exceptions if any" name="Exception17_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">d. Whether the investment firm will provide the client with a periodic assessment of the suitability of the financial instruments recommended to that client</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Whether_the_investment" name="Whether_the_investment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.4" placeholder="Comments / Risks / Opportunities identified" name="comment17_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.4" placeholder="Exceptions if any" name="Exception17_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">e. Whether appropriate guidance on and warnings of the risks associated with investments in financial instruments and proposed investment strategies is provided to the clients</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="appropriate_guidance" name="appropriate_guidance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.5" placeholder="Comments / Risks / Opportunities identified" name="comment17_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.5" placeholder="Exceptions if any" name="Exception17_5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">f. Whether the information on all costs and associated charges include information relating to both investment and ancillary services, including the cost of advice, where relevant, the cost of the financial instrument recommended or marketed to the client and</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="costs_and_associated" name="costs_and_associated" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.6" placeholder="Comments / Risks / Opportunities identified" name="comment17_6">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.6" placeholder="Exceptions if any" name="Exception17_6">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">g. How the client may pay for it, also encompassing any third-party payments.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_client_may_pay" name="the_client_may_pay" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment17.7" placeholder="Comments / Risks / Opportunities identified" name="comment17_7">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception17.7" placeholder="Exceptions if any" name="Exception17_7">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Information to be gathered from the client</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm captured client's experience and knowledge in the investment field </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_captured" name="firm_captured" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment18.1" placeholder="Comments / Risks / Opportunities identified" name="comment18_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception18.1" placeholder="Exceptions if any" name="Exception18_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the timeframe client is looking to hold the investment </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="timeframe_client" name="timeframe_client" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment18.2" placeholder="Comments / Risks / Opportunities identified" name="comment18_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception18.2" placeholder="Exceptions if any" name="Exception18_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the risk appetite of the client </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="risk_appetite" name="risk_appetite" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment18.3" placeholder="Comments / Risks / Opportunities identified" name="comment18_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception18.3" placeholder="Exceptions if any" name="Exception18_3">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm created a risk profile of the client</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="risk_profile" name="risk_profile" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment18.4" placeholder="Comments / Risks / Opportunities identified" name="comment18_4">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception18.4" placeholder="Exceptions if any" name="Exception18_4">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the purpose of their investment and to what extent they want to invest in financial products having sustainability objective</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="financial_products_sustainability" name="financial_products_sustainability" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment18.5" placeholder="Comments / Risks / Opportunities identified" name="comment18_5">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception18.5" placeholder="Exceptions if any" name="Exception18_5">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Capture sustainability preferences</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Mandates</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm recommend financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="financial_instruments" name="financial_instruments" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment19.1" placeholder="Comments / Risks / Opportunities identified" name="comment19_1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception19.1" placeholder="Exceptions if any" name="Exception19_1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm ensured no greenwashing or misselling has happened </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_ensured" name="firm_ensured" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment19.2" placeholder="Comments / Risks / Opportunities identified" name="comment19_2">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception19.2" placeholder="Exceptions if any" name="Exception19_2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm grouped financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="firm_grouped" name="firm_grouped" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="comment19.3" placeholder="Comments / Risks / Opportunities identified" name="comment19_3">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="Exception19.3" placeholder="Exceptions if any" name="Exception19_3">
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><a href="{% url 'self_scoring' %}"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+<!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

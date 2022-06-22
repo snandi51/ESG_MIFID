@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% block content %}
 {% load static %}
 
@@ -7,46 +7,48 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div style="margin-top:40px">
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
     <center><h2 style="color:black;"><b>ENVIRONMENT 2</b></h2></center>
     <!-- Form Name -->
-    <div class="container">
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
                 <h4><strong  style="color:Black; margin-left:100px">Sector</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
             </div>
         </div>
+
         <form method="POST" class="form-horizontal" action="environment_2">
             {% csrf_token %}
-                <div class="form-group" style="padding:10px">
+                <div class="form-group" style="padding:10px" >
                     <div class="row mb-4">
                         <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Energy and Renewable Energy</strong></label>
                         <div class="col-sm-2">
-                            <select type="text" class="form-select" id="energy_and_renewable_energy" name="energy_and_renewable_energy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <select  type="text" class="form-select" id="energy_and_renewable_energy" name="energy_and_renewable_energy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                                 <option value=""></option>
                                 <option value="0">The Invested company does not evaluate its energy consumption and other resources</option>
-                                <option value="1">The Invested company  evaluates its energy consumption and other resources of energy but has not listed out the outcome of its evaluation exercise in its entire value chain</option>
-                                <option value="2">The Invested company  evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services</option>
+                                <option value="1">The Invested company evaluates its energy consumption and other resources of energy but has not listed out the outcome of its evaluation exercise in its entire value chain</option>
+                                <option value="2">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services</option>
                                 <option value="3">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain an action plan to reduce usage of energy in their products and services. The Invested company is working efficiently towards its action plan for reducing consumption of energy and other resources.</option>
-                                <option value="4">The Invested company  evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services.. The Invested company is working efficiently towards its action plan for reducing consumption of energy and other resources which has started yielding results in terms of evolution of efficient methods and processes</option>
+                                <option value="4">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services.. The Invested company is working efficiently towards its action plan for reducing consumption of energy and other resources which has started yielding results in terms of evolution of efficient methods and processes</option>
                             </select>
                         </div>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception1" placeholder="Exceptions if any" name="Exception1">
+                            <input type="text" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="row mb-4">
+                    <div class="row mb-4" >
                         <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Raw materials</strong></label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" >
                             <select type="text" class="form-select" id="raw_materials" name="raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                                 <option value=""></option>
                                 <option value="0">The Invested company does not evaluate its raw material handling process and its dependency on scarce raw materials</option>
@@ -60,7 +62,7 @@
                             <input type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception2" placeholder="Exceptions if any" name="Exception2">
+                            <input type="text" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2">
                         </div>
                     </div>
                 </div>
@@ -72,7 +74,9 @@
                             <select type="text" class="form-select" id="water" name="water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                                 <option value=""></option>
                                 <option value="0">The Invested company does not evaluate  whether it consumes water on a large scale</option>
-                                <option value="1">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities</option>
+                                <option value="1">The Invested company evaluates  whether it consumes water on a large scale and whether
+                                                  it will have to face risk of water scarcity which will also affect water supply to other
+                                                  consumers including local communities</option>
                                 <option value="2">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced</option>
                                 <option value="3">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the Invested company has started using recycled/reused water from different sources </option>
                                 <option value="4">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the Invested company has started using recycled/reused water from different sources efficiently which is seen in the records maintained by it of its calculation of the amount of water being recycled or reused out of the total amount of water used from different sources.</option>
@@ -82,7 +86,7 @@
                             <input type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception3" placeholder="Exceptions if any" name="Exception3">
+                            <input type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3">
                         </div>
                     </div>
                 </div>
@@ -104,7 +108,7 @@
                             <input type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception4" placeholder="Exceptions if any" name="Exception4">
+                            <input type="text" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4">
                         </div>
                     </div>
                 </div>
@@ -126,7 +130,7 @@
                             <input type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception5" placeholder="Exceptions if any" name="Exception5">
+                            <input type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5">
                         </div>
                     </div>
                 </div>
@@ -148,7 +152,7 @@
                             <input type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception6" placeholder="Exceptions if any" name="Exception6">
+                            <input type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6">
                         </div>
                     </div>
                 </div>
@@ -170,7 +174,7 @@
                             <input type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception7" placeholder="Exceptions if any" name="Exception7">
+                            <input type="text" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7">
                         </div>
                     </div>
                 </div>
@@ -192,7 +196,7 @@
                             <input type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception8" placeholder="Exceptions if any" name="Exception8">
+                            <input type="text" class="form-control" id="exception8" placeholder="Exceptions if any" name="exception8">
                         </div>
                     </div>
                 </div>
@@ -214,7 +218,7 @@
                             <input type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception9" placeholder="Exceptions if any" name="Exception9">
+                            <input type="text" class="form-control" id="exception9" placeholder="Exceptions if any" name="exception9">
                         </div>
                     </div>
                 </div>
@@ -236,7 +240,7 @@
                             <input type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="Exception10" placeholder="Exceptions if any" name="Exception10">
+                            <input type="text" class="form-control" id="exception10" placeholder="Exceptions if any" name="exception10">
                         </div>
                     </div>
                 </div>

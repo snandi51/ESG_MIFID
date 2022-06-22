@@ -1,0 +1,129 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+
+<link href="static/assets/css/style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div style="height: 55px">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</div>
+<main id="main">
+
+    <div class="float-container text-black" style="height: 800px; margin-top:10; padding-top:50px">
+        <!--        <div class="float-container text-black" style="height: 800px; margin-left: 420px">-->
+        <div class="float-child1" style="height:620px" >
+            <h5 class="text-black"><strong>ESG- Mifid II Appropriateness Toolkit</strong></h5>
+            <hr>
+            <p class="p_title">Objective of the toolkit:  This toolkit is intended to enable the Investment firms/fund managers to identify and assess client's ESG preferences in their assessments as envisaged in the EU’s proposed changes to the MiFID II suitability rules and recommend investment in investee companies accordingly.</p>
+            <hr>
+            <hr>
+            <p class="p_title">Target Audience:  Firms providing MIFID II investment advice and portfolio management, i.e.advisory investment management firms, including independent financial advisers, wealth managers and asset
+                managers more generally and in particular, heads of proposition/product, compliance officers, COOs,
+                CROs and heads of regulatory change. This will also be of interest to board members looking to scrutinise their firms’ approach to ESG issues.</p>
+            <hr>
+            <hr>
+            <p class="p_title">How should the toolkit be used?</p>
+            <p class="p_title">Users should follow these steps to use the toolkit:</p>
+            <hr>
+            <p><strong>Instructions: </strong></p>
+            <hr>
+            <p><strong>Client: </strong></p>
+            <hr>
+            <ol class="instruction">
+                <li>
+                    If user selects "ESG Thematic Questionnaire and Scoring", user has to start first with the "Information Sheet" and enter the required information in the appropriate fields.
+                </li>
+                <li>
+                    As a next step, user has to fill the selected fields viz. Environment questionnaire page based on sectors selected and its scoring, Social questionnaire and scoring and Governance questionnaire and Scoring.
+                </li>
+                <li>
+                    Final score will be generated automatically and emailed to the respective client email id user email id mapped with the system.
+                </li>
+            </ol>
+        </div>
+        <div class="float-child2">
+            <h5 class="text-black"><strong>Investment Firm Details</strong></h5>
+            <hr>
+            <form method="POST" action="index_client">
+                {% csrf_token %}
+                <div style="height:550px">
+                    <div class="form-group row space1" >
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Investment Firm Name: *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="investment_name" class="form-control form-control-sm" id="investment_name" placeholder="eg: Jack Cena" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Prepared by:*</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="prepare_by" class="form-control form-control-sm" id="prepare_by" placeholder="eg: prepared by" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Date:*</label>
+                        <div class="col-sm-3">
+                            <input type="date" name="date" class="form-control form-control-sm" id="date" placeholder="eg: date" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Investment Firm Address:*</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="firm_address" class="form-control form-control-sm" id="firm_address" placeholder="eg: address" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Brief project description: *</label>
+                        <div class="col-sm-5">
+                            <textarea rows="3" type="text" name="Brief_project" class="form-control form-control-sm" id="Brief_project" placeholder="eg: project about " required></textarea>
+                        </div>
+                    </div>
+                    <div>
+                    <h5 class="text-black"><strong>Client Detail</strong></h5>
+                    </div>
+                    <hr>
+                    <div class="form-group row space1">
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Name *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="client_name" class="form-control form-control-sm" id="client_name" placeholder="eg: smith" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Address *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="client_address" class="form-control form-control-sm" id="client_address" placeholder="eg: xyz" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Contact No. *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="client_contact_no" class="form-control form-control-sm" id="client_contact_no" placeholder="eg: xyz" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client email id *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="client_email" class="form-control form-control-sm" id="client_email" placeholder="eg: abc@gmail.com" required>
+                        </div>
+                    </div>
+
+                    <div >
+                        <h5 class="text-black"><strong>Invested company details</strong></h5>
+                    </div>
+                    <hr>
+                    <div class="form-group row space1">
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Company Name *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="company_name" class="form-control form-control-sm" id="company_name" placeholder="eg: capgemini" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Company Address *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="company_address" class="form-control form-control-sm" id="company_address" placeholder="eg: xyz" required>
+                        </div>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Industry Sector *</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="industry_sector" class="form-control form-control-sm" id="industry_sector" placeholder="eg: xyz" required>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px">
+                        <center><button type="submit" class="btn btn-success"><i class="fa fa-address-card"></i> Submit </button></center>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+</body>
+
+</html>
