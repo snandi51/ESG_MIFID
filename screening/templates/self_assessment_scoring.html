@@ -67,10 +67,10 @@
                 document.forms['self_assessment_scoring']['organisational_requirements'].value = value_dict.organisational_requirements;
                 }
                 if(document.getElementsByName('risk_management').value == null){
-                document.forms['self_assessment_scoring']['risk_management'].value = value_dict.risk_management;
+                document.forms['self_assessment_scoring']['risk_management'].value = value_dict.social_risk_management;
                 }
-                if(document.getElementsByName('Conflicts of Interest').value == null){
-                document.forms['self_assessment_scoring']['Conflicts of Interest'].value = value_dict.Conflicts of Interest;
+                if(document.getElementsByName('conflicts_of_interest').value == null){
+                document.forms['self_assessment_scoring']['conflicts_of_interest'].value = value_dict.conflicts_of_interest;
                 }
                 if(document.getElementsByName('product_governance').value == null){
                 document.forms['self_assessment_scoring']['product_governance'].value = value_dict.product_governance;
@@ -94,7 +94,7 @@
                             var recommendations = document.getElementById("recommendations");
                             var Asset1 = document.getElementById("Asset1");
                             Asset1.style.display = recommendations.value == "0" ? "block" : "none";
-                            var general = document.getElementById("general");
+                            var general = document.getElementById("generals");
                             var Asset2 = document.getElementById("Asset2");
                             Asset2.style.display = general.value == "0" ? "block" : "none";
                             var sources_and_types = document.getElementById("sources_and_types");
@@ -122,30 +122,29 @@
                             var Asset10 = document.getElementById("Asset10");
                             Asset10.style.display = social_impact.value == "0" ? "block" : "none";
                             var organisational_requirements = document.getElementById("organisational_requirements");
-                            var Asset11 = document.getElementById("Asset10");
+                            var Asset11 = document.getElementById("Asset11");
                             Asset11.style.display = organisational_requirements.value == "0" ? "block" : "none";
                             var risk_management = document.getElementById("risk_management");
-                            var Asset12 = document.getElementById("Asset10");
+                            var Asset12 = document.getElementById("Asset12");
                             Asset12.style.display = risk_management.value == "0" ? "block" : "none";
-                            var Conflicts of Interest = document.getElementById("Conflicts of Interest");
-                            var Asset13 = document.getElementById("Asset10");
-                            Asset13.style.display = Conflicts of Interest.value == "0" ? "block" : "none";
+                            var conflicts_of_interest = document.getElementById("conflicts_of_interest");
+                            var Asset13 = document.getElementById("Asset13");
+                            Asset13.style.display = conflicts_of_interest.value == "0" ? "block" : "none";
                             var product_governance = document.getElementById("product_governance");
-                            var Asset14 = document.getElementById("Asset10");
+                            var Asset14 = document.getElementById("Asset14");
                             Asset14.style.display = product_governance.value == "0" ? "block" : "none";
                             var costs_involved = document.getElementById("costs_involved");
-                            var Asset15 = document.getElementById("Asset10");
+                            var Asset15 = document.getElementById("Asset15");
                             Asset15.style.display = costs_involved.value == "0" ? "block" : "none";
                             var provided = document.getElementById("provided");
-                            var Asset16 = document.getElementById("Asset10");
+                            var Asset16 = document.getElementById("Asset16");
                             Asset16.style.display = provided.value == "0" ? "block" : "none";
                             var gathered = document.getElementById("gathered");
-                            var Asset17 = document.getElementById("Asset10");
+                            var Asset17 = document.getElementById("Asset17");
                             Asset17.style.display = gathered.value == "0" ? "block" : "none";
                             var sustainability = document.getElementById("sustainability");
-                            var Asset18 = document.getElementById("Asset10");
+                            var Asset18 = document.getElementById("Asset18");
                             Asset18.style.display = sustainability.value == "0" ? "block" : "none";
-
                         }
             function toggleText(){
                 var myText=document.getElementById("info");
@@ -345,6 +344,9 @@
                     myText.style.display='none';
                 }
             }
+
+
+
       </script>
 
         <form method="POST" class="form-horizontal" action="self_assessment_scoring">
