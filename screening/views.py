@@ -210,6 +210,7 @@ def self_assessment_13(request):
 
 @login_required
 def self_assessment_scoring(request):
+    # toggle switch added
     return render(request, 'final_scoring.html')
 
 
