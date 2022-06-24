@@ -1,9 +1,10 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 
+
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
@@ -17,21 +18,21 @@
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Supply Chain Management</b></h2></center>
+                <center><h2 style="color:Black"><b>Requirements-Systematic Consideration of Financially Material Information</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
             </div>
         </div>
-        <form method="POST" class="form-horizontal" action="environment1_10">
+        <form method="POST" class="form-horizontal" action="self_assessment_4">
             {% csrf_token %}
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any management approach in environmental assessment of its supply chain.?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically identified</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="management_approach" name="management_approach" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="material_ESG_information" name="material_ESG_information" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -39,18 +40,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment5.1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.1" placeholder="Exceptions if any" name="exception10_1"></textarea>
+                        <textarea rows ="3" class="form-control" id="exception5.1" placeholder="Exceptions if any" name="exception5_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="environmental_best_practices" name="environmental_best_practices" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="If_financially_material" name="If_financially_material" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -58,18 +59,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment5.2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.2" placeholder="Exceptions if any" name="exception10_2"></textarea>
+                        <textarea rows ="3" class="form-control" id="exception5.2" placeholder="Exceptions if any" name="exception5_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If not, whether the Investee company can influence its supply chain to adopt environmental best practices and make it their mission ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose exceptions in which financially material ESG information is not considered in investment decisions, if any. </strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="supply_chain" name="supply_chain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="systematically_considered" name="systematically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -77,10 +78,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment5.3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.3" placeholder="Exceptions if any" name="exception10_3"></textarea>
+                        <textarea rows ="3" class="form-control" id="exception5.3" placeholder="Exceptions if any" name="exception5_3"></textarea>
                     </div>
                 </div>
             </div>

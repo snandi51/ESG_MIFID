@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Requirements-Screening</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="self_assessment_6">
+            {% csrf_token %}
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the characteristic of the investment that is evaluated</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="criteria_that_systematically" name="criteria_that_systematically" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.1" placeholder="Exceptions if any" name="exception7_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the threshold or condition against which the characteristic is compared</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="systematically_exclude" name="systematically_exclude" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.2" placeholder="Exceptions if any" name="exception7_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion whether the investment is excluded from, or is eligible for inclusion in, the portfolio when the threshold or condition is met   </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="has_criteria_that" name="has_criteria_that" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.3" placeholder="Exceptions if any" name="exception7_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then does the investment manager disclose for each criterion the reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used in the establishment or evaluation of the criterion.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="inclusion_in_the_portfolio" name="inclusion_in_the_portfolio" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.4" placeholder="Exceptions if any" name="exception7_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then the does investment manager disclose where the criteria are applied in the investment process</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="If_an_investment" name="If_an_investment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.5" placeholder="Exceptions if any" name="exception7_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If an investment product has criteria that systematically exclude certain investments or has criteria that need to be met in order for an investment to be considered for inclusion in the portfolio, then the does investment manager disclose  the exceptions to the application of the criteria, if any</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="product_has_criteria" name="product_has_criteria" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment7.6" placeholder="Comments / Risks / Opportunities identified" name="comment7_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception7.6" placeholder="Exceptions if any" name="exception7_6"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

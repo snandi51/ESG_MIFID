@@ -11,7 +11,8 @@
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
-    <center><h2 style="color:black;"><b>ENVIRONMENT 1</b></h2></center>
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
@@ -21,19 +22,106 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
             </div>
         </div>
+
+        <script type="text/javascript">
+
+        window.onload = function(){
+                console.log('inside the function')
+                var value_dict = {{value_dict|safe}}
+                console.log(value_dict)
+
+                if(document.getElementsByName('direct_ghg_emissions').value == null){
+                document.forms['environment1_6']['direct_ghg_emissions'].value = value_dict.direct_ghg_emissions;
+                }
+                if(document.getElementsByName('ghg_emissions').value == null){
+                document.forms['environment1_6']['ghg_emissions'].value = value_dict.ghg_emissions;
+                }
+                if(document.getElementsByName('indirect_ghg_emissions_scope3').value == null){
+                document.forms['environment1_6']['indirect_ghg_emissions_scope3'].value = value_dict.indirect_ghg_emissions_scope3;
+                }
+                if(document.getElementsByName('indirect_ghg_emissions_scope4').value == null){
+                document.forms['environment1_6']['indirect_ghg_emissions_scope4'].value = value_dict.indirect_ghg_emissions_scope4;
+                }
+
+                console.log("Value replaced successfully")
+                }
+
+        function toggleInput1() {
+                    var direct_ghg_emissions = document.getElementById("direct_ghg_emissions");
+                    var Asset1 = document.getElementById("Asset1");
+                    Asset1.style.display = direct_ghg_emissions.value == "0" ? "block" : "none";
+                    var ghg_emissions = document.getElementById("ghg_emissions");
+                    var Asset2 = document.getElementById("Asset2");
+                    Asset2.style.display = ghg_emissions.value == "0" ? "block" : "none";
+                    var indirect_ghg_emissions_scope3 = document.getElementById("indirect_ghg_emissions_scope3");
+                    var Asset3 = document.getElementById("Asset3");
+                    Asset3.style.display = indirect_ghg_emissions_scope3.value == "0" ? "block" : "none";
+                    var indirect_ghg_emissions_scope4 = document.getElementById("indirect_ghg_emissions_scope4");
+                    var Asset4 = document.getElementById("Asset4");
+                    Asset4.style.display = indirect_ghg_emissions_scope4.value == "0" ? "block" : "none";
+                    }
+
+       function toggleText(){
+            var myText=document.getElementById("info");
+            var displaySetting=myText.style.display;
+
+            if(displaySetting == 'none'){
+                myText.style.display='block';
+            }
+            else{
+                myText.style.display='none';
+            }
+        }
+
+       function toggleText1(){
+            var myText=document.getElementById("info1");
+            var displaySetting=myText.style.display;
+
+            if(displaySetting == 'none'){
+                myText.style.display='block';
+            }
+            else{
+                myText.style.display='none';
+            }
+        }
+        function toggleText2(){
+                var myText=document.getElementById("info2");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText3(){
+                var myText=document.getElementById("info3");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+        </script>
+
         <form method="POST" class="form-horizontal" action="environment1_6">
             {% csrf_token %}
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Invested  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Investee  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="carbon_intensive" name="carbon_intensive" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -46,12 +134,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="set_policies_gas_emission" name="set_policies_gas_emission" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -70,6 +159,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -80,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding:10px" id="Asset1">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Direct GHG emissions (Scope 1)?</strong></label>
                     <div class="col-sm-2">
@@ -88,6 +178,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -96,7 +187,10 @@
                     <div class="col-sm-3">
                         <textarea rows="3" type="text" class="form-control" id="exception6.4" placeholder="Exceptions if any" name="exception6_4"></textarea>
                     </div>
-                    <i style="color:blue;">a. Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent.
+                    <div>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
+                    </div>
+                    <i id="info" style="color:blue;  display:none">a. Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent.
                         b. Gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Base year for the calculation, if applicable, including:
@@ -108,7 +202,7 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding:10px" id="Asset2">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Energy Indirect GHG emissions (Scope 2) like?</strong></label>
                     <div class="col-sm-2">
@@ -116,6 +210,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -124,7 +219,11 @@
                     <div class="col-sm-3">
                         <textarea rows="3" type="text" class="form-control" id="exception6.5" placeholder="Exceptions if any" name="exception6_5"></textarea>
                     </div>
-                    <i style="color:blue;">a. Gross location-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
+                    <div>
+                        <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                    </div>
+                    <i id="info1" style="color:blue;  display:none">a. Gross location-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
                         b. If applicable, gross market-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
                         c. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         d. Base year for the calculation, if applicable, including:
@@ -136,7 +235,7 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding:10px" id="Asset3">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
                     <div class="col-sm-2">
@@ -144,6 +243,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -152,7 +252,11 @@
                     <div class="col-sm-3">
                         <textarea rows="3" type="text" class="form-control" id="exception6.6" placeholder="Exceptions if any" name="exception6_6"></textarea>
                     </div>
-                    <i style="color:blue;">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
+                    <div>
+                        <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
+                    </div>
+                    <i id="info2" style="color:blue;  display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
                         b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
@@ -164,7 +268,7 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding:10px" id="Asset4">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
                     <div class="col-sm-2">
@@ -172,6 +276,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -180,7 +285,11 @@
                     <div class="col-sm-3">
                         <textarea rows="3" type="text" class="form-control" id="exception6.7" placeholder="Exceptions if any" name="exception6_7"></textarea>
                     </div>
-                    <i style="color:blue;">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
+                    <div>
+                        <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                    </div>
+                    <i id="info3" style="color:blue;  display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
                         b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
@@ -194,12 +303,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Invested  company invested in technologies to improve the air quality of the area in which it operates?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Investee  company Investee in technologies to improve the air quality of the area in which it operates?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="air_quality" name="air_quality" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -218,6 +328,7 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -228,8 +339,9 @@
                     </div>
                 </div>
             </div>
+
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

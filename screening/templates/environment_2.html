@@ -3,251 +3,678 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div style="margin-top:40px">
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
-    <center><h2 style="color:black;"><b>ENVIRONMENT 2</b></h2></center>
+    <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+    <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div  style="background-color:rgba(149, 230, 22, 0.7); width:1100px;">
+                <h2 style="color:black; margin-left:30px"><b>Environmental Scoring</b><h style="font-size: 15px; margin-left:140px">Score(0:Unsatisfactory,1:Needs improvement, 2:Good, 3:Very Good, 4:Excellent) </h></h2>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:100px">Sector</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:30px">Sector</strong><strong  style="color:Black; margin-left:280px">Score</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:170px">Exceptions</strong></h4>
             </div>
         </div>
 
+        <script type="text/javascript">
+
+        window.onload = function(){
+                console.log('inside the function')
+                var value_dict = {{value_dict|safe}}
+                console.log(value_dict)
+
+                if(document.getElementsByName('energy_and_renewable_energy').value == null){
+                document.forms['environment_2']['energy_and_renewable_energy'].value = value_dict.energy_and_renewable_energy;
+                }
+                if(document.getElementsByName('raw_materials').value == null){
+                document.forms['environment_2']['raw_materials'].value = value_dict.raw_materials;
+                }
+                if(document.getElementsByName('water').value == null){
+                document.forms['environment_2']['water'].value = value_dict.water;
+                }
+                if(document.getElementsByName('land').value == null){
+                document.forms['environment_2']['land'].value = value_dict.land;
+                }
+                if(document.getElementsByName('waste').value == null){
+                document.forms['environment_2']['waste'].value = value_dict.waste;
+                }
+                if(document.getElementsByName('greenhouse_gas_emissions').value == null){
+                document.forms['environment_2']['greenhouse_gas_emissions'].value = value_dict.greenhouse_gas_emissions;
+                }
+                if(document.getElementsByName('biodiversity').value == null){
+                document.forms['environment_2']['biodiversity'].value = value_dict.biodiversity;
+                }
+                if(document.getElementsByName('circular_economy').value == null){
+                document.forms['environment_2']['circular_economy'].value = value_dict.circular_economy;
+                }
+                if(document.getElementsByName('environmental_compliance').value == null){
+                document.forms['environment_2']['environmental_compliance'].value = value_dict.environmental_compliance;
+                }
+                if(document.getElementsByName('supply_chain_management').value == null){
+                document.forms['environment_2']['supply_chain_management'].value = value_dict.supply_chain_management;
+                }
+                console.log("Value replaced successfully")
+        }
+
+        function toggleInput1() {
+                            var energy_and_renewable_energy = document.getElementById("energy_and_renewable_energy");
+                            var Asset1 = document.getElementById("Asset1");
+                            Asset1.style.display = energy_and_renewable_energy.value == "0" ? "block" : "none";
+                            var raw_materials = document.getElementById("raw_materials");
+                            var Asset2 = document.getElementById("Asset2");
+                            Asset2.style.display = raw_materials.value == "0" ? "block" : "none";
+                            var water = document.getElementById("water");
+                            var Asset3 = document.getElementById("Asset3");
+                            Asset3.style.display = water.value == "0" ? "block" : "none";
+                            var land = document.getElementById("land");
+                            var Asset4 = document.getElementById("Asset4");
+                            Asset4.style.display = land.value == "0" ? "block" : "none";
+                            var waste = document.getElementById("waste");
+                            var Asset5 = document.getElementById("Asset5");
+                            Asset5.style.display = waste.value == "0" ? "block" : "none";
+                            var greenhouse_gas_emissions = document.getElementById("greenhouse_gas_emissions");
+                            var Asset6 = document.getElementById("Asset6");
+                            Asset6.style.display = greenhouse_gas_emissions.value == "0" ? "block" : "none";
+                            var biodiversity = document.getElementById("biodiversity");
+                            var Asset7 = document.getElementById("Asset7");
+                            Asset7.style.display = biodiversity.value == "0" ? "block" : "none";
+                            var circular_economy = document.getElementById("circular_economy");
+                            var Asset8 = document.getElementById("Asset8");
+                            Asset8.style.display = circular_economy.value == "0" ? "block" : "none";
+                            var environmental_compliance = document.getElementById("environmental_compliance");
+                            var Asset9 = document.getElementById("Asset9");
+                            Asset9.style.display = environmental_compliance.value == "0" ? "block" : "none";
+                            var supply_chain_management = document.getElementById("supply_chain_management");
+                            var Asset10 = document.getElementById("Asset10");
+                            Asset10.style.display = supply_chain_management.value == "0" ? "block" : "none";
+                        }
+            function toggleText(){
+                var myText=document.getElementById("info");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText1(){
+                var myText=document.getElementById("info1");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText2(){
+                var myText=document.getElementById("info2");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText3(){
+                var myText=document.getElementById("info3");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText4(){
+                var myText=document.getElementById("info4");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText5(){
+                var myText=document.getElementById("info5");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText6(){
+                var myText=document.getElementById("info6");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText7(){
+                var myText=document.getElementById("info7");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText8(){
+                var myText=document.getElementById("info8");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText9(){
+                var myText=document.getElementById("info9");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+      </script>
+
         <form method="POST" class="form-horizontal" action="environment_2">
             {% csrf_token %}
-                <div class="form-group" style="padding:10px" >
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Energy and Renewable Energy</strong></label>
-                        <div class="col-sm-2">
-                            <select  type="text" class="form-select" id="energy_and_renewable_energy" name="energy_and_renewable_energy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company does not evaluate its energy consumption and other resources</option>
-                                <option value="1">The Invested company evaluates its energy consumption and other resources of energy but has not listed out the outcome of its evaluation exercise in its entire value chain</option>
-                                <option value="2">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services</option>
-                                <option value="3">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain an action plan to reduce usage of energy in their products and services. The Invested company is working efficiently towards its action plan for reducing consumption of energy and other resources.</option>
-                                <option value="4">The Invested company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services.. The Invested company is working efficiently towards its action plan for reducing consumption of energy and other resources which has started yielding results in terms of evolution of efficient methods and processes</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1">
-                        </div>
+            <div class="form-group" style="padding-top:10px" id="Asset1">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;">Energy and Renewable Energy</strong></label>
+                    <div class="col-sm-2">
+                        <select  type="text" class="form-select" id="energy_and_renewable_energy" name="energy_and_renewable_energy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
+                    </div>
+                    <div>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
+                    </div>
+                    <div id="info" style="display:none">
+                    <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                        <tbody>
+                        <tr>
+                            <th scope="row" class="table-active">0</th>
+                            <th scope="row" class="table-active">1</th>
+                            <th scope="row" class="table-active">2</th>
+                            <th scope="row" class="table-active">3</th>
+                            <th scope="row" class="table-active">4</th>
+                        </tr>
+                        <tr>
+                            <td>The investee company does not evaluate its energy consumption and other resources</td>
+                            <td>The investee company evaluates its energy consumption and other resources of energy but has not listed out the outcome of its evaluation exercise in its entire value chain</td>
+                            <td>The investee company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services</td>
+                            <td >The investee company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain an action plan to reduce usage of energy in their products and services. The investee company is working efficiently towards its action plan for reducing consumption of energy and other resources.</td>
+                            <td >The investee company evaluates its energy consumption and other resources of energy. Has listed the outcome of its evaluation exercise in its entire value chain and has an action plan to reduce usage of energy in their products and services.. The investee company is working efficiently towards its action plan for reducing consumption of energy and other resources which has started yielding results in terms of evolution of efficient methods and processes</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4" >
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Raw materials</strong></label>
-                        <div class="col-sm-2" >
-                            <select type="text" class="form-select" id="raw_materials" name="raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company does not evaluate its raw material handling process and its dependency on scarce raw materials</option>
-                                <option value="1">The Invested company evaluates its raw material handling process and its dependency on scarce raw materials</option>
-                                <option value="2">The Invested company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is exploring other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials.</option>
-                                <option value="3">The Invested company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is exploring other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials. It is working efficiently towards using recycled materials in its production process.</option>
-                                <option value="4">The Invested company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is working effectively towards other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials. The Invested company is using recycled materials in its production process and also making use of reusable/recyclable packaging for its products /services.</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2">
-                        </div>
+            <div class="form-group" id="Asset2">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Raw materials</strong></label>
+                    <div class="col-sm-2" >
+                        <select type="text" class="form-select" id="raw_materials" name="raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                    </div>
+                    <div id="info1" style="display:none">
+                    <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                        <tbody>
+                        <tr>
+                            <th scope="row" class="table-active">0</th>
+                            <th scope="row" class="table-active">1</th>
+                            <th scope="row" class="table-active">2</th>
+                            <th scope="row" class="table-active">3</th>
+                            <th scope="row" class="table-active">4</th>
+                        </tr>
+                        <tr>
+                            <td>The investee company does not evaluate its raw material handling process and its dependency on scarce raw materials</td>
+                            <td>The investee company evaluates its raw material handling process and its dependency on scarce raw materials</td>
+                            <td>The investee company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is exploring other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials</td>
+                            <td>The investee company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is exploring other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials. It is working efficiently towards using recycled materials in its production process.</td>
+                            <td>The investee company evaluates its raw material handling process and its dependency on scarce raw materials. As its dependence is on raw materials that are scarce and wish to change its raw material handling process efficiently, it is working effectively towards other options of sourcing raw materials or changing its production process / methods to minimise wastage of raw materials. The investee company is using recycled materials in its production process and also making use of reusable/recyclable packaging for its products /services</td>
+                        </tbody>
+                    </table>
+                    </div>
+                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Water</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="water" name="water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company does not evaluate  whether it consumes water on a large scale</option>
-                                <option value="1">The Invested company evaluates  whether it consumes water on a large scale and whether
-                                                  it will have to face risk of water scarcity which will also affect water supply to other
-                                                  consumers including local communities</option>
-                                <option value="2">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced</option>
-                                <option value="3">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the Invested company has started using recycled/reused water from different sources </option>
-                                <option value="4">The Invested company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The Invested company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the Invested company has started using recycled/reused water from different sources efficiently which is seen in the records maintained by it of its calculation of the amount of water being recycled or reused out of the total amount of water used from different sources.</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3">
-                        </div>
+            <div class="form-group" id="Asset3">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Water</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="water" name="water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
+                    </div>
+                    <div id="info2" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company does not evaluate  whether it consumes water on a large scale</td>
+                                <td>The investee company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities</td>
+                                <td>The investee company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The investee company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced</td>
+                                <td>The investee company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The investee company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the investee company has started using recycled/reused water from different sources </td>
+                                <td>The investee company evaluates  whether it consumes water on a large scale and whether it will have to face risk of water scarcity which will also affect water supply to other consumers including local communities. The investee company is exploring other sources of water / other techniques such that its dependence on water supplied by local authorities is reduced. As a result, the investee company has started using recycled/reused water from different sources efficiently which is seen in the records maintained by it of its calculation of the amount of water being recycled or reused out of the total amount of water used from different sources.</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Land</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="land" name="land" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company is not evaluating any negative impacts on environment due to its  land clearance/deforestation activities</option>
-                                <option value="1">The Invested company is evaluating  negative impacts on  local communities, flora and fauna due to its  land clearance/deforestation activities but not documenting its outcome</option>
-                                <option value="2">The Invested company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome</option>
-                                <option value="3">The Invested company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome. As a result of negative impact of its activities, it is working towards using methods/processes to negate the impact on environment </option>
-                                <option value="4">The Invested company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome. As a result of negative impact of its activities, it is working towards using methods/processes to negate the impact on environment and people in terms of using recyclable products in its production process / planting trees wherever it can as per local laws and regulations)</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4">
-                        </div>
+            <div class="form-group" id="Asset4">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Land</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="land" name="land" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                    </div>
+                    <div id="info3" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company is not evaluating any negative impacts on environment due to its  land clearance/deforestation activities</td>
+                                <td>The investee company is evaluating  negative impacts on  local communities, flora and fauna due to its  land clearance/deforestation activities but not documenting its outcome</td>
+                                <td>The investee company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome</td>
+                                <td>The investee company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome. As a result of negative impact of its activities, it is working towards using methods/processes to negate the impact on environment </td>
+                                <td>The investee company is evaluating negative impacts on  local communities, flora and fauna due to its land clearance/deforestation activities and documenting its outcome. As a result of negative impact of its activities, it is working towards using methods/processes to negate the impact on environment and people in terms of using recyclable products in its production process / planting trees wherever it can as per local laws and regulations)</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Waste</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="waste" name="waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The invested company does not evaluate the kind of waste it generates and its quantum</option>
-                                <option value="1">The invested company evaluates the kind of waste it generates and its quantum </option>
-                                <option value="2">The invested company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise</option>
-                                <option value="3">The invested company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise. Accordingly, it has derived an action plan to use approprate method to reduce waste not impacting the ecosystem</option>
-                                <option value="4">The invested company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise. Accordingly, it has derived an action plan to use approprate method to reduce waste not impacting the ecosystem. As per the action plan, the Invested company has started recycling the waste generated and provided calculation of recycled waste vis-à-vis total waste generated which is noteworthy</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5">
-                        </div>
+            <div class="form-group" id="Asset5">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Waste</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="waste" name="waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info"></a>
+                    </div>
+                    <div id="info4" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company does not evaluate the kind of waste it generates and its quantum</td>
+                                <td>The investee company evaluates the kind of waste it generates and its quantum </td>
+                                <td>The investee company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise</td>
+                                <td>The investee company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise. Accordingly, it has derived an action plan to use approprate method to reduce waste not impacting the ecosystem</td>
+                                <td>The investee company evaluates the kind of waste it generates and its quantum. It also evaluates if the waste generated is toxic and whether such waste can be treated adequately and documents outcome of its evaluation exercise. Accordingly, it has derived an action plan to use approprate method to reduce waste not impacting the ecosystem. As per the action plan, the investee company has started recycling the waste generated and provided calculation of recycled waste vis-à-vis total waste generated which is noteworthy</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Greenhouse Gas Emissions</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="greenhouse_gas_emissions" name="greenhouse_gas_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company does not evaluate impact of its harmful emissions / ozone depleting substances  on environment </option>
-                                <option value="1">The Invested company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same</option>
-                                <option value="2">The Invested company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an action plan to reduce its carbon footprint.</option>
-                                <option value="3">The Invested company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an action plan to reduce its carbon footprint. As per its action plan, it has invested in technologies to improve the air quality of the area in which it operates.</option>
-                                <option value="4">The Invested company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an action plan to reduce its carbon footprint. As per its action plan, it has invested in technologies to improve the air quality of the area in which it operates which has yielded results in terms of calculated reduction in the amount of emissions initially.</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6">
-                        </div>
+            <div class="form-group" id="Asset6">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Greenhouse Gas Emissions</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="greenhouse_gas_emissions" name="greenhouse_gas_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info"></a>
+                    </div>
+                    <div id="info5" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company does not evaluate impact of its harmful emissions / ozone depleting substances  on environment </td>
+                                <td>The investee company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same</td>
+                                <td>The investee company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an action plan to reduce its carbon footprint.</td>
+                                <td>The investee company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an actioan plan to reduce its carbon footprint. As per its action plan, it has invested in technologies to improve the air quality of the area in which it operates.</td>
+                                <td>The investee company evaluates impact of its harmful emissions / ozone depleting substances on environment and documents the same. It has an action plan to reduce its carbon footprint. As per its action plan, it has invested in technologies to improve the air quality of the area in which it operates which has yielded results in terms of calculated reduction in the amount of emissions initially.</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Biodiversity</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="biodiversity" name="biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested  company does not assess the negative impact of its business operations on biodiversity</option>
-                                <option value="1">The Invested  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same</option>
-                                <option value="2">The Invested  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations</option>
-                                <option value="3">The Invested  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens  and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations. It is working efficiently towards its action plan.</option>
-                                <option value="4">The Invested  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations. It is working efficiently towards its action plan which has yielded results in terms of biodiversity conservation and restoration.</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7">
-                        </div>
+            <div class="form-group" id="Asset7">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Biodiversity</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="biodiversity" name="biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn6').click()" alt="Info"></a>
+                    </div>
+                    <div id="info6" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The Investee  company does not assess the negative impact of its business operations on biodiversity</td>
+                                <td>The Investee  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same</td>
+                                <td>The Investee  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations</td>
+                                <td>The Investee  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens  and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations. It is working efficiently towards its action plan.</td>
+                                <td>The Investee  company assesses the negative impact of its business operations on local flora and fauna, different types of species, pests and pathogens and documents the same and has an action plan to mitigate/control the biodiversity loss due to its operations. It is working efficiently towards its action plan which has yielded results in terms of biodiversity conservation and restoration.</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Circular Economy</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="circular_economy" name="circular_economy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company is not using biodegradable/recyclable raw materials in its production/packaging process</option>
-                                <option value="1">The Invested company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce but has not evaluated other options for reducing dependency on scarce raw materials</option>
-                                <option value="2">The Invested company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials</option>
-                                <option value="3">The Invested company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials. The Invested company has an action plan towards evolving methods/process for deploybiodegradable/recyclable raw materials in its production/packaging process</option>
-                                <option value="4">The Invested company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials. The Invested company has an action plan towards evolving methods/process for deploy biodegradable/recyclable raw materials in its production/packaging process which has yielded results in terms of making use of biodegradable/recyclable raw materials in its production/packaging process</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception8" placeholder="Exceptions if any" name="exception8">
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Environment (Others) - Environmental Compliance</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="environmental_compliance" name="environmental_compliance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The Invested company is not in compliance with the local laws and regulations </option>
-                                <option value="1">The Invested company is not in compliance with the local laws and regulations. Does not evaluate Principle Adverse Impacts of its operations on environment. </option>
-                                <option value="2">The Invested company has had serious incidents of non-compliance of negative impact of its operations on environment during the last 5 years and had paid significant fines and had to suffer non-monetary sanctions</option>
-                                <option value="3">The Invested company is in compliance with local laws and regulations, evaluates Principle Adverse Impacts of its operations on environment, takes mitigation measures and has not been subjected to any serious incidents during last 5 years wherein it had to pay significant fines and suffer non-monetary sanctions due to environmental non-compliance</option>
-                                <option value="4">The Invested company is in compliance with local laws and regulations, evaluates Principle Adverse Impacts of its operations on environment, takes mitigation measures and has not been subjected to any serious incidents during last 5 years wherein it had to pay significant fines and suffer non-monetary sanctions due to environmental non-compliance. It monitors various risks and opportunities of its business operations on a continual basis and implements action plan efficiently</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception9" placeholder="Exceptions if any" name="exception9">
-                        </div>
+            <div class="form-group" id="Asset8">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Circular Economy</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="circular_economy" name="circular_economy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception8" placeholder="Exceptions if any" name="exception8"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn7"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn7').click()" alt="Info"></a>
+                    </div>
+                    <div id="info7" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company is not using biodegradable/recyclable raw materials in its production/packaging process</td>
+                                <td>The investee company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce but has not evaluated other options for reducing dependency on scarce raw materials</td>
+                                <td>The investee company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials</td>
+                                <td>The investee company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials. The investee company has an action plan towards evolving methods/process for deploybiodegradable/recyclable raw materials in its production/packaging process</td>
+                                <td>The investee company is not using biodegradable/recyclable raw materials in its production/packaging process but is exploring options to deploy the same. It is also using raw materials which are scarce and  evaluating other options for reducing dependency on scarce raw materials. The investee company has an action plan towards evolving methods/process for deploy biodegradable/recyclable raw materials in its production/packaging process which has yielded results in terms of making use of biodegradable/recyclable raw materials in its production/packaging process</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Supply Chain Management</strong></label>
-                        <div class="col-sm-2">
-                            <select type="text" class="form-select" id="supply_chain_management" name="supply_chain_management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">The company does not evaluate or consider the environmental assessment of its supply chain.</option>
-                                <option value="1">The Invested company has a plan to evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices</option>
-                                <option value="2">The Invested company is already on an evaluation exercise of its suppliers is to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices</option>
-                                <option value="3">The Invested company is already on an evaluation exercise of its suppliers is to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices and has an action plan in place to influence its supply chain to adopt environmental best practices and make it their mission </option>
-                                <option value="4">The Invested company is already on an evaluation exercise of its suppliers is to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices and is working efficiently towards its action plan and influenced its supply chain to adopt environmental best practices and make it their mission.  As a result, the supply chain has started making policies and goals towards achieving ESG compliance</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="exception10" placeholder="Exceptions if any" name="exception10">
-                        </div>
+            <div class="form-group" id="Asset9">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Environment (Others) - Environmental Compliance</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="environmental_compliance" name="environmental_compliance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception9" placeholder="Exceptions if any" name="exception9"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn8').click()" alt="Info"></a>
+                    </div>
+                    <div id="info8" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company is not in compliance with the local laws and regulations </td>
+                                <td>The investee company is not in compliance with the local laws and regulations. Does not evaluate Principle Adverse Impacts of its operations on environment. </td>
+                                <td>The investee company has had serious incidents of non-compliance of negative impact of its operations on environment during the last 5 years and had paid significant fines and had to suffer non-monetary sanctions</td>
+                                <td>The investee company is in compliance with local laws and regulations, evaluates Principle Adverse Impacts of its operations on environment, takes mitigation measures and has not been subjected to any serious incidents during last 5 years wherein it had to pay significant fines and suffer non-monetary sanctions due to environmental non-compliance</td>
+                                <td>The investee company is in compliance with local laws and regulations, evaluates Principle Adverse Impacts of its operations on environment, takes mitigation measures and has not been subjected to any serious incidents during last 5 years wherein it had to pay significant fines and suffer non-monetary sanctions due to environmental non-compliance. It monitors various risks and opportunities of its business operations on a continual basis and implements action plan efficiently</td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div style="margin-bottom:4px">
-                    <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            <div class="form-group" id="Asset10">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Supply Chain Management</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="supply_chain_management" name="supply_chain_management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" type="text" class="form-control" id="exception10" placeholder="Exceptions if any" name="exception10"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText9()" style="display: none;" id="info-btn9"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn9').click()" alt="Info"></a>
+                    </div>
+                    <div id="info9" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The company does not evaluate or consider the environmental assessment of its supply chain.</td>
+                                <td>The investee company has a plan to evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices</td>
+                                <td>The investee company is already on an evaluation exercise of its suppliers as to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices</td>
+                                <td>The investee company is already on an evaluation exercise of its suppliers as to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices and has an action plan in place to influence its supply chain to adopt environmental best practices and make it their mission </td>
+                                <td>The investee company is already on an evaluation exercise of its suppliers as to whether the supplier from whom it procures raw materials and other inputs follows environmental best practices and is working efficiently towards its action plan and influenced its supply chain to adopt environmental best practices and make it their mission.  As a result, the supply chain has started making policies and goals towards achieving ESG compliance</td>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
             <!--            </div>-->
         </form>
     </div>
@@ -259,3 +686,6 @@
 </body>
 
 </html>
+
+
+

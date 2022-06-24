@@ -11,7 +11,8 @@
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
-    <center><h2 style="color:black;"><b>ENVIRONMENT 1</b></h2></center>
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
@@ -21,19 +22,20 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_9">
             {% csrf_token %}
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company is in compliance with the local laws and regulations ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Investee  company  in compliance with the local laws and regulations ?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="local_laws_regulations" name="local_laws_regulations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -46,12 +48,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, has the Invested  company obtained all necessary permits, licenses from the concerned local authorities for its operations ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, has the Investee  company obtained all necessary permits, licenses from the concerned local authorities for its operations ?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="licenses_concerned_local_authorities" name="licenses_concerned_local_authorities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -64,12 +67,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company consider Principle Adverse Impacts of its operations on environment and undertaken mitigation measures?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee  company consider Principle Adverse Impacts of its operations on environment and undertaken mitigation measures?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="principle_adverse_impacts" name="principle_adverse_impacts" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -82,12 +86,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company maintain records of any serious incidents of negative impact of its operations on environment during the last 5 years and its consequential action faced ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee  company maintain records of any serious incidents of negative impact of its operations on environment during the last 5 years and its consequential action faced ?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="consequential_action" name="consequential_action" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -100,12 +105,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Invested company was subjected to significant fines and non-monetary sanctions for non-compliance with environmental laws and/or regulations ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Investee company was subjected to significant fines and non-monetary sanctions for non-compliance with environmental laws and/or regulations ?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="non_compliance_environmental_laws" name="non_compliance_environmental_laws" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -118,12 +124,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company take corrective measures and evaluate and document its consequent positive environmental impact?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company take corrective measures and evaluate and document its consequent positive environmental impact?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="consequent_positive_environmental_impact" name="consequent_positive_environmental_impact" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -136,12 +143,13 @@
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company monitor risks and opportunities for its business operations on a continual basis and implements appropriate action plan?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee  company monitor risks and opportunities for its business operations on a continual basis and implements appropriate action plan?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="monitor_risks_opportunities" name="monitor_risks_opportunities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -152,8 +160,9 @@
                     </div>
                 </div>
             </div>
+
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

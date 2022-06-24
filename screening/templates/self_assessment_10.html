@@ -1,9 +1,10 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 
+
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
@@ -17,21 +18,21 @@
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Raw materials</b></h2></center>
+                <center><h2 style="color:Black"><b>Conflicts of Interest</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
             </div>
         </div>
-        <form method="POST" class="form-horizontal" action="environment1_2">
+        <form method="POST" class="form-horizontal" action="self_assessment_10">
             {% csrf_token %}
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company have any set policies/strategies/goals/responsibilities for handling the materials used in their primary production?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm identify conflicts of interest whose existence may damange the interests of a client including the one arising from distribution of ESG suitable investments</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_of_strategies" name="set_of_strategies" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="investment_firm_identify" name="investment_firm_identify" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -39,18 +40,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.1" placeholder="Comments / Risks / Opportunities identified" name="comment14_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.1" placeholder="Exceptions if any" name="exception2_1"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.1" placeholder="Exceptions if any" name="Exception14_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company evaluate its approach towards handling raw materials used in its production process?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">How does the investment firm identify conflicts of interest and manage the same. Explain.</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="handling_raw_materials" name="handling_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="interest_and_manage" name="interest_and_manage" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -58,18 +59,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.2" placeholder="Comments / Risks / Opportunities identified" name="comment2_2"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.2" placeholder="Comments / Risks / Opportunities identified" name="comment14_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.2" placeholder="Exceptions if any" name="exception2_2"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.2" placeholder="Exceptions if any" name="Exception14_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is there a dependence on raw materials that may become scarce?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management lead to mis-selling practices</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="dependence_raw_materials" name="dependence_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="inclusion_of_ESG" name="inclusion_of_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -77,18 +78,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.3" placeholder="Comments / Risks / Opportunities identified" name="comment2_3"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.3" placeholder="Comments / Risks / Opportunities identified" name="comment14_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.3" placeholder="Exceptions if any" name="exception2_3"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.3" placeholder="Exceptions if any" name="Exception14_3"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, is the Investee company exploring other options of sourcing raw materials or changing its production process / methods efficiently?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to sell own-products or more costly ones</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sourcing_raw_materials" name="sourcing_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="ESG_considerations" name="ESG_considerations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -96,18 +97,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.4" placeholder="Comments / Risks / Opportunities identified" name="comment2_4"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.4" placeholder="Comments / Risks / Opportunities identified" name="comment14_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.4" placeholder="Exceptions if any" name="exception2_4"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.4" placeholder="Exceptions if any" name="Exception14_4"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company make use of recycled materials in its production process?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to generate churning of clients’ portfolios</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="use_recycled_materials" name="use_recycled_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="the_advisory_process" name="the_advisory_process" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -115,18 +116,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.5" placeholder="Comments / Risks / Opportunities identified" name="comment2_5"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.5" placeholder="Comments / Risks / Opportunities identified" name="comment14_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.5" placeholder="Exceptions if any" name="exception2_5"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.5" placeholder="Exceptions if any" name="Exception14_5"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Investee company using reusable/recyclable packaging for its products /services?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the inclusion of ESG considerations in the advisory process and portfolio management considered as an excuse to misrepresent products or strategies as fulfilling ESG preferences where they do not.</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="recyclable_packaging" name="recyclable_packaging" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="process_and_portfolio" name="process_and_portfolio" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -134,13 +135,14 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2.6" placeholder="Comments / Risks / Opportunities identified" name="comment2_6"></textarea>
+                        <textarea rows ="3" class="form-control" id="comment14.6" placeholder="Comments / Risks / Opportunities identified" name="comment14_6"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2.6" placeholder="Exceptions if any" name="exception2_6"></textarea>
+                        <textarea rows ="3" class="form-control" id="Exception14.6" placeholder="Exceptions if any" name="Exception14_6"></textarea>
                     </div>
                 </div>
             </div>
+
             <div style="margin-bottom:4px">
                 <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
             </div>

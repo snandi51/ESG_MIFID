@@ -34,7 +34,7 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a class="navbar-brand text-black"><img src="static/assets/img/cg_logo.png" height=50>|<strong>ESG- Mifid II Appropriateness Toolkit</strong></a>
+            <a class="navbar-brand text-black"><img src="static/assets/img/cg_invent.png" height=50>|<strong>ESG- Mifid II Toolkit</strong></a>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index_client.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -46,10 +46,7 @@
 <!--                    <li><a class="nav-link scrollto" href="#environment_1">environment_1</a></li>-->
                     <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
 <!--                    <li><a class="nav-link scrollto" href="#environment_2">environment_2</a></li>-->
-                    {% else %}
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'login_user' %}">Login User</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'login_client' %}">Login Client</a></li>
+
                     {% endif %}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

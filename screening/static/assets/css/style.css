@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #2d405f;
@@ -1426,15 +1426,15 @@ section {
 .instruction{
     padding: 0px;
     margin: 3px;
-    font-size: 12px;
+    font-size: 10px;
     font: "Verdana", sans-serif;
 
 }
 
 .p_title
 {
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
+    font: "Verdana", sans-serif;
 }
 
 .float-container {
@@ -1445,11 +1445,13 @@ section {
     width: 62%;
     float: left;
     padding: 20px;
+    fon-size: 15px;
     background-color:rgba(255,255,255,0.7);
 }
 
 .float-child2 {
     width: 38%;
+
     float: right;
     padding: 10px;
     background-color:rgba(255,255,255,0.8);
@@ -1460,7 +1462,7 @@ section {
 }
 
 .form_title {
-    font-size: 14px;
+    font-size: 11px;
    }
 
 .dropdown_size{
@@ -1580,6 +1582,18 @@ verdana_result{
     font-size: 12px;
 }
 
+.place{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 40px;
+    top: 50px;
+    font-size: 14px;
+    border-color: #E6E6EA;
+    padding-left:10px;
+    border-radius: 8px;
+}
+
 
 .red{
     background-color: red;
@@ -1602,4 +1616,13 @@ verdana_result{
     height: 100px;
     padding: 8px;
 }
+
+.social-scoring-div{
+    height:6700px;
+    width: 50%;
+    left: 12%;
+    display:flex;
+    background-color:rgba(245, 245, 248, 0.7);
+}
+
 

@@ -1,0 +1,323 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Costs involved</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="self_assessment_12">
+            {% csrf_token %}
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified the sources / third party vendors for buying ESG data and cost involved (depending on current arrangements of relevant firms) </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_the_sources" name="identified_the_sources" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.1" placeholder="Comments / Risks / Opportunities identified" name="comment16_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.1" placeholder="Exceptions if any" name="exception16_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified methods of systematic integration of ESG data in the investment decision process and risk assessment</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_methods" name="identified_methods" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.2" placeholder="Comments / Risks / Opportunities identified" name="comment16_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.2" placeholder="Exceptions if any" name="exception16_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct costs linked to the update/review of the existing procedural and organisational requirements (e.g. the review or update of the arrangements for the identification of the target market)</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_costs" name="direct_costs" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.3" placeholder="Comments / Risks / Opportunities identified" name="comment16_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.3" placeholder="Exceptions if any" name="exception16_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct initial and ongoing IT costs to update current structures and programmes</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_initial" name="direct_initial" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.4" placeholder="Comments / Risks / Opportunities identified" name="comment16_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.4" placeholder="Exceptions if any" name="exception16_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified direct organisational and HR costs linked to the qualification of firm staff (in particular compliance function staff and staff devoted to the definition of the target market) or training for board members</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="direct_organisational" name="direct_organisational" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.5" placeholder="Comments / Risks / Opportunities identified" name="comment16_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.5" placeholder="Exceptions if any" name="exception16_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified initial and on-going costs for reviewing and updating existing risk-management and compliance arrangements</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_initial" name="identified_initial" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.6" placeholder="Comments / Risks / Opportunities identified" name="comment16_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.6" placeholder="Exceptions if any" name="exception16_6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm identified costs for research and data on ESG (depending on the size and nature of the organisation)</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="identified_costs" name="identified_costs" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment16.7" placeholder="Comments / Risks / Opportunities identified" name="comment16_7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception16.7" placeholder="Exceptions if any" name="exception16_7"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Information to be provided to the client</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                </div>
+            </div>
+            <i>Before providing investment advice to the client, does the investment firm provide following information to the client:</i>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">a. Whether or not the advice is provided on an independent basis</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="advice_is_provided" name="advice_is_provided" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.1" placeholder="Comments / Risks / Opportunities identified" name="comment17_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.1" placeholder="Exceptions if any" name="exception17_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">b. Whether the advice is based on a broad or on a more restricted analysis of different types of financial instruments</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="restricted_analysis" name="restricted_analysis" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.2" placeholder="Comments / Risks / Opportunities identified" name="comment17_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.2" placeholder="Exceptions if any" name="exception17_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">c. Whether the range is limited to financial instruments issued or provided by entities having close links with the investment firm or any other legal or economic relationships, such as contractual relationships, so close as to pose a risk of impairing the independent basis of the advice provided</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Whether_the_range" name="Whether_the_range" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.3" placeholder="Comments / Risks / Opportunities identified" name="comment17_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.3" placeholder="Exceptions if any" name="exception17_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">d. Whether the investment firm will provide the client with a periodic assessment of the suitability of the financial instruments recommended to that client</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Whether_the_investment" name="Whether_the_investment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.4" placeholder="Comments / Risks / Opportunities identified" name="comment17_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.4" placeholder="Exceptions if any" name="exception17_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">e. Whether appropriate guidance on and warnings of the risks associated with investments in financial instruments and proposed investment strategies is provided to the clients</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="appropriate_guidance" name="appropriate_guidance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.5" placeholder="Comments / Risks / Opportunities identified" name="comment17_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.5" placeholder="Exceptions if any" name="exception17_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">f. Whether the information on all costs and associated charges include information relating to both investment and ancillary services, including the cost of advice, where relevant, the cost of the financial instrument recommended or marketed to the client and</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="costs_and_associated" name="costs_and_associated" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.6" placeholder="Comments / Risks / Opportunities identified" name="comment17_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.6" placeholder="Exceptions if any" name="exception17_6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">g. How the client may pay for it, also encompassing any third-party payments.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="the_client_may_pay" name="the_client_may_pay" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment17.7" placeholder="Comments / Risks / Opportunities identified" name="comment17_7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception17.7" placeholder="Exceptions if any" name="exception17_7"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>
