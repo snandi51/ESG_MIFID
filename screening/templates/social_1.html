@@ -11,7 +11,9 @@
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
-    <center><h2 style="color:black;"><b>Social 1</b></h2></center>
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+    <center><h2 style="color:black;"><b>Social</b></h2></center>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
@@ -21,7 +23,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="social_1">
@@ -34,1129 +36,739 @@
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                        </select>                    </div>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment1_1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1">
+                        <textarea rows="3"  class="form-control" id="comment1_1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception1_1" placeholder="Exceptions if any" name="exception1_1">
+                        <textarea rows="3"  class="form-control" id="exception1_1" placeholder="Exceptions if any" name="exception1_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company keep records of its usage of energy and other resources for evaluation purpose?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company consider Non-discrimination as a material topic?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f1_2" name="f1_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_2" name="f1_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment1_2" placeholder="Comments / Risks / Opportunities identified" name="comment1_2">
+                        <textarea rows="3" style="" class="form-control" id="comment1_2" placeholder="Comments / Risks / Opportunities identified" name="comment1_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception1_2" placeholder="Exceptions if any" name="exception1_2">
+                        <textarea rows="3" style="" class="form-control" id="exception1_2" placeholder="Exceptions if any" name="exception1_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, has the Invested company listed out the outcome of its evaluation exercise in its entire value chain?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;  ">Has the investee company dealt with any inequality issues arising due to local customs?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f1_3" name="f1_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_3" name="f1_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment1_3" placeholder="Comments / Risks / Opportunities identified" name="comment1_3">
+                        <textarea rows="3" style="" class="form-control" id="comment1_3" placeholder="Comments / Risks / Opportunities identified" name="comment1_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception1_3" placeholder="Exceptions if any" name="exception1_3">
+                        <textarea rows="3" style=""  class="form-control" id="exception1_3" placeholder="Exceptions if any" name="exception1_3"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have an action plan towards using efficient technology driven processes to reduce consumption of energy?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">"Does the investee company have diversity policies and report following information:<br>
+                        a. Percentage of individuals within the organization’s governance bodies in each of the following diversity categories:<br>
+                        i. Gender;<br>
+                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
+                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups).<br>
+                        b. Percentage of employees per employee category in each of the following diversity categories:
+                        i. Gender;<br>
+                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
+                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups)."</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f1_4" name="f1_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_4" name="f1_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment1_4" placeholder="Comments / Risks / Opportunities identified" name="comment1_4">
+                        <textarea rows="3" style="" class="form-control" id="comment1_4" placeholder="Comments / Risks / Opportunities identified" name="comment1_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception1_4" placeholder="Exceptions if any" name="exception1_4">
+                        <textarea rows="3" style="" class="form-control" id="exception1_4" placeholder="Exceptions if any" name="exception1_4"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Invested company  invested in renewable sources of energy. If yes, provide details of investment made and outcome?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company  conduct mandatory health checks for its workers?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f1_5" name="f1_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_5" name="f1_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment1_5" placeholder="Comments / Risks / Opportunities identified" name="comment1_5">
+                        <textarea rows="3" style="" class="form-control" id="comment1_5" placeholder="Comments / Risks / Opportunities identified" name="comment1_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception1_5" placeholder="Exceptions if any" name="exception1_5">
+                        <textarea rows="3" style="" class="form-control" id="exception1_5" placeholder="Exceptions if any" name="exception1_5"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Raw materials</b></h2></center>
+                    <center><h2 style="color:Black"><b>Social cohesion</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company have any set policies/strategies/goals/responsibilities for handling the materials used in their primary production?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company consider Social Cohesion as a material topic and has an explanation  for it?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_1" name="f2_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f2_1" name="f2_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment2_1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception2_1" placeholder="Exceptions if any" name="exception2_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Social Cohesion?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f2_2" name="f2_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment2_2" placeholder="Comments / Risks / Opportunities identified" name="comment2_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception2_2" placeholder="Exceptions if any" name="exception2_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">"Does the investee company provide program for personal development and does it report following information:<br>
+                        a. Type and scope of programs implemented and assistance provided to upgrade employee skills.<br>
+                        b. Social awareness programs conducted and assistance provided to them for Region development, Green transition "</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f2_3" name="f2_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment2_3" placeholder="Comments / Risks / Opportunities identified" name="comment2_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception2_3" placeholder="Exceptions if any" name="exception2_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Social integration</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:190px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company consider Social Integration activties as a material topic and has an explanation  for it?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text"  style="" class="form-select" id="f3_1" name="f3_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1">
+                        <textarea rows="3" style="" class="form-control" id="comment3_1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_1" placeholder="Exceptions if any" name="exception2_1">
+                        <textarea rows="3"style="" class="form-control" id="exception3_1" placeholder="Exceptions if any" name="exception3_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company evaluate its approach towards handling raw materials used in its production process?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Social Integration activities?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_2" name="f2_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f3_2" name="f3_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_2" placeholder="Comments / Risks / Opportunities identified" name="comment2_2">
+                        <textarea rows="3" style="" class="form-control" id="comment3_2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_2" placeholder="Exceptions if any" name="exception2_2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is there a dependence on raw materials that may become scarce?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_3" name="f2_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_3" placeholder="Comments / Risks / Opportunities identified" name="comment2_3">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_3" placeholder="Exceptions if any" name="exception2_3">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, is the Invested company exploring other options of sourcing raw materials or changing its production process / methods efficiently?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_4" name="f2_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_4" placeholder="Comments / Risks / Opportunities identified" name="comment2_4">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_4" placeholder="Exceptions if any" name="exception2_4">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company make use of recycled materials in its production process?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_5" name="f2_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_5" placeholder="Comments / Risks / Opportunities identified" name="comment2_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_5" placeholder="Exceptions if any" name="exception2_5">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Invested company using reusable/recyclable packaging for its products /services?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f2_6" name="f2_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment2_6" placeholder="Comments / Risks / Opportunities identified" name="comment2_6">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception2_6" placeholder="Exceptions if any" name="exception2_6">
+                        <textarea rows="3" style="" class="form-control" id="exception3_2" placeholder="Exceptions if any" name="exception3_2"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Water</b></h2></center>
+                    <center><h2 style="color:Black"><b>Labour relations</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the Water related impacts?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company consider Labor/Management Relations as a material topic and has an explanation  for it?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f3_1" name="f3_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_1" name="f4_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment3_1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1">
+                        <textarea rows="3" style="" class="form-control" id="comment4_1" placeholder="Comments / Risks / Opportunities identified" name="comment4_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception3_1" placeholder="Exceptions if any" name="exception3_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company evaluate whether it consume water on a large scale?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f3_2" name="f3_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment3_2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception3_2" placeholder="Exceptions if any" name="exception3_2">
+                        <textarea rows="3" style="" class="form-control" id="exception4_1" placeholder="Exceptions if any" name="exception4_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Invested  company will have to face risk of water scarcity which will also affect water supply to other consumers including local communities?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Labor/Management Relations related impacts like minimum wage laws?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f3_3" name="f3_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_2" name="f4_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment3_3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_2" placeholder="Comments / Risks / Opportunities identified" name="comment4_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception3_3" placeholder="Exceptions if any" name="exception3_3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_2" placeholder="Exceptions if any" name="exception4_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether Invested  company is exploring other sources of water / other techniques such that dependence on water supplied by local authorities is reduced (such as rain water harvesting, recycling water used by the organisation, waste water from other organisation)?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company use any mechanisms or any procedures and related adjustments to evaluate their management approach towards Labor/Management Relations and ensure adherence of local labour laws?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f3_4" name="f3_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_3" name="f4_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment3_4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4">
+                        <textarea rows="3" style="" class="form-control" id="comment4_3" placeholder="Comments / Risks / Opportunities identified" name="comment4_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception3_4" placeholder="Exceptions if any" name="exception3_4">
+                        <textarea rows="3" style="" class="form-control" id="exception4_3" placeholder="Exceptions if any" name="exception4_3"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the Invested company has recycled/reused water from different sources, it needs to calculate and mention the amount of water being recycled or reused out of the total amount of water used from different sources.?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have any incident reported for labour unrest in last 5 years?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f3_5" name="f3_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_4" name="f4_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment3_5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5">
+                        <textarea rows="3" style="" class="form-control" id="comment4_4" placeholder="Comments / Risks / Opportunities identified" name="comment4_4"></textarea>
+                    </div>
+                    <di4 class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_4" placeholder="Exceptions if any" name="exception4_5"></textarea>
+                    </di4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If Yes, was the incident appropriately handled and was in agreement with both parties?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_5" name="f4_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception3_5" placeholder="Exceptions if any" name="exception3_5">
+                        <textarea rows="3" style="" class="form-control" id="comment4_5" placeholder="Comments / Risks / Opportunities identified" name="comment4_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_5" placeholder="Exceptions if any" name="exception4_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">"Does the investee company provide safe working conditions for their labour </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_6" name="f4_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_6" placeholder="Comments / Risks / Opportunities identified" name="comment4_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_6" placeholder="Exceptions if any" name="exception4_6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does investee company report information whether it ensures regular servicing of proper safety equipments  </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_7" name="f4_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_7" placeholder="Comments / Risks / Opportunities identified" name="comment4_7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_7" placeholder="Exceptions if any" name="exception4_7"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does investee company report information whether employee awareness programs are conducted to teach them about usage of safety measures </strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_8" name="f4_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_8" placeholder="Comments / Risks / Opportunities identified" name="comment4_8"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_8" placeholder="Exceptions if any" name="exception4_8"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does investee company report information about total number of incidents of non-compliance with regulations and/or voluntary codes concerning the health and safety impacts of products and services within the reporting period</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_9" name="f4_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_9" placeholder="Comments / Risks / Opportunities identified" name="comment4_9"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_9" placeholder="Exceptions if any" name="exception4_9"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does investee company report information about incidents of non-compliance with regulations resulting in a fine or penalty</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_10" name="f4_10" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3"style="" class="form-control" id="comment4_10" placeholder="Comments / Risks / Opportunities identified" name="comment4_10"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_10" placeholder="Exceptions if any" name="exception4_10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does investee company report information about incidents of non-compliance with regulations resulting in a warning</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f4_11" name="f4_11" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment4_11" placeholder="Comments / Risks / Opportunities identified" name="comment4_11"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception4_11" placeholder="Exceptions if any" name="exception4_11"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Land</b></h2></center>
+                    <center><h2 style="color:Black"><b>Investment in human capital</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Invested  company directly/indirectly involved in land clearance / deforestation activities?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company has a HR policy with clearly defined roles and responsibility of workers/employees and conditions of employment?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f4_1" name="f4_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_1" name="f5_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment4_1" placeholder="Comments / Risks / Opportunities identified" name="comment4_1">
+                        <textarea rows="3" style="" class="form-control" id="comment5_1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception4_1" placeholder="Exceptions if any" name="exception4_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the Land clearance/deforestation impacts?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f4_2" name="f4_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment4_2" placeholder="Comments / Risks / Opportunities identified" name="comment4_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception4_2" placeholder="Exceptions if any" name="exception4_2">
+                        <textarea rows="3" style="" class="form-control" id="exception5_1" placeholder="Exceptions if any" name="exception5_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes,is the Invested company evaluating negative impact on local communities, flora and fauna as a result of its land clearance/deforestation activities and providing outcome of its evaluation exercise?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If Yes, does the  investee company have human resources education and training policy?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f4_3" name="f4_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_2" name="f5_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment4_3" placeholder="Comments / Risks / Opportunities identified" name="comment4_3">
+                        <textarea rows="3"style="" class="form-control" id="comment5_2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception4_3" placeholder="Exceptions if any" name="exception4_3">
+                        <textarea rows="3" style="" class="form-control" id="exception5_2" placeholder="Exceptions if any" name="exception5_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether it is using methods/processes to negate the impact on environment (such as planting trees wherever it can as per local laws and regulations or using recyclable materials in its production process)?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Have they collected records of capital investment made towards education and training during last 5 years?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f4_4" name="f4_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_3" name="f5_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment4_4" placeholder="Comments / Risks / Opportunities identified" name="comment4_4">
+                        <textarea rows="3" style="" class="form-control" id="comment5_3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception4_4" placeholder="Exceptions if any" name="exception4_4">
+                        <textarea rows="3" style="" class="form-control" id="exception5_3" placeholder="Exceptions if any" name="exception5_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Have they maintained records of placement of human resources to work areas due to their upskilling?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f5_4" name="f5_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment5_4" placeholder="Comments / Risks / Opportunities identified" name="comment5_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception5_4" placeholder="Exceptions if any" name="exception5_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Have they maintained records of grievance redressal mechanism?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f5_5" name="f5_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment5_5" placeholder="Comments / Risks / Opportunities identified" name="comment5_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception5_5" placeholder="Exceptions if any" name="exception5_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If Yes, have they recorded any such instance in last 5 years?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f5_6" name="f5_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment5_6" placeholder="Comments / Risks / Opportunities identified" name="comment5_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception5_6" placeholder="Exceptions if any" name="exception5_6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have adequal policies on overtime, maternity/paternity leave, sick leave and other disabilities?</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" style="" class="form-select" id="f5_7" name="f5_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="comment5_7" placeholder="Comments / Risks / Opportunities identified" name="comment5_7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="3" style="" class="form-control" id="exception5_7" placeholder="Exceptions if any" name="exception5_7"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Waste</b></h2></center>
+                    <center><h2 style="color:Black"><b>Economically or socially disadvantaged communities</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the waste generation?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company have any health and safety risks for local communities located in the place of establishment or consumers who are located in the place of establishment or consumers using company's products?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f5_1" name="f5_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_1" name="f6_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment5_1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1">
+                        <textarea rows="3" style="" class="form-control" id="comment6_1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception5_1" placeholder="Exceptions if any" name="exception5_1">
+                        <textarea rows="3" style="" class="form-control" id="exception6_1" placeholder="Exceptions if any" name="exception6_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company evaluate the kind of waste it generates and whether in large quantities and document its outcome?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, have they managed this satisfactorily without any disputes?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f5_2" name="f5_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_2" name="f6_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment5_2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2">
+                        <textarea rows="3" style="" class="form-control" id="comment6_2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception5_2" placeholder="Exceptions if any" name="exception5_2">
+                        <textarea rows="3" style="" class="form-control" id="exception6_2" placeholder="Exceptions if any" name="exception6_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company also evaluate if the waste generated is toxic and whether such waste can be treated adequately and document outcome of its evaluation exercise?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Have they promoted social causes for communities residing in the place of establishment?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f5_3" name="f5_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_3" name="f6_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment5_3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3">
+                        <textarea rows="3" style="" class="form-control" id="comment6_3" placeholder="Comments / Risks / Opportunities identified" name="comment6_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception5_3" placeholder="Exceptions if any" name="exception5_3">
+                        <textarea rows="3" style="" class="form-control" id="exception6_3" placeholder="Exceptions if any" name="exception6_3"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have an action plan to use appropriate method to reduce waste not impacting the ecosystem?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f5_4" name="f5_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment5_4" placeholder="Comments / Risks / Opportunities identified" name="comment5_4">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception5_4" placeholder="Exceptions if any" name="exception5_4">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company recycle the waste generated and provide calculation of recycled waste vis-à-vis total waste generated?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f5_5" name="f5_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment5_5" placeholder="Comments / Risks / Opportunities identified" name="comment5_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception5_5" placeholder="Exceptions if any" name="exception5_5">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Greenhouse Gas Emissions</b></h2></center>
-                </div>
-            </div>
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Invested  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_1" name="f6_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_1" placeholder="Exceptions if any" name="exception6_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_2" name="f6_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_2" placeholder="Exceptions if any" name="exception6_2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether it has undertaken evaluation exercise of its harmful emissions / ozone depleting substances and its impact on environment and documented the same?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_3" name="f6_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_3" placeholder="Comments / Risks / Opportunities identified" name="comment6_3">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_3" placeholder="Exceptions if any" name="exception6_3">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Direct GHG emissions (Scope 1)?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Have they worked towards creating employment generation for disadvantaged communities?</strong></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="f6_4" name="f6_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_4" placeholder="Comments / Risks / Opportunities identified" name="comment6_4">
+                        <textarea rows="3" style="" class="form-control" id="comment6_4" placeholder="Comments / Risks / Opportunities identified" name="comment6_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_4" placeholder="Exceptions if any" name="exception6_4">
-                    </div>
-                    <i style="color:white;">a. Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent.
-                        b. Gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
-                        c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
-                        d. Base year for the calculation, if applicable, including:
-                        I. the rationale for choosing it;
-                        ii. emissions in the base year;
-                        iii. the context for any significant changes in emissions that triggered recalculations of base year emissions.
-                        e. Source of the emission factors and the global warming potential (GWP) rates used, or a reference to the GWP source.
-                        f. Consolidation approach for emissions; whether equity share, financial control, or operational control.
-                        g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Energy Indirect GHG emissions (Scope 2) like?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_5" name="f6_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_5" placeholder="Comments / Risks / Opportunities identified" name="comment6_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_5" placeholder="Exceptions if any" name="exception6_5">
-                    </div>
-                    <i style="color:white;">a. Gross location-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
-                        b. If applicable, gross market-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
-                        c. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
-                        d. Base year for the calculation, if applicable, including:
-                        I. the rationale for choosing it;
-                        ii. emissions in the base year;
-                        iii. the context for any significant changes in emissions that triggered recalculations of base year emissions.
-                        e. Source of the emission factors and the global warming potential (GWP) rates used, or a reference to the GWP source.
-                        f. Consolidation approach for emissions; whether equity share, financial control, or operational control.
-                        g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_6" name="f6_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_6" placeholder="Comments / Risks / Opportunities identified" name="comment6_6">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_6" placeholder="Exceptions if any" name="exception6_6">
-                    </div>
-                    <i style="color:white;">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
-                        b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
-                        c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
-                        d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
-                        e. Base year for the calculation, if applicable, including:
-                        I. the rationale for choosing it;
-                        ii. emissions in the base year;
-                        iii. the context for any significant changes in emissions that triggered recalculations of base year emissions.
-                        f. Source of the emission factors and the global warming potential (GWP) rates used, or a reference to the GWP source.
-                        g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_7" name="f6_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_7" placeholder="Comments / Risks / Opportunities identified" name="comment6_7">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_7" placeholder="Exceptions if any" name="exception6_7">
-                    </div>
-                    <i style="color:white;">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
-                        b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
-                        c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
-                        d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
-                        e. Base year for the calculation, if applicable, including:
-                        I. the rationale for choosing it;
-                        ii. emissions in the base year;
-                        iii. the context for any significant changes in emissions that triggered recalculations of base year emissions.
-                        f. Source of the emission factors and the global warming potential (GWP) rates used, or a reference to the GWP source.
-                        g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Invested  company invested in technologies to improve the air quality of the area in which it operates?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_8" name="f6_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_8" placeholder="Comments / Risks / Opportunities identified" name="comment6_8">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_8" placeholder="Exceptions if any" name="exception6_8">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, provide details of investment made in efficient technologies and its outcome?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_9" name="f6_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment6_9" placeholder="Comments / Risks / Opportunities identified" name="comment6_9">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception6_9" placeholder="Exceptions if any" name="exception6_9">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Biodiversity</b></h2></center>
-                </div>
-            </div>
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for handling the Biodiversity across the organization?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f7_1" name="f7_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment7_1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception7_1" placeholder="Exceptions if any" name="exception7_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company assess the negative impact of its business operations on biodiversity?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f7_2" name="f7_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment7_2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception7_2" placeholder="Exceptions if any" name="exception7_2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Invested company has documented the negative impact on local flora and fauna, different types of species, pests and pathogens due to its operations?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f7_3" name="f7_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment7_3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception7_3" placeholder="Exceptions if any" name="exception7_3">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If so, does the Invested company have an action plan to mitigate/control the biodiversity loss due to its operations?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f7_4" name="f7_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment7_4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception7_4" placeholder="Exceptions if any" name="exception7_4">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If mitigation measures are already undertaken, whether there is a positive effect on biodiversity in terms of habitat conservation and restoration?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f7_5" name="f7_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment7_5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception7_5" placeholder="Exceptions if any" name="exception7_5">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Circular Economy</b></h2></center>
-                </div>
-            </div>
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any set policies/strategies/goals/responsibilities for using biodegradable, recyclable, reusable materials in its production/packaging process??</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_1" name="f8_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_1" placeholder="Comments / Risks / Opportunities identified" name="comment8_1">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_1" placeholder="Exceptions if any" name="exception8_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, does the Invested  company use biodegradable materials in its production / packaging process?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_2" name="f8_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_2" placeholder="Comments / Risks / Opportunities identified" name="comment8_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_2" placeholder="Exceptions if any" name="exception8_2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Whether the products manufactured by the Invested company are recyclable?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_3" name="f8_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_3" placeholder="Comments / Risks / Opportunities identified" name="comment8_3">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_3" placeholder="Exceptions if any" name="exception8_3">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company use raw materials, that are scarce, in its products?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_4" name="f8_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_4" placeholder="Comments / Risks / Opportunities identified" name="comment8_4">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_4" placeholder="Exceptions if any" name="exception8_4">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the Invested company has not yet made use of biodegradable/recyclable materials, whether it has an action plan for deploying such materials in its production/packaging process?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_5" name="f8_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_5" placeholder="Comments / Risks / Opportunities identified" name="comment8_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_5" placeholder="Exceptions if any" name="exception8_5">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the Invested company is using raw materials that are scarce, whether it has an action plan towards exploring other efficient sources of procuring raw materials?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f8_6" name="f8_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment8_6" placeholder="Comments / Risks / Opportunities identified" name="comment8_6">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception8_6" placeholder="Exceptions if any" name="exception8_6">
+                        <textarea rows="3" style="" class="form-control" id="exception6_4" placeholder="Exceptions if any" name="exception6_4"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Environment (Others) - Environmental Compliance</b></h2></center>
+                    <center><h2 style="color:Black"><b>Others - Supply chain management</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:100px">Questions</strong><strong  style="color:Black; margin-left:180px">Yes/No/NA</strong><strong  style="color:Black; margin-left:110px">Comments</strong><strong  style="color:Black; margin-left:160px">Exceptions</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company is in compliance with the local laws and regulations ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investee company ensure that their supplier follows health and safety standards for its workers/employees from which they pprocure raw materials?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_1" name="f9_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_1" name="f7_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_1" placeholder="Comments / Risks / Opportunities identified" name="comment9_1">
+                        <textarea rows="3" style="" class="form-control" id="comment7_1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_1" placeholder="Exceptions if any" name="exception9_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, has the Invested  company obtained all necessary permits, licenses from the concerned local authorities for its operations ?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_2" name="f9_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_2" placeholder="Comments / Risks / Opportunities identified" name="comment9_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_2" placeholder="Exceptions if any" name="exception9_2">
+                        <textarea rows="3" style="" class="form-control" id="exception7_1" placeholder="Exceptions if any" name="exception7_1"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company consider Principle Adverse Impacts of its operations on environment and undertaken mitigation measures?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, have they influenced their supplier for promoting good health and safety measures for their employees?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_3" name="f9_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_2" name="f7_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_3" placeholder="Comments / Risks / Opportunities identified" name="comment9_3">
+                        <textarea rows="3" style="" class="form-control" id="comment7_2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_3" placeholder="Exceptions if any" name="exception9_3">
+                        <textarea rows="3" style="" class="form-control" id="exception7_2" placeholder="Exceptions if any" name="exception7_2"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group" style="padding:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company maintain records of any serious incidents of negative impact of its operations on environment during the last 5 years and its consequential action faced ?</strong></label>
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, can the results of this be quantified and reported?</strong></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_4" name="f9_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_3" name="f7_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">NA</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_4" placeholder="Comments / Risks / Opportunities identified" name="comment9_4">
+                        <textarea rows="3" style="" class="form-control" id="comment7_3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_4" placeholder="Exceptions if any" name="exception9_4">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Invested company was subjected to significant fines and non-monetary sanctions for non-compliance with environmental laws and/or regulations ?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_5" name="f9_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_5" placeholder="Comments / Risks / Opportunities identified" name="comment9_5">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_5" placeholder="Exceptions if any" name="exception9_5">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company take corrective measures and evaluate and document its consequent positive environmental impact?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_6" name="f9_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_6" placeholder="Comments / Risks / Opportunities identified" name="comment9_6">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_6" placeholder="Exceptions if any" name="exception9_6">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested  company monitor risks and opportunities for its business operations on a continual basis and implements appropriate action plan?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f9_7" name="f9_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment9_7" placeholder="Comments / Risks / Opportunities identified" name="comment9_7">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception9_7" placeholder="Exceptions if any" name="exception9_7">
-                    </div>
-                </div>
-            </div>
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Supply Chain Management</b></h2></center>
-                </div>
-            </div>
-            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:100px">Question</strong><strong  style="color:Black; margin-left:300px">Yes/No</strong><strong  style="color:Black; margin-left:100px">Comments</strong><strong  style="color:Black; margin-left:200px">Exception</strong></h4>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company have any management approach in environmental assessment of its supply chain.?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f10_1" name="f10_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment10_1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception10_1" placeholder="Exceptions if any" name="exception10_1">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Invested company evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f10_2" name="f10_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment10_2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception10_2" placeholder="Exceptions if any" name="exception10_2">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="padding:10px">
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If not, whether the Invested company can influence its supply chain to adopt environmental best practices and make it their mission ?</strong></label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f10_3" name="f10_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                            <option value=""></option>
-                            <option value="0">Yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="comment10_3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="exception10_3" placeholder="Exceptions if any" name="exception10_3">
+                        <textarea rows="3" style="" class="form-control" id="exception7_3" placeholder="Exceptions if any" name="exception7_3"></textarea>
                     </div>
                 </div>
             </div>
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:1100px">Reset</button><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

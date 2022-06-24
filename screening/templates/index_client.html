@@ -8,30 +8,27 @@
 <html lang="en">
 
 <body>
-<div style="height: 55px">
+<div style="height: 25px">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </div>
 <main id="main">
-
-    <div class="float-container text-black" style="height: 800px; margin-top:10; padding-top:50px">
+    <div class="float-container text-black" style="height: 800px; padding-top:10px">
         <!--        <div class="float-container text-black" style="height: 800px; margin-left: 420px">-->
-        <div class="float-child1" style="height:620px" >
-            <h5 class="text-black"><strong>ESG- Mifid II Appropriateness Toolkit</strong></h5>
+        <div class="float-child1" style="height:700px font-size: 50px" >
+            <h5 class="text-black"><strong>ESG- Mifid Toolkit</strong></h5>
             <hr>
             <p class="p_title">Objective of the toolkit:  This toolkit is intended to enable the Investment firms/fund managers to identify and assess client's ESG preferences in their assessments as envisaged in the EU’s proposed changes to the MiFID II suitability rules and recommend investment in investee companies accordingly.</p>
-            <hr>
             <hr>
             <p class="p_title">Target Audience:  Firms providing MIFID II investment advice and portfolio management, i.e.advisory investment management firms, including independent financial advisers, wealth managers and asset
                 managers more generally and in particular, heads of proposition/product, compliance officers, COOs,
                 CROs and heads of regulatory change. This will also be of interest to board members looking to scrutinise their firms’ approach to ESG issues.</p>
             <hr>
-            <hr>
             <p class="p_title">How should the toolkit be used?</p>
             <p class="p_title">Users should follow these steps to use the toolkit:</p>
             <hr>
-            <p><strong>Instructions: </strong></p>
+            <p class="p_title"><strong>Instructions: </strong></p>
             <hr>
-            <p><strong>Client: </strong></p>
+            <p class="p_title"><strong>Client: </strong></p>
             <hr>
             <ol class="instruction">
                 <li>
@@ -50,71 +47,71 @@
             <hr>
             <form method="POST" action="index_client">
                 {% csrf_token %}
-                <div style="height:550px">
+                <div style="height:477.5px">
                     <div class="form-group row space1" >
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Investment Firm Name: *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="investment_name" class="form-control form-control-sm" id="investment_name" placeholder="eg: Jack Cena" required>
+                            <input type="text" name="investment_name" class="form-control form-control-sm" id="investment_name"  required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Prepared by:*</label>
                         <div class="col-sm-3">
-                            <input type="text" name="prepare_by" class="form-control form-control-sm" id="prepare_by" placeholder="eg: prepared by" required>
+                            <input type="text" name="prepare_by" class="form-control form-control-sm" id="prepare_by" required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Date:*</label>
                         <div class="col-sm-3">
-                            <input type="date" name="date" class="form-control form-control-sm" id="date" placeholder="eg: date" required>
+                            <input type="date" name="date" style="width:90px; height:30px; font-size:12px" id="date" required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Investment Firm Address:*</label>
                         <div class="col-sm-3">
-                            <input type="text" name="firm_address" class="form-control form-control-sm" id="firm_address" placeholder="eg: address" required>
+                            <input type="text" name="firm_address" class="form-control form-control-sm" id="firm_address"  required>
                         </div>
-                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Brief project description: *</label>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Brief project description:</label>
                         <div class="col-sm-5">
-                            <textarea rows="3" type="text" name="Brief_project" class="form-control form-control-sm" id="Brief_project" placeholder="eg: project about " required></textarea>
+                            <textarea rows="2" type="text" name="Brief_project" class="form-control form-control-sm" id="Brief_project"></textarea>
                         </div>
                     </div>
                     <div>
-                    <h5 class="text-black"><strong>Client Detail</strong></h5>
+                    <h5 class="p_title"><strong>Client Details</strong></h5>
                     </div>
                     <hr>
                     <div class="form-group row space1">
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Name *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="client_name" class="form-control form-control-sm" id="client_name" placeholder="eg: smith" required>
+                            <input type="text" name="client_name" class="form-control form-control-sm" id="client_name"  required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Address *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="client_address" class="form-control form-control-sm" id="client_address" placeholder="eg: xyz" required>
+                            <input type="text" name="client_address" class="form-control form-control-sm" id="client_address"  required>
                         </div>
-                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Contact No. *</label>
+                        <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client Contact No.</label>
                         <div class="col-sm-3">
-                            <input type="text" name="client_contact_no" class="form-control form-control-sm" id="client_contact_no" placeholder="eg: xyz" required>
+                            <input type="text" name="client_contact_no" class="form-control form-control-sm" id="client_contact_no" >
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Client email id *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="client_email" class="form-control form-control-sm" id="client_email" placeholder="eg: abc@gmail.com" required>
+                            <input type="text" name="client_email" class="form-control form-control-sm" id="client_email" required>
                         </div>
                     </div>
 
                     <div >
-                        <h5 class="text-black"><strong>Invested company details</strong></h5>
+                        <h5 class="p_title"><strong>Investee Company Details</strong></h5>
                     </div>
                     <hr>
                     <div class="form-group row space1">
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Company Name *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="company_name" class="form-control form-control-sm" id="company_name" placeholder="eg: capgemini" required>
+                            <input type="text" name="company_name" class="form-control form-control-sm" id="company_name" required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Company Address *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="company_address" class="form-control form-control-sm" id="company_address" placeholder="eg: xyz" required>
+                            <input type="text" name="company_address" class="form-control form-control-sm" id="company_address" required>
                         </div>
                         <label for="inputPassword" class="col-sm-3 col-form-label form_title">Industry Sector *</label>
                         <div class="col-sm-3">
-                            <input type="text" name="industry_sector" class="form-control form-control-sm" id="industry_sector" placeholder="eg: xyz" required>
+                            <input type="text" name="industry_sector" class="form-control form-control-sm" id="industry_sector" required>
                         </div>
                     </div>
-                    <div style="margin-top: 30px">
+                    <div style="margin-top: 10px; margin-left:20px">
                         <center><button type="submit" class="btn btn-success"><i class="fa fa-address-card"></i> Submit </button></center>
                     </div>
                 </div>

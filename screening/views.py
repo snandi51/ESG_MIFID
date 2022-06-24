@@ -121,26 +121,90 @@ def logout_user(request):
 # def self_assessment_1(request):
 #     return render(request, 'self_assessment_1.html')
 
+@login_required
+def new(request):
+    return render(request, 'new.html')
+
 
 @login_required
 def selection(request):
     # ipdb.set_trace()
-    if request.method == 'POST':
-        s1 = request.POST.get('s1')
-
-        input_data = {
-            's1': s1,
-        }
-
-        context = {
-            'input_data': input_data,
-        }
-        return render(request, 'selection.html', context)
+    # if request.method == 'POST':
+    #     s1 = request.POST.get('s1')
+    #
+    #     input_data = {
+    #         's1': s1,
+    #     }
+    #
+    #     context = {
+    #         'input_data': input_data,
+    #     }
+    #     return render(request, 'selection.html', context)
     return render(request, 'selection.html')
 
 
 @login_required
 def self_assessment_1(request):
+    return render(request, 'self_assessment_2.html')
+
+
+@login_required
+def self_assessment_2(request):
+    return render(request, 'self_assessment1_3.html')
+
+
+@login_required
+def self_assessment1_3(request):
+    return render(request, 'self_assessment_4.html')
+
+
+@login_required
+def self_assessment_4(request):
+    return render(request, 'self_assessment_5.html')
+
+
+@login_required
+def self_assessment_5(request):
+    return render(request, 'self_assessment_6.html')
+
+
+@login_required
+def self_assessment_6(request):
+    return render(request, 'self_assessment_7.html')
+
+
+@login_required
+def self_assessment_7(request):
+    return render(request, 'self_assessment_8.html')
+
+
+@login_required
+def self_assessment_8(request):
+    return render(request, 'self_assessment_9.html')
+
+
+@login_required
+def self_assessment_9(request):
+    return render(request, 'self_assessment_10.html')
+
+
+@login_required
+def self_assessment_10(request):
+    return render(request, 'self_assessment_11.html')
+
+
+@login_required
+def self_assessment_11(request):
+    return render(request, 'self_assessment_12.html')
+
+
+@login_required
+def self_assessment_12(request):
+    return render(request, 'self_assessment_13.html')
+
+
+@login_required
+def self_assessment_13(request):
     return render(request, 'self_assessment_scoring.html')
 
 
@@ -165,7 +229,7 @@ def environment1_1(request):
         reduce_consumption = request.POST.get("reduce_consumption")
         comment1_4 = request.POST.get("comment1_4")
         exception1_4 = request.POST.get("exception1_4")
-        invested_renewable_sources = request.POST.get("invested_renewable_sources")
+        Investee_renewable_sources = request.POST.get("Investee_renewable_sources")
         comment1_5 = request.POST.get("comment1_5")
         exception1_5 = request.POST.get("exception1_5")
 
@@ -182,7 +246,7 @@ def environment1_1(request):
             'reduce_consumption': reduce_consumption,
             'comment1_4': comment1_4,
             'exception1_4': exception1_4,
-            'invested_renewable_sources': invested_renewable_sources,
+            'Investee_renewable_sources': Investee_renewable_sources,
             'comment1_5': comment1_5,
             'exception1_5': exception1_5,
         }

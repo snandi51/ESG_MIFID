@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+  <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+  <!-- Form Name -->
+  <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+    <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+      <div class="row mb-1" style="padding:5px">
+        <center><h2 style="color:Black"><b>Product Governance</b></h2></center>
+      </div>
+    </div>
+    <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+      <div class="row mb-1" style="padding:5px">
+        <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+      </div>
+    </div>
+    <form method="POST" class="form-horizontal" action="self_assessment_11">
+      {% csrf_token %}
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm identify and document the potential target market for each financial instrument </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="identify_and_document" name="identify_and_document" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.1" placeholder="Comments / Risks / Opportunities identified" name="comment15_1"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.1" placeholder="Exceptions if any" name="exception15_1"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm specify and document the type of client for whose needs, characteristics and objectives and ESG preferences (where relevant), the financial instrument is compatible</strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="specify_and_document" name="specify_and_document" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.2" placeholder="Comments / Risks / Opportunities identified" name="comment15_2"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.2" placeholder="Exceptions if any" name="exception15_2"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm also identify and document any group of clients for whose needs, characteristics and objectives, the financial instrument is not compatible </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_also_identify" name="firm_also_identify" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.3" placeholder="Comments / Risks / Opportunities identified" name="comment15_3"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.3" placeholder="Exceptions if any" name="exception15_3"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument's risk/reward profile is consistent with the target market </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_determine" name="firm_determine" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.4" placeholder="Comments / Risks / Opportunities identified" name="comment15_4"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.4" placeholder="Exceptions if any" name="exception15_4"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument's ESG characteristics (where relevant) are consistent with the target market </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_determine_whether" name="firm_determine_whether" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.5" placeholder="Comments / Risks / Opportunities identified" name="comment15_5"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.5" placeholder="Exceptions if any" name="exception15_5"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm determine whether a financial instrument meets the identified needs, characteristics and objectives of the target market, including by examining, whether the financial instrument design is driven by features that benefit the client and not by a business model that relies on poor client outcomes to be profitable </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="financial_instrument" name="financial_instrument" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.6" placeholder="Comments / Risks / Opportunities identified" name="comment15_6"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.6" placeholder="Exceptions if any" name="exception15_6"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm review and document the investment products they offer or recommend and the services they provide on a regular basis, taking into account any event that could materially affect the potential risk to the identified target market </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_review" name="firm_review" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.7" placeholder="Comments / Risks / Opportunities identified" name="comment15_7"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.7" placeholder="Exceptions if any" name="exception15_7"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm assess whether the product or service remains consistent with the needs, characteristics and objectives and ESG preferences (where relevant), of the identified target market </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_assess" name="firm_assess" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.8" placeholder="Comments / Risks / Opportunities identified" name="comment15_8"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.8" placeholder="Exceptions if any" name="exception15_8"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm assess whether the intended distribution strategy remains appropriate. </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="management_approach_environmental_assessment" name="management_approach_environmental_assessment" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.9" placeholder="Comments / Risks / Opportunities identified" name="comment15_9"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.9" placeholder="Exceptions if any" name="exception15_9"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm reconsider the target market and/or update the product governance arrangements in case of wrong idenfication of target market for a specific product or service </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="firm_reconsider" name="firm_reconsider" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.10" placeholder="Comments / Risks / Opportunities identified" name="comment15_10"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.10" placeholder="Exceptions if any" name="exception15_10"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm reconsider the target market and/or update the product governance arrangements in case the product or service no longer meets the circumstances of the identified target market (in cases where product becomes illiquid or very volatile due to market volatility)</strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="the_target_market" name="the_target_market" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.11" placeholder="Comments / Risks / Opportunities identified" name="comment15_11"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.11" placeholder="Exceptions if any" name="exception15_11"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">In order to capture sustainability preferences, does the investment firm recommend financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="capture_sustainability" name="capture_sustainability" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.12" placeholder="Comments / Risks / Opportunities identified" name="comment15_12"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.12" placeholder="Exceptions if any" name="exception15_12"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding:10px">
+        <div class="row mb-4">
+          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">In order to capture sustainability preferences, does the investment firm rank in advance and group financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts </strong></label>
+          <div class="col-sm-2">
+            <select type="text" class="form-select" id="sustainability_preferences" name="sustainability_preferences" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+              <option value=""></option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+              <option value="NA">NA</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="comment15.13" placeholder="Comments / Risks / Opportunities identified" name="comment15_13"></textarea>
+          </div>
+          <div class="col-sm-3">
+            <textarea rows ="3" class="form-control" id="exception15.13" placeholder="Exceptions if any" name="exception15_13"></textarea>
+          </div>
+        </div>
+      </div>
+
+
+      <div style="margin-bottom:4px">
+        <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+      </div>
+      <!--            </div>-->
+    </form>
+  </div>
+  </div>
+</main>
+<!-- End #main -->
+{% endblock %}

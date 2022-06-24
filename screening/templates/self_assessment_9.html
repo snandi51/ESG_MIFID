@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <center><h2 style="color:Black"><b>Organisational Requirements</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px">
+                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="self_assessment_9">
+            {% csrf_token %}
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm take into account the nature, scale and complexity of the business of the firm, and the nature and range of investment services and activities undertaken in the course of that business</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="account_the_nature" name="account_the_nature" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment12.1" placeholder="Comments / Risks / Opportunities identified" name="comment12_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception12.1" placeholder="Exceptions if any" name="exception12_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm take ESG considerations into account only where they are relevant</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="take_ESG_considerations" name="take_ESG_considerations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment12.2" placeholder="Comments / Risks / Opportunities identified" name="comment12_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception12.2" placeholder="Exceptions if any" name="exception12_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm consider principal adverse impacts of investment decisions on sustainability factors, a statement on due diligence policies with respect to those impacts, taking due account of their size, the nature and scale of their activities and the types of financial products they make available</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="principal_adverse" name="principal_adverse" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment12.3" placeholder="Comments / Risks / Opportunities identified" name="comment12_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception12.3" placeholder="Exceptions if any" name="exception12_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Where the investment firm does not consider adverse impacts of investment decisions on sustainability factors, does the investment firm provide clear reasons for why they do not do so, including, where relevant, information as to whether and when they intend to consider such adverse impacts.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="adverse_impacts" name="adverse_impacts" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="c.omment12.4" placeholder="Comments / Risks / Opportunities identified" name="comment12_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception12.4" placeholder="Exceptions if any" name="exception12_4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <center><h2 style="color:Black"><b>Risk Management</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px">
+                    <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Compliance function and Internal Audit function of the investment firm consider issues related to sustainability risks</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="Compliance_function" name="Compliance_function" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.1" placeholder="Comments / Risks / Opportunities identified" name="comment13_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.1" placeholder="Exceptions if any" name="exception13_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Do the compliance and internal audit functions of the investment firm document the issues related to sustainability risks</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="audit_functions" name="audit_functions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.2" placeholder="Comments / Risks / Opportunities identified" name="comment13_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.2" placeholder="Exceptions if any" name="exception13_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="body_and_senior" name="body_and_senior" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.3" placeholder="Comments / Risks / Opportunities identified" name="comment13_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.3" placeholder="Exceptions if any" name="exception13_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the management body and senior management of the investment firm consider aspects related to sustainability risk in their respective duties, whether it is documented in their risk management policies and procedures</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="senior_management" name="senior_management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.4" placeholder="Comments / Risks / Opportunities identified" name="comment13_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.4" placeholder="Exceptions if any" name="exception13_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment firm establish, implement and maintain adequate risk management policies and procedures which identify the risks relating to the firm's activities, processes and systems.</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_firm" name="investment_firm" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.5" placeholder="Comments / Risks / Opportunities identified" name="comment13_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.5" placeholder="Exceptions if any" name="exception13_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="padding:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Where appropriate, does the investment firm set the level of risk tolerated by the firm and in doing so, do they take into account sustainability risk</strong></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="investment_fim" name="investment_fim" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="comment13.6" placeholder="Comments / Risks / Opportunities identified" name="comment13_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows ="3" class="form-control" id="exception13.6" placeholder="Exceptions if any" name="exception13_6"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

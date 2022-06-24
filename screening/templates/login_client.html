@@ -3,11 +3,12 @@
 {% block content %}
 
 <div style="margin-top: 70px" class="text-black  text-center">
-    <h3><strong>ESG- Mifid II Appropriateness Toolkit</strong></h3>
+    <h3><strong>ESG- Mifid II Toolkit</strong></h3>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container col-sm-4 text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7); height: auto">
-    <div class ="form-group" style =" width: 500px; margin-left:130px; padding-bottom: 50px; margin-top: 40px">
+    <button type="submit" style="margin-left:1px; margin-top:5px; height:50px; width:198px; border-radius: 8px; border-color: #E6E6EA;"><a href="{% url 'login_user' %}" style="color:black">Self Assessment</a></button><button type="submit"  style="margin-left:1px; margin-top:1px; height:50px; width:195px; border-radius: 8px; border-color: #E6E6EA;"><a href="{% url 'login_client' %}" style="color:black">Client Assessment</a></button>
+    <div class ="form-group" style =" width: 350px; margin-left:80px; padding-bottom: 20px; margin-top: 2px">
         <div class="col-md-8 text-black;">
             {% if messages %}
             {% for message in messages %}
@@ -18,16 +19,12 @@
             {% endfor %}
             {% endif %}
             <form method="POST" action="login_client">
-                <div class="col-sm-2" style="margin-left:350px; padding-top:10px">
-                    <div class="row" >
-                        <button type="submit" class="btn btn-primary rounded-pill" style="margin-left:-280px;"><a href="{% url 'login_user' %}">User Login</a></button><button type="submit" class="btn btn-primary rounded-pill login_button" style="margin-left:80px"><a href="{% url 'login_client' %}">client Login</a></button>
-                    </div>
+
 <!--                    <select onChange="window.location.href=this.value">-->
 <!--                        <option value="">Select</option>-->
 <!--                        <option value="">User Login</option>-->
 <!--                        <option value="login_client">Client Login</option>-->
 <!--                    </select>-->
-                </div>
                 {% csrf_token %}
                 <center>
                     <fieldset class="form-group">
