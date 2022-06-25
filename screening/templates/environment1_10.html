@@ -16,20 +16,20 @@
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Supply Chain Management</b></h2></center>
+            <div class="row mb-1" style="padding-top:5px">
+                <center><h2 style="color:Black; font-size:17px">Sector(As per Article 2(17) of SFDR: <b>Supply Chain Management</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_10">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any management approach in environmental assessment of its supply chain.?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any management approach in environmental assessment of its supply chain.?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="management_approach" name="management_approach" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -39,16 +39,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.1" placeholder="Exceptions if any" name="exception10_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception10.1" placeholder="Exceptions if any" name="exception10_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="environmental_best_practices" name="environmental_best_practices" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -58,16 +58,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.2" placeholder="Exceptions if any" name="exception10_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception10.2" placeholder="Exceptions if any" name="exception10_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If not, whether the Investee company can influence its supply chain to adopt environmental best practices and make it their mission ?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If not, whether the Investee company can influence its supply chain to adopt environmental best practices and make it their mission ?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="supply_chain" name="supply_chain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -77,16 +77,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10.3" placeholder="Exceptions if any" name="exception10_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception10.3" placeholder="Exceptions if any" name="exception10_3"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

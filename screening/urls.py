@@ -8,7 +8,6 @@ urlpatterns = [
     # path('self_assessment_1', screening_views.self_assessment_1, name='self_assessment_1'),
     path('index_user', screening_views.home1, name='index_user'),
     path('index_client', screening_views.home2, name='index_client'),
-    path('new', screening_views.new, name='new'),
     path('selection', screening_views.selection, name='selection'),
     path('self_assessment_1', screening_views.self_assessment_1, name='self_assessment_1'),
     path('self_assessment_2', screening_views.self_assessment_2, name='self_assessment_2'),

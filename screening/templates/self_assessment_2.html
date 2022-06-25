@@ -18,20 +18,19 @@
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Requirements-General</b></h2></center>
+                <center><h5 style="color:Black"><b>Requirements-General</b></h5></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_2">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">General:If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide details like name of the investment product and name of the investment manager
-                    </strong></label>
+                    <label class="control-label col-sm-4"><b style="color:#2B0A3D; font-size:12px">General:If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide details like name of the investment product and name of the investment manager</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="General_If_the_investment_manager" name="General_If_the_investment_manager" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -41,16 +40,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.1" placeholder="Exceptions if any" name="exception3_1"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.1" placeholder="Exceptions if any" name="exception3_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, except for any disclosures prohibited by law or regulation</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, except for any disclosures prohibited by law or regulation</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="applicable_disclosures_required" name="applicable_disclosures_required" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -60,16 +59,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.2" placeholder="Exceptions if any" name="exception3_2"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.2" placeholder="Exceptions if any" name="exception3_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the period covered by the ESG disclosure statement</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the period covered by the ESG disclosure statement</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="apply_the_Global_ESG_Disclosure_Standards" name="apply_the_Global_ESG_Disclosure_Standards" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -79,16 +78,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.3" placeholder="Exceptions if any" name="exception3_3"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.3" placeholder="Exceptions if any" name="exception3_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made during the period covered by the ESG disclosure statement that are relevant to the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, along with the effective dates of those changes</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made during the period covered by the ESG disclosure statement that are relevant to the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, along with the effective dates of those changes</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="the_effective_dates_of_those_changes" name="the_effective_dates_of_those_changes" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -98,16 +97,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.4" placeholder="Exceptions if any" name="exception3_4"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.4" placeholder="Exceptions if any" name="exception3_4"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made to the ESG disclosure statement within the past year to correct a significant error</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made to the ESG disclosure statement within the past year to correct a significant error</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="correct_a_significant_error" name="correct_a_significant_error" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -117,16 +116,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.5" placeholder="Exceptions if any" name="exception3_5"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.5" placeholder="Exceptions if any" name="exception3_5"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is an investment manager prohibited by law or regulation from making a required disclosure in the ESG disclosure statement. </strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is an investment manager prohibited by law or regulation from making a required disclosure in the ESG disclosure statement.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="prohibited_by_law" name="prohibited_by_law" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -136,16 +135,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.6" placeholder="Comments / Risks / Opportunities identified" name="comment3_6"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.6" placeholder="Comments / Risks / Opportunities identified" name="comment3_6"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.6" placeholder="Exceptions if any" name="exception3_6"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.6" placeholder="Exceptions if any" name="exception3_6"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment manager is prohibited by law or regulation from making a required disclosure in the ESG disclosure statement, then does the investment manager disclose a description of the required disclosure that cannot be included and explain why it cannot be included </strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager is prohibited by law or regulation from making a required disclosure in the ESG disclosure statement, then does the investment manager disclose a description of the required disclosure that cannot be included and explain why it cannot be included</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="cannot_be_included_and_explain" name="cannot_be_included_and_explain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -155,16 +154,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.7" placeholder="Comments / Risks / Opportunities identified" name="comment3_7"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.7" placeholder="Comments / Risks / Opportunities identified" name="comment3_7"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.7" placeholder="Exceptions if any" name="exception3_7"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.7" placeholder="Exceptions if any" name="exception3_7"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose a summary description of the ESG approaches used in the investment product. </strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager disclose a summary description of the ESG approaches used in the investment product.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="a_summary_description" name="a_summary_description" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -174,16 +173,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.8" placeholder="Comments / Risks / Opportunities identified" name="comment3_8"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.8" placeholder="Comments / Risks / Opportunities identified" name="comment3_8"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.8" placeholder="Exceptions if any" name="exception3_8"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.8" placeholder="Exceptions if any" name="exception3_8"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues.</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="stewardship_activities_or" name="stewardship_activities_or" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -193,16 +192,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.9" placeholder="Comments / Risks / Opportunities identified" name="comment3_9"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.9" placeholder="Comments / Risks / Opportunities identified" name="comment3_9"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.9" placeholder="Exceptions if any" name="exception3_9"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.9" placeholder="Exceptions if any" name="exception3_9"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues, then does the investment manager disclose a summary description of those specific ESG issues</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues, then does the investment manager disclose a summary description of those specific ESG issues</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="investment_manager_disclose" name="investment_manager_disclose" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -212,16 +211,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.10" placeholder="Comments / Risks / Opportunities identified" name="comment3_10"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.10" placeholder="Comments / Risks / Opportunities identified" name="comment3_10"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.10" placeholder="Exceptions if any" name="exception3_10"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.10" placeholder="Exceptions if any" name="exception3_10"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose any third-party ESG-related labels and certifications with which the investment product complies</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager disclose any third-party ESG-related labels and certifications with which the investment product complies</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="related_labels_and_certifications" name="related_labels_and_certifications" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -231,16 +230,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment3.11" placeholder="Comments / Risks / Opportunities identified" name="comment3_11"></textarea>
+                        <textarea rows="2" class="form-control" id="comment3.11" placeholder="Comments / Risks / Opportunities identified" name="comment3_11"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception3.11" placeholder="Exceptions if any" name="exception3_11"></textarea>
+                        <textarea rows="2" class="form-control" id="exception3.11" placeholder="Exceptions if any" name="exception3_11"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

@@ -16,13 +16,13 @@
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Greenhouse Gas Emissions</b></h2></center>
+            <div class="row mb-1" style="padding-top:5px">
+                <center><h2 style="color:Black; font-size:17px">Sector(As per Article 2(17) of SFDR: <b>Greenhouse Gas Emissions</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
 
@@ -113,9 +113,9 @@
 
         <form method="POST" class="form-horizontal" action="environment1_6">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Is the Investee  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is the Investee  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="carbon_intensive" name="carbon_intensive" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -125,16 +125,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.1" placeholder="Exceptions if any" name="exception6_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.1" placeholder="Exceptions if any" name="exception6_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="set_policies_gas_emission" name="set_policies_gas_emission" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -144,16 +144,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.2" placeholder="Exceptions if any" name="exception6_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.2" placeholder="Exceptions if any" name="exception6_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether it has undertaken evaluation exercise of its harmful emissions / ozone depleting substances and its impact on environment and documented the same?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether it has undertaken evaluation exercise of its harmful emissions / ozone depleting substances and its impact on environment and documented the same?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="impact_environment_documented" name="impact_environment_documented" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -163,16 +163,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.3" placeholder="Comments / Risks / Opportunities identified" name="comment6_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.3" placeholder="Comments / Risks / Opportunities identified" name="comment6_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.3" placeholder="Exceptions if any" name="exception6_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.3" placeholder="Exceptions if any" name="exception6_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px" id="Asset1">
+            <div class="form-group" id="Asset1">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Direct GHG emissions (Scope 1)?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Direct GHG emissions (Scope 1)?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="direct_ghg_emissions" name="direct_ghg_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -182,15 +182,15 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.4" placeholder="Comments / Risks / Opportunities identified" name="comment6_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.4" placeholder="Comments / Risks / Opportunities identified" name="comment6_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.4" placeholder="Exceptions if any" name="exception6_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.4" placeholder="Exceptions if any" name="exception6_4"></textarea>
                     </div>
                     <div>
                         <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
                     </div>
-                    <i id="info" style="color:blue;  display:none">a. Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent.
+                    <i id="info" style="color:blue; font-size:12px; display:none">a. Gross direct (Scope 1) GHG emissions in metric tons of CO2 equivalent.
                         b. Gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Base year for the calculation, if applicable, including:
@@ -202,9 +202,9 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px" id="Asset2">
+            <div class="form-group" id="Asset2">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Energy Indirect GHG emissions (Scope 2) like?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Energy Indirect GHG emissions (Scope 2) like?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="ghg_emissions" name="ghg_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -214,16 +214,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.5" placeholder="Comments / Risks / Opportunities identified" name="comment6_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.5" placeholder="Comments / Risks / Opportunities identified" name="comment6_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.5" placeholder="Exceptions if any" name="exception6_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.5" placeholder="Exceptions if any" name="exception6_5"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
                         <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
                     </div>
-                    <i id="info1" style="color:blue;  display:none">a. Gross location-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
+                    <i id="info1" style="color:blue; font-size:12px; display:none">a. Gross location-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
                         b. If applicable, gross market-based energy indirect (Scope 2) GHG emissions in metric tons of CO2 equivalent.
                         c. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         d. Base year for the calculation, if applicable, including:
@@ -235,9 +235,9 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px" id="Asset3">
+            <div class="form-group" id="Asset3">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="indirect_ghg_emissions_scope3" name="indirect_ghg_emissions_scope3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -247,16 +247,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.6" placeholder="Comments / Risks / Opportunities identified" name="comment6_6"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.6" placeholder="Comments / Risks / Opportunities identified" name="comment6_6"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.6" placeholder="Exceptions if any" name="exception6_6"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.6" placeholder="Exceptions if any" name="exception6_6"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
                         <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
                     </div>
-                    <i id="info2" style="color:blue;  display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
+                    <i id="info2" style="color:blue; font-size:12px; display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
                         b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
@@ -268,9 +268,9 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px" id="Asset4">
+            <div class="form-group" id="Asset4">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="indirect_ghg_emissions_scope4" name="indirect_ghg_emissions_scope4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -280,16 +280,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.7" placeholder="Comments / Risks / Opportunities identified" name="comment6_7"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.7" placeholder="Comments / Risks / Opportunities identified" name="comment6_7"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.7" placeholder="Exceptions if any" name="exception6_7"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.7" placeholder="Exceptions if any" name="exception6_7"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
                         <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
                     </div>
-                    <i id="info3" style="color:blue;  display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
+                    <i id="info3" style="color:blue; font-size:12px;  display:none">a. Gross other indirect (Scope 3) GHG emissions in metric tons of CO2 equivalent.
                         b. If available, the gases included in the calculation; whether CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, or all.
                         c. Biogenic CO2 emissions in metric tons of CO2 equivalent.
                         d. Other indirect (Scope 3) GHG emissions categories and activities included in the calculation.
@@ -301,9 +301,9 @@
                         g. Standards, methodologies, assumptions, and/or calculation tools used.</i>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Investee  company Investee in technologies to improve the air quality of the area in which it operates?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the Investee  company Investee in technologies to improve the air quality of the area in which it operates?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="air_quality" name="air_quality" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -313,16 +313,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.8" placeholder="Comments / Risks / Opportunities identified" name="comment6_8"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.8" placeholder="Comments / Risks / Opportunities identified" name="comment6_8"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.8" placeholder="Exceptions if any" name="exception6_8"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.8" placeholder="Exceptions if any" name="exception6_8"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" >
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, provide details of investment made in efficient technologies and its outcome?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, provide details of investment made in efficient technologies and its outcome?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="provide_detail_investment_technology" name="provide_detail_investment_technology" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -332,16 +332,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6.9" placeholder="Comments / Risks / Opportunities identified" name="comment6_9"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6.9" placeholder="Comments / Risks / Opportunities identified" name="comment6_9"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6.9" placeholder="Exceptions if any" name="exception6_9"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6.9" placeholder="Exceptions if any" name="exception6_9"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

@@ -18,19 +18,19 @@
   <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
     <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
       <div class="row mb-1" style="padding:5px">
-        <center><h2 style="color:Black"><b>Information to be gathered from the client</b></h2></center>
+        <center><h5 style="color:Black"><b>Information to be gathered from the client</b></h5></center>
       </div>
     </div>
     <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
       <div class="row mb-1" style="padding:5px">
-        <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+        <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
       </div>
     </div>
     <form method="POST" class="form-horizontal" action="self_assessment_13">
       {% csrf_token %}
-      <div class="form-group" style="padding:10px">
+      <div class="form-group" style="padding-top:10px">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm captured client's experience and knowledge in the investment field </strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investment firm captured client's experience and knowledge in the investment field</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="firm_captured" name="firm_captured" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -40,16 +40,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment18.1" placeholder="Comments / Risks / Opportunities identified" name="comment18_1"></textarea>
+            <textarea rows="2" class="form-control" id="comment18.1" placeholder="Comments / Risks / Opportunities identified" name="comment18_1"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception18.1" placeholder="Exceptions if any" name="exception18_1"></textarea>
+            <textarea rows="2" class="form-control" id="exception18.1" placeholder="Exceptions if any" name="exception18_1"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group" >
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the timeframe client is looking to hold the investment </strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">What is the timeframe client is looking to hold the investment</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="timeframe_client" name="timeframe_client" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -59,16 +59,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment18.2" placeholder="Comments / Risks / Opportunities identified" name="comment18_2"></textarea>
+            <textarea rows="2" class="form-control" id="comment18.2" placeholder="Comments / Risks / Opportunities identified" name="comment18_2"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception18.2" placeholder="Exceptions if any" name="exception18_2"></textarea>
+            <textarea rows="2" class="form-control" id="exception18.2" placeholder="Exceptions if any" name="exception18_2"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group" >
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the risk appetite of the client </strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">What is the risk appetite of the client</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="risk_appetite" name="risk_appetite" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -78,16 +78,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment18.3" placeholder="Comments / Risks / Opportunities identified" name="comment18_3"></textarea>
+            <textarea rows="2" class="form-control" id="comment18.3" placeholder="Comments / Risks / Opportunities identified" name="comment18_3"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception18.3" placeholder="Exceptions if any" name="exception18_3"></textarea>
+            <textarea rows="2" class="form-control" id="exception18.3" placeholder="Exceptions if any" name="exception18_3"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm created a risk profile of the client</strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investment firm created a risk profile of the client</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="risk_profile" name="risk_profile" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -97,16 +97,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment18.4" placeholder="Comments / Risks / Opportunities identified" name="comment18_4"></textarea>
+            <textarea rows="2" class="form-control" id="comment18.4" placeholder="Comments / Risks / Opportunities identified" name="comment18_4"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception18.4" placeholder="Exceptions if any" name="exception18_4"></textarea>
+            <textarea rows="2" class="form-control" id="exception18.4" placeholder="Exceptions if any" name="exception18_4"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">What is the purpose of their investment and to what extent they want to invest in financial products having sustainability objective</strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">What is the purpose of their investment and to what extent they want to invest in financial products having sustainability objective</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="financial_products_sustainability" name="financial_products_sustainability" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -116,27 +116,27 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment18.5" placeholder="Comments / Risks / Opportunities identified" name="comment18_5"></textarea>
+            <textarea rows="2" class="form-control" id="comment18.5" placeholder="Comments / Risks / Opportunities identified" name="comment18_5"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception18.5" placeholder="Exceptions if any" name="exception18_5"></textarea>
+            <textarea rows="2" class="form-control" id="exception18.5" placeholder="Exceptions if any" name="exception18_5"></textarea>
           </div>
         </div>
       </div>
 
       <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
         <div class="row mb-1" style="padding:5px">
-          <center><h2 style="color:Black"><b>Capture sustainability preferences</b></h2></center>
+          <center><h5 style="color:Black"><b>Capture sustainability preferences</b></h5></center>
         </div>
       </div>
       <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
         <div class="row mb-1" style="padding:5px">
-          <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+          <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group" style="padding-top:10px">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm recommend financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR</strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investment firm recommend financial instruments that are either invested, at least to some extent, in taxonomy-compliant activities under the Taxonomy Regulation, or in sustainable investments, as defined in Article 2, point (17), of the SFDR</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="financial_instruments" name="financial_instruments" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -146,16 +146,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment19.1" placeholder="Comments / Risks / Opportunities identified" name="comment19_1"></textarea>
+            <textarea rows="2" class="form-control" id="comment19.1" placeholder="Comments / Risks / Opportunities identified" name="comment19_1"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception19.1" placeholder="Exceptions if any" name="exception19_1"></textarea>
+            <textarea rows="2" class="form-control" id="exception19.1" placeholder="Exceptions if any" name="exception19_1"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm ensured no greenwashing or misselling has happened </strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investment firm ensured no greenwashing or misselling has happened</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="firm_ensured" name="firm_ensured" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -165,16 +165,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment19.2" placeholder="Comments / Risks / Opportunities identified" name="comment19_2"></textarea>
+            <textarea rows="2" class="form-control" id="comment19.2" placeholder="Comments / Risks / Opportunities identified" name="comment19_2"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception19.2" placeholder="Exceptions if any" name="exception19_2"></textarea>
+            <textarea rows="2" class="form-control" id="exception19.2" placeholder="Exceptions if any" name="exception19_2"></textarea>
           </div>
         </div>
       </div>
-      <div class="form-group" style="padding:10px">
+      <div class="form-group">
         <div class="row mb-4">
-          <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the investment firm grouped financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts </strong></label>
+          <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investment firm grouped financial instruments in terms of the proportion invested in economic activities that qualify as environmentally sustainable, the proportion of sustainable investments, or the consideration of principal adverse impacts</b></label>
           <div class="col-sm-2">
             <select type="text" class="form-select" id="firm_grouped" name="firm_grouped" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
               <option value=""></option>
@@ -184,16 +184,16 @@
             </select>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="comment19.3" placeholder="Comments / Risks / Opportunities identified" name="comment19_3"></textarea>
+            <textarea rows="2" class="form-control" id="comment19.3" placeholder="Comments / Risks / Opportunities identified" name="comment19_3"></textarea>
           </div>
           <div class="col-sm-3">
-            <textarea rows ="3" class="form-control" id="exception19.3" placeholder="Exceptions if any" name="exception19_3"></textarea>
+            <textarea rows="2" class="form-control" id="exception19.3" placeholder="Exceptions if any" name="exception19_3"></textarea>
           </div>
         </div>
       </div>
 
       <div style="margin-bottom:4px">
-        <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+        <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
       </div>
       <!--            </div>-->
     </form>

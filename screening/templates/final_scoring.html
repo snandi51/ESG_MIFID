@@ -12,7 +12,7 @@
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
   <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
-  <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
   <center><h2 style="color:black;"><b>Final Scoring - Self Assessment</b></h2></center>
   <!-- Form Name -->
   <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
@@ -23,6 +23,41 @@
     <!--        </div>-->
 
     <div class="container text-white; rounded">
+      <center><h2 style="color:black;"><b>Interpretation of Average Score -Self-assessment -Investment Firms</b></h2></center>
+      <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black">
+        <tbody>
+        <tr>
+          <th scope="row" class="table-active">Average Score</th>
+          <th scope="row" class="table-active">Interpretation</th>
+          <th scope="row" class="table-active">Recommendation</th>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">0</td>
+          <td>The investment management firm is not considering sustainability into its internal systems, policies and procedures</td>
+          <td>Needs immediate action </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">1</td>
+          <td>The investment management firm has identified various areas to integrate sustainability factors into its internal systems, policies and procedures</td>
+          <td>Needs improvement</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">2</td>
+          <td>The investment management firm has started the process of integrating sustainability factors into its strategies, internal systems, policies and procedures</td>
+          <td>Good compliance</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">3</td>
+          <td>The investment management firm has fully integrated sustainability factors into its strategies, internal systems, policies and procedures</td>
+          <td>Great compliance</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">4</td>
+          <td>The investment management firm has not only fully integrated sustainability factors into its strategies, internal systems,  policies and procedures across the organisation's value chain, but also has evolved its own policies and procedures for tackling sustainability related issues. The ESG non-compliance risk is minimal.</td>
+          <td>Outstanding compliance</td>
+        </tr>
+        </tbody>
+      </table>
       <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black">
         <tbody>
         <tr>
@@ -34,129 +69,100 @@
         </tr>
         <tr>
           <td>Requirements and Recommendations</td>
-          <td></td>
-          <td></td>
-          <td rowspan="17" ></td>
-          <td rowspan="17" ></td>
+          <td style="vertical-align: middle;" align="center">{{f1}}</td>
+          <td >{{comment1}}</td>
+          <td rowspan="18" style="vertical-align: middle;" align="center">{{total_score}}</td>
+          <td rowspan="18" style="vertical-align: middle;" align="center">{{avg_score}}</td>
         </tr>
         <tr>
           <td>Requirements- General</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f2}}</td>
+          <td >{{comment2}}</td>
         </tr>
         <tr>
           <td>Requirements- Sources and Types</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f3}}</td>
+          <td >{{comment3}}</td>
         </tr>
         <tr>
           <td>Requirements- Systematic Consideration of Financially Material Information</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f4}}</td>
+          <td >{{comment4}}</td>
         </tr>
         <tr>
           <td>Requirements- ESG Investment Universe</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f5}}</td>
+          <td >{{comment5}}</td>
         </tr>
         <tr>
           <td>Requirements- Screening</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f6}}</td>
+          <td >{{comment6}}</td>
         </tr>
         <tr>
           <td>Requirements- Portfolio-Level ESG Characteristics</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f7}}</td>
+          <td >{{comment7}}</td>
         </tr>
         <tr>
           <td>Requirements- Portfolio-Level Allocation Targets</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f8}}</td>
+          <td >{{comment8}}</td>
         </tr>
         <tr>
           <td>Requirements- Portfolio-Stewardship Activities</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f9}}</td>
+          <td >{{comment9}}</td>
         </tr>
         <tr>
           <td>Requirements- Environmental and Social Impact Objectives and Recommendations</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f10}}</td>
+          <td >{{comment10}}</td>
         </tr>
         <tr>
           <td>Organisational Requirements</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f11}}</td>
+          <td >{{comment11}}</td>
         </tr>
         <tr>
           <td>Risk Management</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f12}}</td>
+          <td >{{comment12}}</td>
         </tr>
         <tr>
           <td>Conflicts of Interest</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f13}}</td>
+          <td >{{comment13}}</td>
         </tr>
         <tr>
           <td>Product Governance</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f14}}</td>
+          <td>{{comment14}}</td>
         </tr>
         <tr>
           <td>Costs involved</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f15}}</td>
+          <td >{{comment15}}</td>
         </tr>
         <tr>
           <td>Information to be provided to the client</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f16}}</td>
+          <td>{{comment16}}</td>
         </tr>
         <tr>
           <td>Information to be gathered from the client</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{f17}}</td>
+          <td>{{comment17}}</td>
+        </tr>
+        <tr>
+          <td>Capture sustainability preferences</td>
+          <td style="vertical-align: middle;" align="center">{{f18}}</td>
+          <td>{{comment18}}</td>
         </tr>
         </tbody>
       </table>
 
-      <center><h2 style="color:black;"><b>Interpretation of Average Score -Self-assessment -Investment Firms</b></h2></center>
-      <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black">
-        <tbody>
-        <tr>
-          <th scope="row" class="table-active">Average Score</th>
-          <th scope="row" class="table-active">Interpretation</th>
-          <th scope="row" class="table-active">Recommendation</th>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>The investment management firm is not considering sustainability into its internal systems, policies and procedures</td>
-          <td>Needs immediate action </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>The investment management firm has identified various areas to integrate sustainability factors into its internal systems, policies and procedures</td>
-          <td>Needs improvement</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>The investment management firm has started the process of integrating sustainability factors into its strategies, internal systems, policies and procedures</td>
-          <td>Good compliance</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>The investment management firm has fully integrated sustainability factors into its strategies, internal systems, policies and procedures</td>
-          <td>Great compliance</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>The investment management firm has not only fully integrated sustainability factors into its strategies, internal systems,  policies and procedures across the organisation's value chain, but also has evolved its own policies and procedures for tackling sustainability related issues. The ESG non-compliance risk is minimal.</td>
-          <td>Outstanding compliance</td>
-        </tr>
-        </tbody>
-      </table>
+
     </div>
   </div>
   </div>

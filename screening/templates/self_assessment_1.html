@@ -14,24 +14,24 @@
 <main id="main">
     <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
     <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
-    <center><h2 style="color:black;"><b>ESG GLOBAL STANDARDS</b></h2></center>
+    <center><h4 style="color:black;"><b>ESG GLOBAL STANDARDS</b></h4></center>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Requirements</b></h2></center>
+                <center><h5 style="color:Black"><b>Requirements</b></h5></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_1">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investment Manager  comply with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investment Manager  comply with any laws and Regulations that apply to the preparation and distribution of an ESG disclosure statement</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="laws_and_regulations" name="laws_and_regulations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -41,27 +41,27 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" class="form-control" id="Exception1.1" placeholder="Exceptions if any" name="Exception1_1"></textarea>
+                        <textarea rows="2" class="form-control" id="Exception1.1" placeholder="Exceptions if any" name="Exception1_1"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Recommendations</b></h2></center>
+                    <center><h5 style="color:Black"><b>Recommendations</b></h5></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                    <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager obtain independent assurance on its ESG disclosure statements</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager obtain independent assurance on its ESG disclosure statements</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="investment_manager_obtain_independent_assurance" name="investment_manager_obtain_independent_assurance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -71,16 +71,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment2.1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment2.1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="Exception2.1" placeholder="Exceptions if any" name="Exception2_1"></textarea>
+                        <textarea rows="2" class="form-control" id="Exception2.1" placeholder="Exceptions if any" name="Exception2_1"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>
