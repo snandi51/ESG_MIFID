@@ -18,19 +18,19 @@
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Requirements- Portfolio-Level Allocation Targets</b></h2></center>
+                <center><h5 style="color:Black"><b>Requirements- Portfolio-Level Allocation Targets</b></h5></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_8">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the specific ESG characteristics of the investments for which there is an allocation target</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the specific ESG characteristics of the investments for which there is an allocation target</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="allocation_targets" name="allocation_targets" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -40,16 +40,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment9.1" placeholder="Comments / Risks / Opportunities identified" name="comment9_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment9.1" placeholder="Comments / Risks / Opportunities identified" name="comment9_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception9.1" placeholder="Exceptions if any" name="exception9_1"></textarea>
+                        <textarea rows="2" class="form-control" id="exception9.1" placeholder="Exceptions if any" name="exception9_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the allocation target value or range</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager  disclose for each allocation target, the allocation target value or range</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="investments_that" name="investments_that" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -59,16 +59,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment9.2" placeholder="Comments / Risks / Opportunities identified" name="comment9_2"></textarea>
+                        <textarea rows="2" class="form-control" id="comment9.2" placeholder="Comments / Risks / Opportunities identified" name="comment9_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception9.2" placeholder="Exceptions if any" name="exception9_2"></textarea>
+                        <textarea rows="2" class="form-control" id="exception9.2" placeholder="Exceptions if any" name="exception9_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager disclose how progress towards, or attainment of, those targets is reported to investors</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has portfolio-level allocation targets for investments that have specific ESG characteristics, then does the investment manager disclose how progress towards, or attainment of, those targets is reported to investors</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="specific_ESG" name="specific_ESG" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -78,27 +78,27 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment9.3" placeholder="Comments / Risks / Opportunities identified" name="comment9_3"></textarea>
+                        <textarea rows="2" class="form-control" id="comment9.3" placeholder="Comments / Risks / Opportunities identified" name="comment9_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception9.3" placeholder="Exceptions if any" name="exception9_3"></textarea>
+                        <textarea rows="2" class="form-control" id="exception9.3" placeholder="Exceptions if any" name="exception9_3"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Requirements-Portfolio-Stewardship Activities</b></h2></center>
+                    <center><h5 style="color:Black"><b>Requirements-Portfolio-Stewardship Activities</b></h5></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                    <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager  disclose how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities.</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager  disclose how an investor can obtain a complete and current copy of all of the policies that govern the investment product’s stewardship activities.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="current_copy" name="current_copy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -108,16 +108,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.1" placeholder="Comments / Risks / Opportunities identified" name="comment10_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.1" placeholder="Exceptions if any" name="exception10_1"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.1" placeholder="Exceptions if any" name="exception10_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the types of stewardship activities typically undertaken for the investment product, differentiated by type of investment where necessary;</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the types of stewardship activities typically undertaken for the investment product, differentiated by type of investment where necessary</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="ESG_issues" name="ESG_issues" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -127,16 +127,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.2" placeholder="Comments / Risks / Opportunities identified" name="comment10_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.2" placeholder="Exceptions if any" name="exception10_2"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.2" placeholder="Exceptions if any" name="exception10_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the ESG issues typically considered when undertaking those stewardship activities</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose the ESG issues typically considered when undertaking those stewardship activities</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="typically_considered" name="typically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -146,16 +146,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.3" placeholder="Comments / Risks / Opportunities identified" name="comment10_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.3" placeholder="Exceptions if any" name="exception10_3"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.3" placeholder="Exceptions if any" name="exception10_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose how those stewardship activities and ESG issues are relevant to the investment product’s objectives and investment process </strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose how those stewardship activities and ESG issues are relevant to the investment product’s objectives and investment process</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="typically_considere" name="typically_considere" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -165,16 +165,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.4" placeholder="Comments / Risks / Opportunities identified" name="comment10_4"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.4" placeholder="Comments / Risks / Opportunities identified" name="comment10_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.4" placeholder="Exceptions if any" name="exception10_4"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.4" placeholder="Exceptions if any" name="exception10_4"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose  the processes and systems that support the stewardship activities undertaken for the investment product</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If ESG issues are typically considered when undertaking stewardship activities, does the investment manager disclose  the processes and systems that support the stewardship activities undertaken for the investment product</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="stewardship_activities" name="stewardship_activities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -184,16 +184,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.5" placeholder="Comments / Risks / Opportunities identified" name="comment10_5"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.5" placeholder="Comments / Risks / Opportunities identified" name="comment10_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.5" placeholder="Exceptions if any" name="exception10_5"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.5" placeholder="Exceptions if any" name="exception10_5"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager disclose how stewardship activities for the investment product are reported to investors.</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager disclose how stewardship activities for the investment product are reported to investors.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="disclose_how_stewardship" name="disclose_how_stewardship" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -203,26 +203,26 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment10.6" placeholder="Comments / Risks / Opportunities identified" name="comment10_6"></textarea>
+                        <textarea rows="2" class="form-control" id="comment10.6" placeholder="Comments / Risks / Opportunities identified" name="comment10_6"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception10.6" placeholder="Exceptions if any" name="exception10_6"></textarea>
+                        <textarea rows="2" class="form-control" id="exception10.6" placeholder="Exceptions if any" name="exception10_6"></textarea>
                     </div>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <center><h2 style="color:Black"><b>Requirements- Environmental and Social Impact Objectives</b></h2></center>
+                    <center><h5 style="color:Black"><b>Requirements- Environmental and Social Impact Objectives</b></h5></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div class="row mb-1" style="padding:5px">
-                    <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                    <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the investment manager recommend financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager recommend financial products wherein investments are made with the intention to generate positive, measurable social and environmental impact alongside a financial return, based on client expectations and preferences.</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="financial_products" name="financial_products" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -232,16 +232,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment11.1" placeholder="Comments / Risks / Opportunities identified" name="comment11_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment11.1" placeholder="Comments / Risks / Opportunities identified" name="comment11_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception11.1" placeholder="Exceptions if any" name="exception11_1"></textarea>
+                        <textarea rows="2" class="form-control" id="exception11.1" placeholder="Exceptions if any" name="exception11_1"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

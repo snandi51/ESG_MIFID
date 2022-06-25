@@ -18,19 +18,19 @@
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Requirements-Systematic Consideration of Financially Material Information</b></h2></center>
+                <center><h5 style="color:Black"><b>Requirements-Systematic Consideration of Financially Material Information</b></h5></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:40px">Mandates</strong><strong  style="color:Black; margin-left:230px">Yes/No/NA</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:130px">Exception</strong></h4>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_4">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically identified</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically identified</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="material_ESG_information" name="material_ESG_information" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -40,16 +40,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment5.1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
+                        <textarea rows="2" class="form-control" id="comment5.1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception5.1" placeholder="Exceptions if any" name="exception5_1"></textarea>
+                        <textarea rows="2" class="form-control" id="exception5.1" placeholder="Exceptions if any" name="exception5_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose how financially material ESG information is typically incorporated into investment decisions, differentiated by type of investment when necessary</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="If_financially_material" name="If_financially_material" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -59,16 +59,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment5.2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
+                        <textarea rows="2" class="form-control" id="comment5.2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception5.2" placeholder="Exceptions if any" name="exception5_2"></textarea>
+                        <textarea rows="2" class="form-control" id="exception5.2" placeholder="Exceptions if any" name="exception5_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose exceptions in which financially material ESG information is not considered in investment decisions, if any. </strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If financially material ESG information is systematically considered in investment decisions, then does the investment manager disclose exceptions in which financially material ESG information is not considered in investment decisions, if any</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="systematically_considered" name="systematically_considered" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -78,16 +78,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="comment5.3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
+                        <textarea rows="2" class="form-control" id="comment5.3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows ="3" class="form-control" id="exception5.3" placeholder="Exceptions if any" name="exception5_3"></textarea>
+                        <textarea rows="2" class="form-control" id="exception5.3" placeholder="Exceptions if any" name="exception5_3"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

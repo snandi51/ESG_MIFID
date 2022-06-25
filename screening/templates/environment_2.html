@@ -12,17 +12,18 @@
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
     <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
-    <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+    <a href="#" ><i style="font-size:12px; color:red; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="background-color:rgba(149, 230, 22, 0.7); width:1100px;">
-                <h2 style="color:black; margin-left:30px"><b>Environmental Scoring</b><h style="font-size: 15px; margin-left:140px">Score(0:Unsatisfactory,1:Needs improvement, 2:Good, 3:Very Good, 4:Excellent) </h></h2>
+                <h2 style="color:black; margin-left:30px; font-size:23px"><b>Environmental Scoring</b><h style="font-size: 15px; margin-left:250px">Score(0:Unsatisfactory,1:Needs improvement, 2:Good, 3:Very Good, 4:Excellent) </h></h2>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:30px">Sector</strong><strong  style="color:Black; margin-left:280px">Score</strong><strong  style="color:Black; margin-left:120px">Comments</strong><strong  style="color:Black; margin-left:170px">Exceptions</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Sector</strong><strong style="color:Black; margin-left:250px; font-size:18px">Score</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
             </div>
         </div>
 
@@ -214,7 +215,7 @@
             {% csrf_token %}
             <div class="form-group" style="padding-top:10px" id="Asset1">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;">Energy and Renewable Energy</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Energy and Renewable Energy</b></label>
                     <div class="col-sm-2">
                         <select  type="text" class="form-select" id="energy_and_renewable_energy" name="energy_and_renewable_energy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -227,13 +228,13 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment1" placeholder="Comments / Risks / Opportunities identified" name="comment1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
                     </div>
                     <div>
-                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"><i style="font-size:12px">To understand score interpretations click down arrow button</i></a>
                     </div>
                     <div id="info" style="display:none">
                     <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
@@ -260,7 +261,7 @@
 
             <div class="form-group" id="Asset2">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Raw materials</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Raw materials</b></label>
                     <div class="col-sm-2" >
                         <select type="text" class="form-select" id="raw_materials" name="raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -273,10 +274,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment2" placeholder="Comments / Risks / Opportunities identified" name="comment2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
@@ -306,7 +307,7 @@
 
             <div class="form-group" id="Asset3">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Water</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Water</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="water" name="water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -319,10 +320,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3" placeholder="Comments / Risks / Opportunities identified" name="comment3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
@@ -352,7 +353,7 @@
 
             <div class="form-group" id="Asset4">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Land</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Land</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="land" name="land" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -365,10 +366,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment4" placeholder="Comments / Risks / Opportunities identified" name="comment4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
@@ -398,7 +399,7 @@
 
             <div class="form-group" id="Asset5">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Waste</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Waste</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="waste" name="waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -411,10 +412,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment5" placeholder="Comments / Risks / Opportunities identified" name="comment5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
@@ -444,7 +445,7 @@
 
             <div class="form-group" id="Asset6">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Greenhouse Gas Emissions</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Greenhouse Gas Emissions</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="greenhouse_gas_emissions" name="greenhouse_gas_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -457,10 +458,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment6" placeholder="Comments / Risks / Opportunities identified" name="comment6"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
@@ -490,7 +491,7 @@
 
             <div class="form-group" id="Asset7">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Biodiversity</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Biodiversity</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="biodiversity" name="biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -503,10 +504,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7" placeholder="Comments / Risks / Opportunities identified" name="comment7"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7" placeholder="Exceptions if any" name="exception7"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
@@ -536,7 +537,7 @@
 
             <div class="form-group" id="Asset8">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Circular Economy</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Circular Economy</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="circular_economy" name="circular_economy" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -549,10 +550,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment8" placeholder="Comments / Risks / Opportunities identified" name="comment8"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception8" placeholder="Exceptions if any" name="exception8"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception8" placeholder="Exceptions if any" name="exception8"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn7"></button>
@@ -582,7 +583,7 @@
 
             <div class="form-group" id="Asset9">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Environment (Others) - Environmental Compliance</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Environment (Others) - Environmental Compliance</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="environmental_compliance" name="environmental_compliance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -595,10 +596,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment9" placeholder="Comments / Risks / Opportunities identified" name="comment9"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception9" placeholder="Exceptions if any" name="exception9"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception9" placeholder="Exceptions if any" name="exception9"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
@@ -628,7 +629,7 @@
 
             <div class="form-group" id="Asset10">
                 <div class="row mb-4" >
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Supply Chain Management</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Supply Chain Management</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="supply_chain_management" name="supply_chain_management" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -641,10 +642,10 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment10" placeholder="Comments / Risks / Opportunities identified" name="comment10"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception10" placeholder="Exceptions if any" name="exception10"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception10" placeholder="Exceptions if any" name="exception10"></textarea>
                     </div>
                     <div>
                         <button type="button" onclick="toggleText9()" style="display: none;" id="info-btn9"></button>
@@ -673,7 +674,7 @@
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

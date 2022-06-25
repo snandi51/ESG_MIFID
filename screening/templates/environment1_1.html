@@ -13,25 +13,30 @@
 <main id="main">
     <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
     <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
-
-    <center><h2 style="color:black;"><b>Environment</b></h2></center>
+    <center><h2 style="color:black; padding-top:-10px"><b>Environment</b></h2></center>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Energy and Renewable Energy</b></h2></center>
+            <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+            </div>
+            <div class="row mb-1" style="padding:5px;  width:51%;">
+                <center><h2 style="color:Black; font-size:17px">Sector(As per Article 2(17) of SFDR: <b>Energy and Renewable Energy</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+            </div>
+            <div style="padding:-10px;width:50%;">
+                <i style="color:red; font-size:10px">Key Questions to be answered for building investment strategy-Theme based</i>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_1">
             {% csrf_token %}
-                <div class="form-group" style="padding:10px">
+                <div class="form-group" style="padding-top:10px">
                     <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the energy used?</strong></label>
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the energy used?</b></label>
                         <div class="col-sm-2">
                             <select  type="text" class="form-select" id="set_of_policies" name="set_of_policies" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                                 <option value=""></option>
@@ -41,16 +46,16 @@
                             </select>
                         </div>
                         <div class="col-sm-3">
-                            <textarea rows="3" type="text" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
+                            <textarea rows="2" type="text" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
                         </div>
                         <div class="col-sm-3">
-                            <textarea rows="3" type="text" class="form-control" id="exception1.1" placeholder="Exceptions if any" name="exception1_1"></textarea>
+                            <textarea rows="2" type="text" class="form-control" id="exception1.1" placeholder="Exceptions if any" name="exception1_1"></textarea>
                         </div>
                     </div>
                 </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company keep records of its usage of energy and other resources for evaluation purpose?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company keep records of its usage of energy and other resources for evaluation purpose?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="keep_records" name="keep_records"><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -60,16 +65,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment1.2" placeholder="Comments / Risks / Opportunities identified" name="comment1_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment1.2" placeholder="Comments / Risks / Opportunities identified" name="comment1_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception1.2" placeholder="Exceptions if any" name="exception1_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception1.2" placeholder="Exceptions if any" name="exception1_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, has the Investee company listed out the outcome of its evaluation exercise in its entire value chain?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px ">If yes, has the Investee company listed out the outcome of its evaluation exercise in its entire value chain?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="evaluation_exercise" name="evaluation_exercise" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -79,16 +84,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment1.3" placeholder="Comments / Risks / Opportunities identified" name="comment1_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment1.3" placeholder="Comments / Risks / Opportunities identified" name="comment1_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception1.3" placeholder="Exceptions if any" name="exception1_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception1.3" placeholder="Exceptions if any" name="exception1_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have an action plan towards using efficient technology driven processes to reduce consumption of energy?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px ">Does the Investee company have an action plan towards using efficient technology driven processes to reduce consumption of energy?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="reduce_consumption" name="reduce_consumption" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -98,16 +103,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment1.4" placeholder="Comments / Risks / Opportunities identified" name="comment1_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment1.4" placeholder="Comments / Risks / Opportunities identified" name="comment1_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception1.4" placeholder="Exceptions if any" name="exception1_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception1.4" placeholder="Exceptions if any" name="exception1_4"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" >
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Has the Investee company  Investee in renewable sources of energy. If yes, provide details of investment made and outcome?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px ">Has the Investee company  Investee in renewable sources of energy. If yes, provide details of investment made and outcome?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="Investee_renewable_sources" name="Investee_renewable_sources" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -117,16 +122,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment1.5" placeholder="Comments / Risks / Opportunities identified" name="comment1_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment1.5" placeholder="Comments / Risks / Opportunities identified" name="comment1_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception1.5" placeholder="Exceptions if any" name="exception1_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception1.5" placeholder="Exceptions if any" name="exception1_5"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
 <!--            </div>-->
         </form>

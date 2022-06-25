@@ -16,20 +16,20 @@
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Water</b></h2></center>
+            <div class="row mb-1" style="padding-top:5px">
+                <center><h2 style="color:Black; font-size:17px">Sector(As per Article 2(17) of SFDR: <b>Water</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_3">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Water related impacts?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Water related impacts?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="set_of_policies_water" name="set_of_policies_water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -39,16 +39,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3.1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3.1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3.1" placeholder="Exceptions if any" name="exception3_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3.1" placeholder="Exceptions if any" name="exception3_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee  company evaluate whether it consume water on a large scale?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company evaluate whether it consume water on a large scale?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="consume_water" name="consume_water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -58,16 +58,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3.2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3.2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3.2" placeholder="Exceptions if any" name="exception3_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3.2" placeholder="Exceptions if any" name="exception3_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Investee  company will have to face risk of water scarcity which will also affect water supply to other consumers including local communities?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether the Investee  company will have to face risk of water scarcity which will also affect water supply to other consumers including local communities?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="face_risk_water_scarcity" name="face_risk_water_scarcity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -77,16 +77,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3.3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3.3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3.3" placeholder="Exceptions if any" name="exception3_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3.3" placeholder="Exceptions if any" name="exception3_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether Investee  company is exploring other sources of water / other techniques such that dependence on water supplied by local authorities is reduced (such as rain water harvesting, recycling water used by the organisation, waste water from other organisation)?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether Investee  company is exploring other sources of water / other techniques such that dependence on water supplied by local authorities is reduced (such as rain water harvesting, recycling water used by the organisation, waste water from other organisation)?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="recycling_water_used_by_organisation" name="recycling_water_used_by_organisation" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -96,16 +96,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3.4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3.4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3.4" placeholder="Exceptions if any" name="exception3_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3.4" placeholder="Exceptions if any" name="exception3_4"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If the investee company has recycled/reused water from different sources, does it calculate and mention the amount of water being recycled or reused out of the total amount of water used from different sources?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investee company has recycled/reused water from different sources, does it calculate and mention the amount of water being recycled or reused out of the total amount of water used from different sources?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="mention_amount_of_water_recycle" name="mention_amount_of_water_recycle" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -115,15 +115,15 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment3.5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment3.5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception3.5" placeholder="Exceptions if any" name="exception3_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception3.5" placeholder="Exceptions if any" name="exception3_5"></textarea>
                     </div>
                 </div>
             </div>
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

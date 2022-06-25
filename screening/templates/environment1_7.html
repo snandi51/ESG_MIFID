@@ -16,20 +16,20 @@
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <center><h2 style="color:Black"><b>Biodiversity</b></h2></center>
+            <div class="row mb-1" style="padding-top:5px">
+                <center><h2 style="color:Black; font-size:17px">Sector(As per Article 2(17) of SFDR: <b>Biodiversity</b></h2></center>
             </div>
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-            <div class="row mb-1" style="padding:5px">
-                <h4><strong  style="color:Black; margin-left:80px">Question</strong><strong  style="color:Black; margin-left:220px">Yes/No/NA</strong><strong  style="color:Black; margin-left:80px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h4>
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_7">
             {% csrf_token %}
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Biodiversity across the organization?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Biodiversity across the organization?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="set_policies_biodiversity" name="set_policies_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -39,16 +39,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7.1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7.1" placeholder="Comments / Risks / Opportunities identified" name="comment7_1"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7.1" placeholder="Exceptions if any" name="exception7_1"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7.1" placeholder="Exceptions if any" name="exception7_1"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does the Investee  company assess the negative impact of its business operations on biodiversity?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company assess the negative impact of its business operations on biodiversity?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="operations_biodiversity" name="operations_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -58,16 +58,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7.2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7.2" placeholder="Comments / Risks / Opportunities identified" name="comment7_2"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7.2" placeholder="Exceptions if any" name="exception7_2"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7.2" placeholder="Exceptions if any" name="exception7_2"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group" >
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If yes, whether the Investee company has documented the negative impact on local flora and fauna, different types of species, pests and pathogens due to its operations?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether the Investee company has documented the negative impact on local flora and fauna, different types of species, pests and pathogens due to its operations?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="different_types_species" name="different_types_species" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -77,16 +77,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7.3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7.3" placeholder="Comments / Risks / Opportunities identified" name="comment7_3"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7.3" placeholder="Exceptions if any" name="exception7_3"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7.3" placeholder="Exceptions if any" name="exception7_3"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If so, does the Investee company have an action plan to mitigate/control the biodiversity loss due to its operations?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If so, does the Investee company have an action plan to mitigate/control the biodiversity loss due to its operations?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="control_biodiversity" name="control_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -96,16 +96,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7.4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7.4" placeholder="Comments / Risks / Opportunities identified" name="comment7_4"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7.4" placeholder="Exceptions if any" name="exception7_4"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7.4" placeholder="Exceptions if any" name="exception7_4"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding:10px">
+            <div class="form-group">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">If mitigation measures are already undertaken, whether there is a positive effect on biodiversity in terms of habitat conservation and restoration?</strong></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If mitigation measures are already undertaken, whether there is a positive effect on biodiversity in terms of habitat conservation and restoration?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="positive_biodiversity" name="positive_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -115,16 +115,16 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="comment7.5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="comment7.5" placeholder="Comments / Risks / Opportunities identified" name="comment7_5"></textarea>
                     </div>
                     <div class="col-sm-3">
-                        <textarea rows="3" type="text" class="form-control" id="exception7.5" placeholder="Exceptions if any" name="exception7_5"></textarea>
+                        <textarea rows="2" type="text" class="form-control" id="exception7.5" placeholder="Exceptions if any" name="exception7_5"></textarea>
                     </div>
                 </div>
             </div>
 
             <div style="margin-bottom:4px">
-                <button class="btn btn-primary rounded-pill" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary rounded-pill">Next</button></a>
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
             <!--            </div>-->
         </form>

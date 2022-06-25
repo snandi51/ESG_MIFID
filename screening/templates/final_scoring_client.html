@@ -13,7 +13,7 @@
 <main id="main">
   <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
   <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
-  <center><h2 style="color:black;"><b>Final Score - Investee Company</b></h2></center>
+  <center><h2 style="color:black;"><b>Final Score - {{company_name}}</b></h2></center>
 
 
   <!-- Form Name -->
@@ -28,27 +28,27 @@
           <th scope="row" class="table-active">Recommendation</th>
         </tr>
         <tr>
-          <td>0</td>
+          <td style="vertical-align: middle;" align="center">0</td>
           <td>The investment management firm is not considering sustainability into its internal systems, policies and procedures</td>
           <td>Needs immediate action </td>
         </tr>
         <tr>
-          <td>1</td>
+          <td style="vertical-align: middle;" align="center">1</td>
           <td>The investment management firm has identified various areas to integrate sustainability factors into its internal systems, policies and procedures</td>
           <td>Needs improvement</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td style="vertical-align: middle;" align="center">2</td>
           <td>The investment management firm has started the process of integrating sustainability factors into its strategies, internal systems, policies and procedures</td>
           <td>Good compliance</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td style="vertical-align: middle;" align="center">3</td>
           <td>The investment management firm has fully integrated sustainability factors into its strategies, internal systems, policies and procedures</td>
           <td>Great compliance</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td style="vertical-align: middle;" align="center">4</td>
           <td>The investment management firm has not only fully integrated sustainability factors into its strategies, internal systems,  policies and procedures across the organisation's value chain, but also has evolved its own policies and procedures for tackling sustainability related issues. The ESG non-compliance risk is minimal.</td>
           <td>Outstanding compliance</td>
         </tr>
@@ -65,60 +65,55 @@
         </tr>
         <tr>
           <td>Energy and Renewable Energy</td>
-          <td></td>
-          <td></td>
-          <td rowspan="11"></td>
-          <td rowspan="11"></td>
+          <td style="vertical-align: middle;" align="center">{{e2_1}}</td>
+          <td >{{comment1}}</td>
+          <td rowspan="11" style="vertical-align: middle;" align="center">{{total_score}}</td>
+          <td rowspan="11" style="vertical-align: middle;" align="center">{{avg_score}}</td>
         </tr>
         <tr>
           <td>Raw materials</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_2}}</td>
+          <td >{{comment2}}</td>
         </tr>
         <tr>
           <td>Water</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_3}}</td>
+          <td >{{comment3}}</td>
         </tr>
         <tr>
           <td>Land</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_4}}</td>
+          <td >{{comment4}}</td>
         </tr>
         <tr>
           <td>Waste</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_5}}</td>
+          <td >{{comment5}}</td>
         </tr>
         <tr>
           <td>Greenhouse Gas Emissions</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_6}}</td>
+          <td >{{comment6}}</td>
         </tr>
         <tr>
           <td>Biodiversity</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_7}}</td>
+          <td >{{comment7}}</td>
         </tr>
         <tr>
           <td>Circular economy</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_8}}</td>
+          <td >{{comment8}}</td>
         </tr>
         <tr>
-          <td>Environment (Others) :</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Environmental compliance</td>
-          <td></td>
-          <td></td>
+          <td>Environment (Others) : Environmental compliance</td>
+          <td style="vertical-align: middle;" align="center">{{e2_9}}</td>
+          <td >{{comment9}}</td>
         </tr>
         <tr>
           <td>Supply Chain Management</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{e2_10}}</td>
+          <td >{{comment10}}</td>
         </tr>
         </tbody>
       </table>
@@ -133,40 +128,40 @@
         </tr>
         <tr>
           <td>Inequality</td>
-          <td></td>
-          <td></td>
-          <td rowspan="7"></td>
-          <td rowspan="7"></td>
+          <td style="vertical-align: middle;" align="center">{{s1_1}}</td>
+          <td >{{s_comment1}}</td>
+          <td rowspan="7" style="vertical-align: middle;" align="center">{{s_total_score}}</td>
+          <td rowspan="7" style="vertical-align: middle;" align="center">{{s_avg_score}}</td>
         </tr>
         <tr>
           <td>Social cohesion</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_2}}</td>
+          <td >{{s_comment2}}</td>
         </tr>
         <tr>
           <td>Social integration</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_3}}</td>
+          <td >{{s_comment3}}</td>
         </tr>
         <tr>
           <td>Labour relations</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_4}}</td>
+          <td >{{s_comment4}}</td>
         </tr>
         <tr>
           <td>Investment in human capital</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_5}}</td>
+          <td >{{s_comment5}}</td>
         </tr>
         <tr>
           <td>Economically or socially disadvantaged communities</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_6}}</td>
+          <td >{{s_comment6}}</td>
         </tr>
         <tr>
           <td>Others - Supply chain management</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{s1_7}}</td>
+          <td >{{s_comment7}}</td>
         </tr>
         </tbody>
       </table>
@@ -181,35 +176,35 @@
         </tr>
         <tr>
           <td>Employee Relations</td>
-          <td></td>
-          <td></td>
-          <td rowspan="6"></td>
-          <td rowspan="6"></td>
+          <td style="vertical-align: middle;" align="center">{{g1_1}}</td>
+          <td >{{g_comment1}}</td>
+          <td rowspan="6" style="vertical-align: middle;" align="center">{{g_total_score}}</td>
+          <td rowspan="6" style="vertical-align: middle;" align="center">{{g_avg_score}}</td>
         </tr>
         <tr>
           <td>Sound Management Structures</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{g1_2}}</td>
+          <td >{{g_comment2}}</td>
         </tr>
         <tr>
           <td>Remuneration of Staff</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{g1_3}}</td>
+          <td >{{g_comment3}}</td>
         </tr>
         <tr>
           <td>Tax Compliance</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{g1_4}}</td>
+          <td >{{g_comment4}}</td>
         </tr>
         <tr>
           <td>Commitment to Good Corporate Governance</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{g1_5}}</td>
+          <td >{{g_comment5}}</td>
         </tr>
         <tr>
           <td>Governance Other</td>
-          <td></td>
-          <td></td>
+          <td style="vertical-align: middle;" align="center">{{g1_6}}</td>
+          <td >{{g_comment6}}</td>
         </tr>
         </tbody>
       </table>
