@@ -1,0 +1,466 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+    <a href="#" ><i style="font-size:12px; color:red; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
+
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div  style="background-color:rgba(149, 230, 22, 0.7); width:1100px;">
+                <h2 style="color:black;  font-size:23px"><b>Governance Scoring</b><h style="font-size: 15px; margin-left:280px">Score(0:Unsatisfactory,1:Needs improvement, 2:Good, 3:Very Good, 4:Excellent) </h></h2>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; font-size:18px">Evaluation Criteria </strong><strong style="color:Black; margin-left:250px; font-size:18px">Score</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+        window.onload = function(){
+                console.log('inside the function')
+                var value_dict = {{value_dict|safe}}
+                console.log(value_dict)
+
+                if(document.getElementsByName('employee_relations').value == null){
+                document.forms['governance_scoring']['employee_relations'].value = value_dict.employee_relations;
+                }
+                if(document.getElementsByName('sound_management_structures').value == null){
+                document.forms['governance_scoring']['sound_management_structures'].value = value_dict.sound_management_structures;
+                }
+                if(document.getElementsByName('remuneration_staff').value == null){
+                document.forms['governance_scoring']['remuneration_staff'].value = value_dict.remuneration_staff;
+                }
+                if(document.getElementsByName('tax_compliance').value == null){
+                document.forms['governance_scoring']['tax_compliance'].value = value_dict.tax_compliance;
+                }
+                if(document.getElementsByName('corporate_governance').value == null){
+                document.forms['governance_scoring']['corporate_governance'].value = value_dict.corporate_governance;
+                }
+                if(document.getElementsByName('governance_other').value == null){
+                document.forms['governance_scoring']['governance_other'].value = value_dict.governance_other;
+                }
+
+                console.log("Value replaced successfully")
+        }
+
+        function toggleInput1() {
+                            var employee_relations = document.getElementById("employee_relations");
+                            var Asset1 = document.getElementById("Asset1");
+                            Asset1.style.display = employee_relations.value == "0" ? "block" : "none";
+                            var sound_management_structures = document.getElementById("sound_management_structures");
+                            var Asset2 = document.getElementById("Asset2");
+                            Asset2.style.display = sound_management_structures.value == "0" ? "block" : "none";
+                            var remuneration_staff = document.getElementById("remuneration_staff");
+                            var Asset3 = document.getElementById("Asset3");
+                            Asset3.style.display = remuneration_staff.value == "0" ? "block" : "none";
+                            var tax_compliance = document.getElementById("tax_compliance");
+                            var Asset4 = document.getElementById("Asset4");
+                            Asset4.style.display = tax_compliance.value == "0" ? "block" : "none";
+                            var corporate_governance = document.getElementById("corporate_governance");
+                            var Asset5 = document.getElementById("Asset5");
+                            Asset5.style.display = corporate_governance.value == "0" ? "block" : "none";
+                            var governance_other = document.getElementById("greenhouse_gas_emissions");
+                            var Asset6 = document.getElementById("Asset6");
+                            Asset6.style.display =governance_other.value == "0" ? "block" : "none";
+
+                        }
+            function toggleText(){
+                var myText=document.getElementById("info");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText1(){
+                var myText=document.getElementById("info1");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText2(){
+                var myText=document.getElementById("info2");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText3(){
+                var myText=document.getElementById("info3");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText4(){
+                var myText=document.getElementById("info4");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText5(){
+                var myText=document.getElementById("info5");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText6(){
+                var myText=document.getElementById("info6");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+      </script>
+
+        <form method="POST" class="form-horizontal" action="only_governance_scoring">
+            {% csrf_token %}
+            <div class="form-group" style="padding-top:10px" id="Asset1">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Employee Relations</b></label>
+                    <div class="col-sm-2">
+                        <select  type="text" class="form-select" id="employee_relations" name="employee_relations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="g_comment1" placeholder="Comments / Risks / Opportunities identified" name="g_comment1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
+                    </div>
+                    <div>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"><i style="font-size:12px">To understand score interpretations click down arrow button</i></a>
+                    </div>
+                    <div id="info" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>Investee  company does not have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion</td>
+                                <td>Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors</td>
+                                <td>Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has a grievance redressal mechanism for its employees</td>
+                                <td>Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has grievance redressal mechanism for its employees- and had no serious violation incidents by employees reported during last 5 years. </td>
+                                <td>Investee  company  have internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion and also has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors. In addition, it has grievance redressal mechanism for its employees- and had no serious violation incidents by employees reported during last 5 years. It conducts training for its staff on ESG matters.Further, the investee  company conducts various employee health programmes and welfare activities and has good safety record</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" id="Asset2">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Sound Management Structures</b></label>
+                    <div class="col-sm-2" >
+                        <select type="text" class="form-select" id="sound_management_structures" name="sound_management_structures" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="g_comment2" placeholder="Comments / Risks / Opportunities identified" name="g_comment2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2" placeholder="Exceptions if any" name="exception2"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                    </div>
+                    <div id="info1" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>The investee company does not have formal policies and systems to manage ESG.</td>
+                                <td>The investee company have formal policies and systems to manage ESG and pro-actively identifies opportunities for ESG improvements</td>
+                                <td>The investee company have formal policies and systems to manage ESG and pro-actively identifies opportunities for ESG improvements. There are defined processes in place in investee company to manage /monitor ESG matters and the implementation of action plans.</td>
+                                <td>The investee company have formal policies and systems to manage ESG and pro-actively identifies opportunities for ESG improvements. There are defined processes in place in investee company to manage /monitor ESG matters and the implementation of action plans. The investee company has ESG responsibility been established at all levels up to the company’s board.</td>
+                                <td>The investee company have formal policies and systems to manage ESG and pro-actively identifies opportunities for ESG improvements. There are defined processes in place in investee company to manage /monitor ESG matters and the implementation of action plans. The investee company has ESG responsibility been established at all levels up to the company’s board. The company promoters, management, staff or Board members of the investee company are not associated with money laundering activities.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" id="Asset3">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Remuneration of Staff</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="remuneration_staff" name="remuneration_staff" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="g_comment3" placeholder="Comments / Risks / Opportunities identified" name="g_comment3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="exception3" placeholder="Exceptions if any" name="exception3"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
+                    </div>
+                    <div id="info2" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>Investee company does not have sound remuneration and reimbursement policy for its staff. </td>
+                                <td>Investee company has sound remuneration and reimbursement policy for its staff  and  this policy is in line with the local laws and regulations.</td>
+                                <td>Investee company has sound remuneration and reimbursement policy for its staff  and  this policy is in line with the local laws and regulations.
+                                    There were no incidents of remuneration issues reported by employees during last 5 years.</td>
+                                <td>Investee company has sound remuneration and reimbursement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. It has recruited specialist consultants / external technical experts to assess and monitor ESG issues (particularly for high risk companies).</td>
+                                <td>Investee company has sound remuneration and reimburesement policy for its staff  and  this policy is in line with the local laws and regulations. There were no incidents of remuneration issues reported by employees during last 5 years. It has recruited specialist consultants / external technical experts to assess and monitor ESG issues (particularly for high risk companies).
+                                    Investee company has a Rewards & Recognition policy as part of  empoyee welfare and recongition for exceptional talent.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" id="Asset4">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Tax Compliance</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="tax" name="tax" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2"  class="form-control" id="g_comment4" placeholder="Comments / Risks / Opportunities identified" name="g_comment4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2"  class="form-control" id="exception4" placeholder="Exceptions if any" name="exception4"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                    </div>
+                    <div id="info3" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>Investee  company does not follow local laws and regulations with respect to payment of taxes and they do not provide complete information to the tax authorities.</td>
+                                <td>Investee  company follows local laws and regulations with respect to payment of taxes and provides incomplete information to the tax authorities.</td>
+                                <td>Investee  company follows local laws and regulations with respect to payment of taxes and provides complete information to the tax authorities. </td>
+                                <td>Investee  company follows local laws and regulations with respect to payment of taxes and provide complete information to the tax authorities. No instances reported for tax evasion by the investee company during the last 5 years. </td>
+                                <td>Investee  company follows local laws and regulations with respect to payment of taxes and provide complete information to the tax authorities. No instances reported for tax evasion by the investee company during the last 5 years. Board Member staff, company promoters, management of the investee company are not being under legal scrutiny by regulators or law enforcement authorities.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" id="Asset5">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Commitment to Good Corporate Governance</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="corporate_governance" name="corporate_governance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="g_comment5" placeholder="Comments / Risks / Opportunities identified" name="g_comment5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="exception5" placeholder="Exceptions if any" name="exception5"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info"></a>
+                    </div>
+                    <div id="info4" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>Investee conpany does not have formal action plans drawn up to address ESG issues.</td>
+                                <td>Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring.</td>
+                                <td>Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders.</td>
+                                <td>Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders. Investee  company has a whistleblower policy and procedures in place.</td>
+                                <td>Investee conpany have formal action plans drawn up to address ESG issues and provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring. It also has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders. Investee  company has a whistleblower policy and procedures in place and a designated official entrusted with the responsibility for ensuring compliance with the company's corporate governance policy</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" id="Asset6">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Governance Other</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="governance_other" name="governance_other" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="g_comment6" placeholder="Comments / Risks / Opportunities identified" name="g_comment6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="exception6" placeholder="Exceptions if any" name="exception6"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
+                        <a><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info"></a>
+                    </div>
+                    <div id="info5" style="display:none">
+                        <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="table-active">0</th>
+                                <th scope="row" class="table-active">1</th>
+                                <th scope="row" class="table-active">2</th>
+                                <th scope="row" class="table-active">3</th>
+                                <th scope="row" class="table-active">4</th>
+                            </tr>
+                            <tr>
+                                <td>Investee company does not follow transparency of activities undertaken by the company and disclosure information for investors.</td>
+                                <td>Investee company follows transparency of activities undertaken by the company and disclosure information for investors. There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board.</td>
+                                <td>Investee company follows transparency of activities undertaken by the company and disclosure information for investors. There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board. There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years. </td>
+                                <td>Investee company follows transparency of activities undertaken by the company and disclosure information for investors.
+                                    There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board.
+                                    There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years.
+                                    Investee company has key performance indicators in place to measure and track ESG performance</td>
+                                <td>Investee company follows transparency of activities undertaken by the company and disclosure information for investors.
+                                    There are defined lines of communication in place in investee company to report ESG issues to the company’s management and board. There were no incidents of regulatory penalties,  fraud/scam being reported during past 5 years. Investee company has key performance indicators in place to measure and track ESG performance and have an allocated
+                                    ESG professional on staff. The Financial Instruments of the investee company cover ESG factors through ESG thematic approach and the investee company reports ESG performance to investors annually.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+                <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
+            </div>
+            <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>
+
+
+

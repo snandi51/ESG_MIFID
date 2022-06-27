@@ -118,25 +118,1138 @@ def logout_user(request):
 # def self_assessment_1(request):
 #     return render(request, 'self_assessment_1.html')
 
-@login_required
-def new(request):
-    return render(request, 'new.html')
-
 
 @login_required
 def selection(request):
-    # if request.method == 'POST':
-    #     s1 = request.POST.get('s1')
-    #
-    #     input_data = {
-    #         's1': s1,
-    #     }
-    #
-    #     context = {
-    #         'input_data': input_data,
-    #     }
-    #     return render(request, 'selection.html', context)
     return render(request, 'selection.html')
+
+
+@login_required
+def environment_selection(request):
+    return render(request, 'environment_selection.html')
+
+
+# if client select only social option:
+@login_required
+def social_1_scoring(request):
+    if request.method == 'POST':
+        f1_1 = request.POST.get("f1_1")
+        comment1_1 = request.POST.get("comment1_1")
+        exception1_1 = request.POST.get("exception1_1")
+        f1_2 = request.POST.get("f1_2")
+        comment1_2 = request.POST.get("comment1_2")
+        exception1_2 = request.POST.get("exception1_2")
+        f1_3 = request.POST.get("f1_3")
+        comment1_3 = request.POST.get("comment1_3")
+        exception1_3 = request.POST.get("exception1_3")
+        f1_4 = request.POST.get("f1_4")
+        comment1_4 = request.POST.get("comment1_4")
+        exception1_4 = request.POST.get("exception1_4")
+        f1_5 = request.POST.get("f1_5")
+        comment1_5 = request.POST.get("comment1_5")
+        exception1_5 = request.POST.get("exception1_5")
+        f2_1 = request.POST.get("f2_1")
+        comment2_1 = request.POST.get("comment2_1")
+        exception2_1 = request.POST.get("exception2_1")
+        f2_2 = request.POST.get("f2_2")
+        comment2_2 = request.POST.get("comment2_2")
+        exception2_2 = request.POST.get("exception2_2")
+        f2_3 = request.POST.get("f2_3")
+        comment2_3 = request.POST.get("comment2_3")
+        exception2_3 = request.POST.get("exception2_3")
+        f2_4 = request.POST.get("f2_4")
+        comment2_4 = request.POST.get("comment2_4")
+        exception2_4 = request.POST.get("exception2_4")
+        f2_5 = request.POST.get("f2_5")
+        comment2_5 = request.POST.get("comment2_5")
+        exception2_5 = request.POST.get("exception2_5")
+        f2_6 = request.POST.get("f2_6")
+        comment2_6 = request.POST.get("comment2_6")
+        exception2_6 = request.POST.get("exception2_6")
+        f3_1 = request.POST.get("f3_1")
+        comment3_1 = request.POST.get("comment3_1")
+        exception3_1 = request.POST.get("exception3_1")
+        f3_2 = request.POST.get("f3_2")
+        comment3_2 = request.POST.get("comment3_2")
+        exception3_2 = request.POST.get("exception3_2")
+        f3_3 = request.POST.get("f3_3")
+        comment3_3 = request.POST.get("comment3_3")
+        exception3_3 = request.POST.get("exception3_3")
+        f3_4 = request.POST.get("f3_4")
+        comment3_4 = request.POST.get("comment3_4")
+        exception3_4 = request.POST.get("exception3_4")
+        f3_5 = request.POST.get("f3_5")
+        comment3_5 = request.POST.get("comment3_5")
+        exception3_5 = request.POST.get("exception3_5")
+        f4_1 = request.POST.get("f4_1")
+        comment4_1 = request.POST.get("comment4_1")
+        exception4_1 = request.POST.get("exception4_1")
+        f4_2 = request.POST.get("f4_2")
+        comment4_2 = request.POST.get("comment4_2")
+        exception4_2 = request.POST.get("exception4_2")
+        f4_3 = request.POST.get("f4_3")
+        comment4_3 = request.POST.get("comment4_3")
+        exception4_3 = request.POST.get("exception4_3")
+        f4_4 = request.POST.get("f4_4")
+        comment4_4 = request.POST.get("comment4_4")
+        exception4_4 = request.POST.get("exception4_4")
+        f5_1 = request.POST.get("f5_1")
+        comment5_1 = request.POST.get("comment5_1")
+        exception5_1 = request.POST.get("exception5_1")
+        f5_2 = request.POST.get("f5_2")
+        comment5_2 = request.POST.get("comment5_2")
+        exception5_2 = request.POST.get("exception5_2")
+        f5_3 = request.POST.get("f5_3")
+        comment5_3 = request.POST.get("comment5_3")
+        exception5_3 = request.POST.get("exception5_3")
+        f5_4 = request.POST.get("f5_4")
+        comment5_4 = request.POST.get("comment5_4")
+        exception5_4 = request.POST.get("exception5_4")
+        f5_5 = request.POST.get("f5_5")
+        comment5_5 = request.POST.get("comment5_5")
+        exception5_5 = request.POST.get("exception5_5")
+        f5_6 = request.POST.get("f5_6")
+        comment5_6 = request.POST.get("comment5_6")
+        exception5_6 = request.POST.get("exception5_6")
+        f6_1 = request.POST.get("f6_1")
+        comment6_1 = request.POST.get("comment6_1")
+        exception6_1 = request.POST.get("exception6_1")
+        f6_2 = request.POST.get("f6_2")
+        comment6_2 = request.POST.get("comment6_2")
+        exception6_2 = request.POST.get("exception6_2")
+        f6_3 = request.POST.get("f6_3")
+        comment6_3 = request.POST.get("comment6_3")
+        exception6_3 = request.POST.get("exception6_3")
+        f6_4 = request.POST.get("f6_4")
+        comment6_4 = request.POST.get("comment6_4")
+        exception6_4 = request.POST.get("exception6_4")
+        f6_5 = request.POST.get("f6_5")
+        comment6_5 = request.POST.get("comment6_5")
+        exception6_5 = request.POST.get("exception6_5")
+        f6_6 = request.POST.get("f6_6")
+        comment6_6 = request.POST.get("comment6_6")
+        exception6_6 = request.POST.get("exception6_6")
+        f6_7 = request.POST.get("f6_7")
+        comment6_7 = request.POST.get("comment6_7")
+        exception6_7 = request.POST.get("exception6_7")
+        f6_8 = request.POST.get("f6_8")
+        comment6_8 = request.POST.get("comment6_8")
+        exception6_8 = request.POST.get("exception6_8")
+        f6_9 = request.POST.get("f6_9")
+        comment6_9 = request.POST.get("comment6_9")
+        exception6_9 = request.POST.get("exception6_9")
+        f7_1 = request.POST.get("f7_1")
+        comment7_1 = request.POST.get("comment7_1")
+        exception7_1 = request.POST.get("exception7_1")
+        f7_2 = request.POST.get("f7_2")
+        comment7_2 = request.POST.get("comment7_2")
+        exception7_2 = request.POST.get("exception7_2")
+        f7_3 = request.POST.get("f7_3")
+        comment7_3 = request.POST.get("comment7_3")
+        exception7_3 = request.POST.get("exception7_3")
+        f7_4 = request.POST.get("f7_4")
+        comment7_4 = request.POST.get("comment7_4")
+        exception7_4 = request.POST.get("exception7_4")
+        f7_5 = request.POST.get("f7_5")
+        comment7_5 = request.POST.get("comment7_5")
+        exception7_5 = request.POST.get("exception7_5")
+        f8_1 = request.POST.get("f8_1")
+        comment8_1 = request.POST.get("comment8_1")
+        exception8_1 = request.POST.get("exception8_1")
+        f8_2 = request.POST.get("f8_2")
+        comment8_2 = request.POST.get("comment8_1")
+        exception8_2 = request.POST.get("exception8_2")
+        f8_3 = request.POST.get("f8_3")
+        comment8_3 = request.POST.get("comment8_3")
+        exception8_3 = request.POST.get("exception8_3")
+        f8_4 = request.POST.get("f8_4")
+        comment8_4 = request.POST.get("comment8_4")
+        exception8_4 = request.POST.get("exception8_4")
+        f8_5 = request.POST.get("f8_5")
+        comment8_5 = request.POST.get("comment8_5")
+        exception8_5 = request.POST.get("exception8_5")
+        f8_6 = request.POST.get("f8_6")
+        comment8_6 = request.POST.get("comment8_6")
+        exception8_6 = request.POST.get("exception8_6")
+        f9_1 = request.POST.get("f9_1")
+        comment9_1= request.POST.get("comment9_1")
+        exception9_1 = request.POST.get("exception9_1")
+        f9_2 = request.POST.get("f9_2")
+        comment9_2 = request.POST.get("comment9_2")
+        exception9_2 = request.POST.get("exception9_2")
+        f9_3 = request.POST.get("f9_3")
+        comment9_3 = request.POST.get("comment9_3")
+        exception9_3 = request.POST.get("exception9_3")
+        f9_4 = request.POST.get("f9_4")
+        comment9_4 = request.POST.get("comment9_4")
+        exception9_4 = request.POST.get("exception9_4")
+        f9_5 = request.POST.get("f9_5")
+        comment9_5 = request.POST.get("comment9_5")
+        exception9_5 = request.POST.get("exception9_5")
+        f9_6 = request.POST.get("f9_6")
+        comment9_6= request.POST.get("comment9_6")
+        exception9_6 = request.POST.get("exception9_6")
+        f9_7 = request.POST.get("f9_7")
+        comment9_7 = request.POST.get("comment9_7")
+        exception9_7 = request.POST.get("exception9_7")
+        f10_1 = request.POST.get("f10_1")
+        comment10_1 = request.POST.get("comment10_1")
+        exception10_1 = request.POST.get("exception10_1")
+        f10_2 = request.POST.get("f10_2")
+        comment10_2 = request.POST.get("comment10_2")
+        exception10_2 = request.POST.get("exception10_2")
+        f10_3 = request.POST.get("f10_3")
+        comment10_3 = request.POST.get("comment10_3")
+        exception10_3 = request.POST.get("exception10_3")
+
+        input_data = {
+            'f1_1': f1_1,
+            'comment1_1': comment1_1,
+            'exception1_1': exception1_1,
+            'f1_2': f1_2,
+            'comment1_2': comment1_2,
+            'exception1_2': exception1_2,
+            'f1_3': f1_3,
+            'comment1_3': comment1_3,
+            'exception1_3': exception1_3,
+            'f1_4': f1_4,
+            'comment1_4': comment1_4,
+            'exception1_4': exception1_4,
+            'f1_5': f1_5,
+            'comment1_5': comment1_5,
+            'exception1_5': exception1_5,
+            'f2_1': f2_1,
+            'comment2_1': comment2_1,
+            'exception2_1': exception2_1,
+            'f2_2': f2_2,
+            'comment2_2': comment2_2,
+            'exception2_2': exception2_2,
+            'f2_3': f2_3,
+            'comment2_3': comment2_3,
+            'exception2_3': exception2_3,
+            'f2_4': f2_4,
+            'comment2_4': comment2_4,
+            'exception2_4': exception2_4,
+            'f2_5': f2_5,
+            'comment2_5': comment2_5,
+            'exception2_5': exception2_5,
+            'f2_6': f2_6,
+            'comment2_6': comment2_6,
+            'exception2_6': exception2_6,
+            'f3_1': f3_1,
+            'comment3_1': comment3_1,
+            'exception3_1': exception3_1,
+            'f3_2': f3_2,
+            'comment3_2': comment3_2,
+            'exception3_2': exception3_2,
+            'f3_3': f3_3,
+            'comment3_3': comment3_3,
+            'exception3_3': exception3_3,
+            'f3_4': f3_4,
+            'comment3_4': comment3_4,
+            'exception3_4': exception3_4,
+            'f3_5': f3_5,
+            'comment3_5': comment3_5,
+            'exception3_5': exception3_5,
+            'f4_1': f4_1,
+            'comment4_1': comment4_1,
+            'exception4_1': exception4_1,
+            'f4_2': f4_2,
+            'comment4_2': comment4_2,
+            'exception4_2': exception4_2,
+            'f4_3': f4_3,
+            'comment4_3': comment4_3,
+            'exception4_3': exception4_3,
+            'f4_4': f4_4,
+            'comment4_4': comment4_4,
+            'exception4_4': exception4_4,
+            'f5_1': f5_1,
+            'comment5_1': comment5_1,
+            'exception5_1': exception5_1,
+            'f5_2': f5_2,
+            'comment5_2': comment5_2,
+            'exception5_2': exception5_2,
+            'f5_3': f5_3,
+            'comment5_3': comment5_3,
+            'exception5_3': exception5_3,
+            'f5_4': f5_4,
+            'comment5_4': comment5_4,
+            'exception5_4': exception5_4,
+            'f5_5': f5_5,
+            'comment5_5': comment5_5,
+            'exception5_5': exception5_5,
+            'f5_6': f5_6,
+            'comment5_6': comment5_6,
+            'exception5_6': exception5_6,
+            'f6_1': f6_1,
+            'comment6_1': comment6_1,
+            'exception6_1': exception6_1,
+            'f6_2': f6_2,
+            'comment6_2': comment6_2,
+            'exception6_2': exception6_2,
+            'f6_3': f6_3,
+            'comment6_3': comment6_3,
+            'exception6_3': exception6_3,
+            'f6_4': f6_4,
+            'comment6_4': comment6_4,
+            'exception6_4': exception6_4,
+            'f6_5': f6_5,
+            'comment6_5': comment6_5,
+            'exception6_5': exception6_5,
+            'f6_6': f6_6,
+            'comment6_6': comment6_6,
+            'exception6_6': exception6_6,
+            'f6_7': f6_7,
+            'comment6_7': comment6_7,
+            'exception6_7': exception6_7,
+            'f6_8': f6_8,
+            'comment6_8': comment6_8,
+            'exception6_8': exception6_8,
+            'f6_9': f6_9,
+            'comment6_9': comment6_9,
+            'exception6_9': exception6_9,
+            'f7_1': f7_1,
+            'comment7_1': comment7_1,
+            'exception7_1': exception7_1,
+            'f7_2': f7_2,
+            'comment7_2': comment7_2,
+            'exception7_2': exception7_2,
+            'f7_3': f7_3,
+            'comment7_3': comment7_3,
+            'exception7_3': exception7_3,
+            'f7_4': f7_4,
+            'comment7_4': comment7_4,
+            'exception7_4': exception7_4,
+            'f7_5': f7_5,
+            'comment7_5': comment7_5,
+            'exception7_5': exception7_5,
+            'f8_1': f8_1,
+            'comment8_1': comment8_1,
+            'exception8_1': exception8_1,
+            'f8_2': f8_2,
+            'comment8_2': comment8_2,
+            'exception8_2': exception8_2,
+            'f8_3': f8_3,
+            'comment8_3': comment8_3,
+            'exception8_3': exception8_3,
+            'f8_4': f8_4,
+            'comment8_4': comment8_4,
+            'exception8_4': exception8_4,
+            'f8_5': f8_5,
+            'comment8_5': comment8_5,
+            'exception8_5': exception8_5,
+            'f8_6': f8_6,
+            'comment8_6': comment8_6,
+            'exception8_6': exception8_6,
+            'f9_1':f9_1,
+            'comment9_1': comment9_1,
+            'exception9_1': exception9_1,
+            'f9_2': f9_2,
+            'comment9_2': comment9_2,
+            'exception9_2': exception9_2,
+            'f9_3': f9_3,
+            'comment9_3': comment9_3,
+            'exception9_3': exception9_3,
+            'f9_4': f9_4,
+            'comment9_4': comment9_4,
+            'exception9_4': exception9_4,
+            'f9_5': f9_5,
+            'comment9_5': comment9_5,
+            'exception9_5': exception9_5,
+            'f9_6': f9_6,
+            'comment9_6': comment9_6,
+            'exception9_6': exception9_6,
+            'f9_7': f9_7,
+            'comment9_7': comment9_7,
+            'exception9_7': exception9_7,
+            'f10_1': f10_1,
+            'comment10_1': comment10_1,
+            'exception10_1': exception10_1,
+            'f10_2': f10_2,
+            'comment10_2': comment10_2,
+            'exception10_2': exception10_2,
+            'f10_3': f10_3,
+            'comment10_3': comment10_3,
+            'exception10_3': exception10_3,
+        }
+
+        context = {
+            'input_data': input_data,
+        }
+        return render(request, 'social_score.html', context)
+    return render(request, 'social_1_scoring.html')
+
+
+@login_required
+def social_score(request):
+    if request.method == 'POST':
+        inequality = request.POST.get("inequality")
+        s_comment1 = request.POST.get("s_comment1")
+        exception1 = request.POST.get("exception1")
+        social_cohesion = request.POST.get("social_cohesion")
+        s_comment2 = request.POST.get("s_comment2")
+        exception2 = request.POST.get("exception2")
+        social_integration = request.POST.get("social_integration")
+        s_comment3 = request.POST.get("s_comment3")
+        exception3 = request.POST.get("exception3")
+        labour_relations = request.POST.get("labour_relations")
+        s_comment4 = request.POST.get("s_comment4")
+        exception4 = request.POST.get("exception4")
+        investment_human_capital = request.POST.get("investment_human_capital")
+        s_comment5 = request.POST.get("s_comment5")
+        exception5 = request.POST.get("exception5")
+        economically_socially_communities = request.POST.get("economically_socially_communities")
+        s_comment6 = request.POST.get("s_comment6")
+        exception6 = request.POST.get("exception6")
+        supply_chain_management_s = request.POST.get("supply_chain_management_s")
+        s_comment7 = request.POST.get("s_comment7")
+        exception7 = request.POST.get("exception7")
+
+        input_data = {
+            'inequality': inequality,
+            's_comment1': s_comment1,
+            'exception1': exception1,
+            'social_cohesion': social_cohesion,
+            's_comment2': s_comment2,
+            'exception2': exception2,
+            'social_integration': social_integration,
+            's_comment3': s_comment3,
+            'exception3': exception3,
+            'labour_relations': labour_relations,
+            's_comment4': s_comment4,
+            'exception4': exception4,
+            'investment_human_capital': investment_human_capital,
+            's_comment5': s_comment5,
+            'exception5': exception5,
+            'economically_socially_communities': economically_socially_communities,
+            's_comment6': s_comment6,
+            'exception6': exception6,
+            'supply_chain_management_s': supply_chain_management_s,
+            's_comment7': s_comment7,
+            'exception7': exception7,
+        }
+
+        table = socialCalculations(input_data, request)
+        s_total_score = table.s1_all()[0]
+        s_avg_score = table.s1_all()[1]
+
+        context = {
+            'input_data': input_data,
+            'company_name': request.session.get('company_name'),
+            's1_1': inequality,
+            's1_2': social_cohesion,
+            's1_3': social_integration,
+            's1_4': labour_relations,
+            's1_5': investment_human_capital,
+            's1_6': economically_socially_communities,
+            's1_7': supply_chain_management_s,
+            's_comment1': s_comment1,
+            's_comment2': s_comment2,
+            's_comment3': s_comment3,
+            's_comment4': s_comment4,
+            's_comment5': s_comment5,
+            's_comment6': s_comment6,
+            's_comment7': s_comment7,
+            's_total_score': s_total_score,
+            's_avg_score': s_avg_score,
+        }
+        return render(request, 'final_scoring_client.html', context)
+    return render(request, 'social_score.html')
+
+
+# if client select only Governance and Governance scoring :
+@login_required
+def only_governance(request):
+    if request.method == 'POST':
+        f1_1 = request.POST.get("f1_1")
+        comment1_1 = request.POST.get("comment1_1")
+        exception1_1 = request.POST.get("exception1_1")
+        f1_2 = request.POST.get("f1_2")
+        comment1_2 = request.POST.get("comment1_2")
+        exception1_2 = request.POST.get("exception1_2")
+        f1_3 = request.POST.get("f1_3")
+        comment1_3 = request.POST.get("comment1_3")
+        exception1_3 = request.POST.get("exception1_3")
+        f1_4 = request.POST.get("f1_4")
+        comment1_4 = request.POST.get("comment1_4")
+        exception1_4 = request.POST.get("exception1_4")
+        f1_5 = request.POST.get("f1_5")
+        comment1_5 = request.POST.get("comment1_5")
+        exception1_5 = request.POST.get("exception1_5")
+        f1_6 = request.POST.get("f1_6")
+        comment1_6 = request.POST.get("comment1_6")
+        exception1_6 = request.POST.get("exception1_6")
+        f1_7 = request.POST.get("f1_7")
+        comment1_7 = request.POST.get("comment1_7")
+        exception1_7 = request.POST.get("exception1_7")
+        f1_8 = request.POST.get("f1_8")
+        comment1_8 = request.POST.get("comment1_8")
+        exception1_8 = request.POST.get("exception1_8")
+        f1_9 = request.POST.get("f1_9")
+        comment1_9 = request.POST.get("comment1_9")
+        exception1_9 = request.POST.get("exception1_9")
+        f2_1 = request.POST.get("f2_1")
+        comment2_1 = request.POST.get("comment2_1")
+        exception2_1 = request.POST.get("exception2_1")
+        f2_2 = request.POST.get("f2_2")
+        comment2_2 = request.POST.get("comment2_2")
+        exception2_2 = request.POST.get("exception2_2")
+        f2_3 = request.POST.get("f2_3")
+        comment2_3 = request.POST.get("comment2_3")
+        exception2_3 = request.POST.get("exception2_3")
+        f2_4 = request.POST.get("f2_4")
+        comment2_4 = request.POST.get("comment2_4")
+        exception2_4 = request.POST.get("exception2_4")
+        f2_5 = request.POST.get("f2_5")
+        comment2_5 = request.POST.get("comment2_5")
+        exception2_5 = request.POST.get("exception2_5")
+        f3_1 = request.POST.get("f3_1")
+        comment3_1 = request.POST.get("comment3_1")
+        exception3_1 = request.POST.get("exception3_1")
+        f3_2 = request.POST.get("f3_2")
+        comment3_2 = request.POST.get("comment3_2")
+        exception3_2 = request.POST.get("exception3_2")
+        f3_3 = request.POST.get("f3_3")
+        comment3_3 = request.POST.get("comment3_3")
+        exception3_3 = request.POST.get("exception3_3")
+        f3_4 = request.POST.get("f3_4")
+        comment3_4 = request.POST.get("comment3_4")
+        exception3_4 = request.POST.get("exception3_4")
+        f3_5 = request.POST.get("f3_5")
+        comment3_5 = request.POST.get("comment3_5")
+        exception3_5 = request.POST.get("exception3_5")
+        f4_1 = request.POST.get("f4_1")
+        comment4_1 = request.POST.get("comment4_1")
+        exception4_1 = request.POST.get("exception4_1")
+        f4_2 = request.POST.get("f4_2")
+        comment4_2 = request.POST.get("comment4_2")
+        exception4_2 = request.POST.get("exception4_2")
+        f4_3 = request.POST.get("f4_3")
+        comment4_3 = request.POST.get("comment4_3")
+        exception4_3 = request.POST.get("exception4_3")
+        f5_1 = request.POST.get("f5_1")
+        comment5_1 = request.POST.get("comment5_1")
+        exception5_1 = request.POST.get("exception5_1")
+        f5_2 = request.POST.get("f5_2")
+        comment5_2 = request.POST.get("comment5_2")
+        exception5_2 = request.POST.get("exception5_2")
+        f5_3 = request.POST.get("f5_3")
+        comment5_3 = request.POST.get("comment5_3")
+        exception5_3 = request.POST.get("exception5_3")
+        f5_4 = request.POST.get("f5_4")
+        comment5_4 = request.POST.get("comment5_4")
+        exception5_4 = request.POST.get("exception5_4")
+        f5_5 = request.POST.get("f5_5")
+        comment5_5 = request.POST.get("comment5_5")
+        exception5_5 = request.POST.get("exception5_5")
+        f5_6 = request.POST.get("f5_6")
+        comment5_6 = request.POST.get("comment5_6")
+        exception5_6 = request.POST.get("exception5_6")
+        f6_1 = request.POST.get("f6_1")
+        comment6_1 = request.POST.get("comment6_1")
+        exception6_1 = request.POST.get("exception6_1")
+        f6_2 = request.POST.get("f6_2")
+        comment6_2 = request.POST.get("comment6_2")
+        exception6_2 = request.POST.get("exception6_2")
+        f6_3 = request.POST.get("f6_3")
+        comment6_3 = request.POST.get("comment6_3")
+        exception6_3 = request.POST.get("exception6_3")
+        f6_4 = request.POST.get("f6_4")
+        comment6_4 = request.POST.get("comment6_4")
+        exception6_4 = request.POST.get("exception6_4")
+        f6_5 = request.POST.get("f6_5")
+        comment6_5 = request.POST.get("comment6_5")
+        exception6_5 = request.POST.get("exception6_5")
+        f6_6 = request.POST.get("f6_6")
+        comment6_6 = request.POST.get("comment6_6")
+        exception6_6 = request.POST.get("exception6_6")
+        f6_7 = request.POST.get("f6_7")
+        comment6_7 = request.POST.get("comment6_7")
+        exception6_7 = request.POST.get("exception6_7")
+        f6_8 = request.POST.get("f6_8")
+        comment6_8 = request.POST.get("comment6_8")
+        exception6_8 = request.POST.get("exception6_8")
+        f6_9 = request.POST.get("f6_9")
+        comment6_9 = request.POST.get("comment6_9")
+        exception6_9 = request.POST.get("exception6_9")
+
+        input_data = {
+            'f1_1': f1_1,
+            'comment1_1': comment1_1,
+            'exception1_1': exception1_1,
+            'f1_2': f1_2,
+            'comment1_2': comment1_2,
+            'exception1_2': exception1_2,
+            'f1_3': f1_3,
+            'comment1_3': comment1_3,
+            'exception1_3': exception1_3,
+            'f1_4': f1_4,
+            'comment1_4': comment1_4,
+            'exception1_4': exception1_4,
+            'f1_5': f1_5,
+            'comment1_5': comment1_5,
+            'exception1_5': exception1_5,
+            'f1_6': f1_6,
+            'comment1_6': comment1_6,
+            'exception1_6': exception1_6,
+            'f1_7': f1_7,
+            'comment1_7': comment1_7,
+            'exception1_7': exception1_7,
+            'f1_8': f1_8,
+            'comment1_8': comment1_8,
+            'exception1_8': exception1_8,
+            'f1_9': f1_9,
+            'comment1_9': comment1_9,
+            'exception1_9': exception1_9,
+            'f2_1': f2_1,
+            'comment2_1': comment2_1,
+            'exception2_1': exception2_1,
+            'f2_2': f2_2,
+            'comment2_2': comment2_2,
+            'exception2_2': exception2_2,
+            'f2_3': f2_3,
+            'comment2_3': comment2_3,
+            'exception2_3': exception2_3,
+            'f2_4': f2_4,
+            'comment2_4': comment2_4,
+            'exception2_4': exception2_4,
+            'f2_5': f2_5,
+            'comment2_5': comment2_5,
+            'exception2_5': exception2_5,
+            'f3_1': f3_1,
+            'comment3_1': comment3_1,
+            'exception3_1': exception3_1,
+            'f3_2': f3_2,
+            'comment3_2': comment3_2,
+            'exception3_2': exception3_2,
+            'f3_3': f3_3,
+            'comment3_3': comment3_3,
+            'exception3_3': exception3_3,
+            'f3_4': f3_4,
+            'comment3_4': comment3_4,
+            'exception3_4': exception3_4,
+            'f3_5': f3_5,
+            'comment3_5': comment3_5,
+            'exception3_5': exception3_5,
+            'f4_1': f4_1,
+            'comment4_1': comment4_1,
+            'exception4_1': exception4_1,
+            'f4_2': f4_2,
+            'comment4_2': comment4_2,
+            'exception4_2': exception4_2,
+            'f4_3': f4_3,
+            'comment4_3': comment4_3,
+            'exception4_3': exception4_3,
+            'f5_1': f5_1,
+            'comment5_1': comment5_1,
+            'exception5_1': exception5_1,
+            'f5_2': f5_2,
+            'comment5_2': comment5_2,
+            'exception5_2': exception5_2,
+            'f5_3': f5_3,
+            'comment5_3': comment5_3,
+            'exception5_3': exception5_3,
+            'f5_4': f5_4,
+            'comment5_4': comment5_4,
+            'exception5_4': exception5_4,
+            'f5_5': f5_5,
+            'comment5_5': comment5_5,
+            'exception5_5': exception5_5,
+            'f5_6': f5_6,
+            'comment5_6': comment5_6,
+            'exception5_6': exception5_6,
+            'f6_1': f6_1,
+            'comment6_1': comment6_1,
+            'exception6_1': exception6_1,
+            'f6_2': f6_2,
+            'comment6_2': comment6_2,
+            'exception6_2': exception6_2,
+            'f6_3': f6_3,
+            'comment6_3': comment6_3,
+            'exception6_3': exception6_3,
+            'f6_4': f6_4,
+            'comment6_4': comment6_4,
+            'exception6_4': exception6_4,
+            'f6_5': f6_5,
+            'comment6_5': comment6_5,
+            'exception6_5': exception6_5,
+            'f6_6': f6_6,
+            'comment6_6': comment6_6,
+            'exception6_6': exception6_6,
+            'f6_7': f6_7,
+            'comment6_7': comment6_7,
+            'exception6_7': exception6_7,
+            'f6_8': f6_8,
+            'comment6_8': comment6_8,
+            'exception6_8': exception6_8,
+            'f6_9': f6_9,
+            'comment6_9': comment6_9,
+            'exception6_9': exception6_9,
+        }
+
+        context = {
+            'input_data': input_data,
+        }
+        return render(request, 'only_governance_scoring.html', context)
+    return render(request, 'only_governance.html')
+
+
+@login_required
+def only_governance_scoring(request):
+    if request.method == 'POST':
+        employee_relations = request.POST.get("employee_relations")
+        g_comment1 = request.POST.get("g_comment1")
+        exception1 = request.POST.get("exception1")
+        sound_management_structures = request.POST.get("sound_management_structures")
+        g_comment2 = request.POST.get("g_comment2")
+        exception2 = request.POST.get("exception2")
+        remuneration_staff = request.POST.get("remuneration_staff")
+        g_comment3 = request.POST.get("g_comment3")
+        exception3 = request.POST.get("exception3")
+        tax = request.POST.get("tax")
+        g_comment4 = request.POST.get("g_comment4")
+        exception4 = request.POST.get("exception4")
+        corporate_governance = request.POST.get("corporate_governance")
+        g_comment5 = request.POST.get("g_comment5")
+        exception5 = request.POST.get("exception5")
+        governance_other = request.POST.get("governance_other")
+        g_comment6 = request.POST.get("g_comment6")
+        exception6 = request.POST.get("exception6")
+
+        input_data = {
+            'employee_relations': employee_relations,
+            'g_comment1': g_comment1,
+            'exception1': exception1,
+            'sound_management_structures': sound_management_structures,
+            'g_comment2': g_comment2,
+            'exception2': exception2,
+            'remuneration_staff': remuneration_staff,
+            'g_comment3': g_comment3,
+            'exception3': exception3,
+            'tax': tax,
+            'g_comment4': g_comment4,
+            'exception4': exception4,
+            'corporate_governance': corporate_governance,
+            'g_comment5': g_comment5,
+            'exception5': exception5,
+            'governance_other': governance_other,
+            'g_comment6': g_comment6,
+            'exception6': exception6,
+        }
+
+        table = governanceCalculations(input_data, request)
+        g_total_score = table.g1_all()[0]
+        g_avg_score = table.g1_all()[1]
+
+        context = {
+            'input_data': input_data,
+            # 'e2_1': request.session.get('e2_1'),
+            # 'e2_2': request.session.get('e2_2'),
+            # 'e2_3': request.session.get('e2_3'),
+            # 'e2_4': request.session.get('e2_4'),
+            # 'e2_5': request.session.get('e2_5'),
+            # 'e2_6': request.session.get('e2_6'),
+            # 'e2_7': request.session.get('e2_7'),
+            # 'e2_8': request.session.get('e2_8'),
+            # 'e2_9': request.session.get('e2_9'),
+            # 'e2_10': request.session.get('e2_10'),
+            # 'comment1': request.session.get('comment1'),
+            # 'comment2': request.session.get('comment2'),
+            # 'comment3': request.session.get('comment3'),
+            # 'comment4': request.session.get('comment4'),
+            # 'comment5': request.session.get('comment5'),
+            # 'comment6': request.session.get('comment6'),
+            # 'comment7': request.session.get('comment7'),
+            # 'comment8': request.session.get('comment8'),
+            # 'comment9': request.session.get('comment9'),
+            # 'comment10': request.session.get('comment10'),
+            # 'total_score': request.session.get('total_score'),
+            # 'avg_score': request.session.get('avg_score'),
+            'company_name': request.session.get('company_name'),
+            # 's1_1': request.session.get('s1_1'),
+            # 's1_2': request.session.get('s1_2'),
+            # 's1_3': request.session.get('s1_3'),
+            # 's1_4': request.session.get('s1_4'),
+            # 's1_5': request.session.get('s1_5'),
+            # 's1_6': request.session.get('s1_6'),
+            # 's1_7': request.session.get('s1_7'),
+            # 's_comment1': request.session.get('s_comment1'),
+            # 's_comment2': request.session.get('s_comment2'),
+            # 's_comment3': request.session.get('s_comment3'),
+            # 's_comment4': request.session.get('s_comment4'),
+            # 's_comment5': request.session.get('s_comment5'),
+            # 's_comment6': request.session.get('s_comment6'),
+            # 's_comment7': request.session.get('s_comment7'),
+            # 's_total_score': request.session.get('s_total_score'),
+            # 's_avg_score': request.session.get('s_avg_score'),
+            'g1_1': employee_relations,
+            'g_comment1': g_comment1,
+            'g1_2': sound_management_structures,
+            'g_comment2': g_comment2,
+            'g1_3': remuneration_staff,
+            'g_comment3': g_comment3,
+            'g1_4': tax,
+            'g_comment4': g_comment4,
+            'g1_5': corporate_governance,
+            'g_comment5': g_comment5,
+            'g1_6': governance_other,
+            'g_comment6': g_comment6,
+            'g_total_score': g_total_score,
+            'g_avg_score': g_avg_score,
+        }
+        return render(request, 'final_scoring_client.html', context)
+    return render(request, 'only_governance_scoring.html')
+
+
+# if client select Social and Governance option to fill form :
+@login_required
+def social_1_select(request):
+    if request.method == 'POST':
+        f1_1 = request.POST.get("f1_1")
+        comment1_1 = request.POST.get("comment1_1")
+        exception1_1 = request.POST.get("exception1_1")
+        f1_2 = request.POST.get("f1_2")
+        comment1_2 = request.POST.get("comment1_2")
+        exception1_2 = request.POST.get("exception1_2")
+        f1_3 = request.POST.get("f1_3")
+        comment1_3 = request.POST.get("comment1_3")
+        exception1_3 = request.POST.get("exception1_3")
+        f1_4 = request.POST.get("f1_4")
+        comment1_4 = request.POST.get("comment1_4")
+        exception1_4 = request.POST.get("exception1_4")
+        f1_5 = request.POST.get("f1_5")
+        comment1_5 = request.POST.get("comment1_5")
+        exception1_5 = request.POST.get("exception1_5")
+        f2_1 = request.POST.get("f2_1")
+        comment2_1 = request.POST.get("comment2_1")
+        exception2_1 = request.POST.get("exception2_1")
+        f2_2 = request.POST.get("f2_2")
+        comment2_2 = request.POST.get("comment2_2")
+        exception2_2 = request.POST.get("exception2_2")
+        f2_3 = request.POST.get("f2_3")
+        comment2_3 = request.POST.get("comment2_3")
+        exception2_3 = request.POST.get("exception2_3")
+        f2_4 = request.POST.get("f2_4")
+        comment2_4 = request.POST.get("comment2_4")
+        exception2_4 = request.POST.get("exception2_4")
+        f2_5 = request.POST.get("f2_5")
+        comment2_5 = request.POST.get("comment2_5")
+        exception2_5 = request.POST.get("exception2_5")
+        f2_6 = request.POST.get("f2_6")
+        comment2_6 = request.POST.get("comment2_6")
+        exception2_6 = request.POST.get("exception2_6")
+        f3_1 = request.POST.get("f3_1")
+        comment3_1 = request.POST.get("comment3_1")
+        exception3_1 = request.POST.get("exception3_1")
+        f3_2 = request.POST.get("f3_2")
+        comment3_2 = request.POST.get("comment3_2")
+        exception3_2 = request.POST.get("exception3_2")
+        f3_3 = request.POST.get("f3_3")
+        comment3_3 = request.POST.get("comment3_3")
+        exception3_3 = request.POST.get("exception3_3")
+        f3_4 = request.POST.get("f3_4")
+        comment3_4 = request.POST.get("comment3_4")
+        exception3_4 = request.POST.get("exception3_4")
+        f3_5 = request.POST.get("f3_5")
+        comment3_5 = request.POST.get("comment3_5")
+        exception3_5 = request.POST.get("exception3_5")
+        f4_1 = request.POST.get("f4_1")
+        comment4_1 = request.POST.get("comment4_1")
+        exception4_1 = request.POST.get("exception4_1")
+        f4_2 = request.POST.get("f4_2")
+        comment4_2 = request.POST.get("comment4_2")
+        exception4_2 = request.POST.get("exception4_2")
+        f4_3 = request.POST.get("f4_3")
+        comment4_3 = request.POST.get("comment4_3")
+        exception4_3 = request.POST.get("exception4_3")
+        f4_4 = request.POST.get("f4_4")
+        comment4_4 = request.POST.get("comment4_4")
+        exception4_4 = request.POST.get("exception4_4")
+        f5_1 = request.POST.get("f5_1")
+        comment5_1 = request.POST.get("comment5_1")
+        exception5_1 = request.POST.get("exception5_1")
+        f5_2 = request.POST.get("f5_2")
+        comment5_2 = request.POST.get("comment5_2")
+        exception5_2 = request.POST.get("exception5_2")
+        f5_3 = request.POST.get("f5_3")
+        comment5_3 = request.POST.get("comment5_3")
+        exception5_3 = request.POST.get("exception5_3")
+        f5_4 = request.POST.get("f5_4")
+        comment5_4 = request.POST.get("comment5_4")
+        exception5_4 = request.POST.get("exception5_4")
+        f5_5 = request.POST.get("f5_5")
+        comment5_5 = request.POST.get("comment5_5")
+        exception5_5 = request.POST.get("exception5_5")
+        f5_6 = request.POST.get("f5_6")
+        comment5_6 = request.POST.get("comment5_6")
+        exception5_6 = request.POST.get("exception5_6")
+        f6_1 = request.POST.get("f6_1")
+        comment6_1 = request.POST.get("comment6_1")
+        exception6_1 = request.POST.get("exception6_1")
+        f6_2 = request.POST.get("f6_2")
+        comment6_2 = request.POST.get("comment6_2")
+        exception6_2 = request.POST.get("exception6_2")
+        f6_3 = request.POST.get("f6_3")
+        comment6_3 = request.POST.get("comment6_3")
+        exception6_3 = request.POST.get("exception6_3")
+        f6_4 = request.POST.get("f6_4")
+        comment6_4 = request.POST.get("comment6_4")
+        exception6_4 = request.POST.get("exception6_4")
+        f6_5 = request.POST.get("f6_5")
+        comment6_5 = request.POST.get("comment6_5")
+        exception6_5 = request.POST.get("exception6_5")
+        f6_6 = request.POST.get("f6_6")
+        comment6_6 = request.POST.get("comment6_6")
+        exception6_6 = request.POST.get("exception6_6")
+        f6_7 = request.POST.get("f6_7")
+        comment6_7 = request.POST.get("comment6_7")
+        exception6_7 = request.POST.get("exception6_7")
+        f6_8 = request.POST.get("f6_8")
+        comment6_8 = request.POST.get("comment6_8")
+        exception6_8 = request.POST.get("exception6_8")
+        f6_9 = request.POST.get("f6_9")
+        comment6_9 = request.POST.get("comment6_9")
+        exception6_9 = request.POST.get("exception6_9")
+        f7_1 = request.POST.get("f7_1")
+        comment7_1 = request.POST.get("comment7_1")
+        exception7_1 = request.POST.get("exception7_1")
+        f7_2 = request.POST.get("f7_2")
+        comment7_2 = request.POST.get("comment7_2")
+        exception7_2 = request.POST.get("exception7_2")
+        f7_3 = request.POST.get("f7_3")
+        comment7_3 = request.POST.get("comment7_3")
+        exception7_3 = request.POST.get("exception7_3")
+        f7_4 = request.POST.get("f7_4")
+        comment7_4 = request.POST.get("comment7_4")
+        exception7_4 = request.POST.get("exception7_4")
+        f7_5 = request.POST.get("f7_5")
+        comment7_5 = request.POST.get("comment7_5")
+        exception7_5 = request.POST.get("exception7_5")
+        f8_1 = request.POST.get("f8_1")
+        comment8_1 = request.POST.get("comment8_1")
+        exception8_1 = request.POST.get("exception8_1")
+        f8_2 = request.POST.get("f8_2")
+        comment8_2 = request.POST.get("comment8_1")
+        exception8_2 = request.POST.get("exception8_2")
+        f8_3 = request.POST.get("f8_3")
+        comment8_3 = request.POST.get("comment8_3")
+        exception8_3 = request.POST.get("exception8_3")
+        f8_4 = request.POST.get("f8_4")
+        comment8_4 = request.POST.get("comment8_4")
+        exception8_4 = request.POST.get("exception8_4")
+        f8_5 = request.POST.get("f8_5")
+        comment8_5 = request.POST.get("comment8_5")
+        exception8_5 = request.POST.get("exception8_5")
+        f8_6 = request.POST.get("f8_6")
+        comment8_6 = request.POST.get("comment8_6")
+        exception8_6 = request.POST.get("exception8_6")
+        f9_1 = request.POST.get("f9_1")
+        comment9_1= request.POST.get("comment9_1")
+        exception9_1 = request.POST.get("exception9_1")
+        f9_2 = request.POST.get("f9_2")
+        comment9_2 = request.POST.get("comment9_2")
+        exception9_2 = request.POST.get("exception9_2")
+        f9_3 = request.POST.get("f9_3")
+        comment9_3 = request.POST.get("comment9_3")
+        exception9_3 = request.POST.get("exception9_3")
+        f9_4 = request.POST.get("f9_4")
+        comment9_4 = request.POST.get("comment9_4")
+        exception9_4 = request.POST.get("exception9_4")
+        f9_5 = request.POST.get("f9_5")
+        comment9_5 = request.POST.get("comment9_5")
+        exception9_5 = request.POST.get("exception9_5")
+        f9_6 = request.POST.get("f9_6")
+        comment9_6= request.POST.get("comment9_6")
+        exception9_6 = request.POST.get("exception9_6")
+        f9_7 = request.POST.get("f9_7")
+        comment9_7 = request.POST.get("comment9_7")
+        exception9_7 = request.POST.get("exception9_7")
+        f10_1 = request.POST.get("f10_1")
+        comment10_1 = request.POST.get("comment10_1")
+        exception10_1 = request.POST.get("exception10_1")
+        f10_2 = request.POST.get("f10_2")
+        comment10_2 = request.POST.get("comment10_2")
+        exception10_2 = request.POST.get("exception10_2")
+        f10_3 = request.POST.get("f10_3")
+        comment10_3 = request.POST.get("comment10_3")
+        exception10_3 = request.POST.get("exception10_3")
+
+        input_data = {
+            'f1_1': f1_1,
+            'comment1_1': comment1_1,
+            'exception1_1': exception1_1,
+            'f1_2': f1_2,
+            'comment1_2': comment1_2,
+            'exception1_2': exception1_2,
+            'f1_3': f1_3,
+            'comment1_3': comment1_3,
+            'exception1_3': exception1_3,
+            'f1_4': f1_4,
+            'comment1_4': comment1_4,
+            'exception1_4': exception1_4,
+            'f1_5': f1_5,
+            'comment1_5': comment1_5,
+            'exception1_5': exception1_5,
+            'f2_1': f2_1,
+            'comment2_1': comment2_1,
+            'exception2_1': exception2_1,
+            'f2_2': f2_2,
+            'comment2_2': comment2_2,
+            'exception2_2': exception2_2,
+            'f2_3': f2_3,
+            'comment2_3': comment2_3,
+            'exception2_3': exception2_3,
+            'f2_4': f2_4,
+            'comment2_4': comment2_4,
+            'exception2_4': exception2_4,
+            'f2_5': f2_5,
+            'comment2_5': comment2_5,
+            'exception2_5': exception2_5,
+            'f2_6': f2_6,
+            'comment2_6': comment2_6,
+            'exception2_6': exception2_6,
+            'f3_1': f3_1,
+            'comment3_1': comment3_1,
+            'exception3_1': exception3_1,
+            'f3_2': f3_2,
+            'comment3_2': comment3_2,
+            'exception3_2': exception3_2,
+            'f3_3': f3_3,
+            'comment3_3': comment3_3,
+            'exception3_3': exception3_3,
+            'f3_4': f3_4,
+            'comment3_4': comment3_4,
+            'exception3_4': exception3_4,
+            'f3_5': f3_5,
+            'comment3_5': comment3_5,
+            'exception3_5': exception3_5,
+            'f4_1': f4_1,
+            'comment4_1': comment4_1,
+            'exception4_1': exception4_1,
+            'f4_2': f4_2,
+            'comment4_2': comment4_2,
+            'exception4_2': exception4_2,
+            'f4_3': f4_3,
+            'comment4_3': comment4_3,
+            'exception4_3': exception4_3,
+            'f4_4': f4_4,
+            'comment4_4': comment4_4,
+            'exception4_4': exception4_4,
+            'f5_1': f5_1,
+            'comment5_1': comment5_1,
+            'exception5_1': exception5_1,
+            'f5_2': f5_2,
+            'comment5_2': comment5_2,
+            'exception5_2': exception5_2,
+            'f5_3': f5_3,
+            'comment5_3': comment5_3,
+            'exception5_3': exception5_3,
+            'f5_4': f5_4,
+            'comment5_4': comment5_4,
+            'exception5_4': exception5_4,
+            'f5_5': f5_5,
+            'comment5_5': comment5_5,
+            'exception5_5': exception5_5,
+            'f5_6': f5_6,
+            'comment5_6': comment5_6,
+            'exception5_6': exception5_6,
+            'f6_1': f6_1,
+            'comment6_1': comment6_1,
+            'exception6_1': exception6_1,
+            'f6_2': f6_2,
+            'comment6_2': comment6_2,
+            'exception6_2': exception6_2,
+            'f6_3': f6_3,
+            'comment6_3': comment6_3,
+            'exception6_3': exception6_3,
+            'f6_4': f6_4,
+            'comment6_4': comment6_4,
+            'exception6_4': exception6_4,
+            'f6_5': f6_5,
+            'comment6_5': comment6_5,
+            'exception6_5': exception6_5,
+            'f6_6': f6_6,
+            'comment6_6': comment6_6,
+            'exception6_6': exception6_6,
+            'f6_7': f6_7,
+            'comment6_7': comment6_7,
+            'exception6_7': exception6_7,
+            'f6_8': f6_8,
+            'comment6_8': comment6_8,
+            'exception6_8': exception6_8,
+            'f6_9': f6_9,
+            'comment6_9': comment6_9,
+            'exception6_9': exception6_9,
+            'f7_1': f7_1,
+            'comment7_1': comment7_1,
+            'exception7_1': exception7_1,
+            'f7_2': f7_2,
+            'comment7_2': comment7_2,
+            'exception7_2': exception7_2,
+            'f7_3': f7_3,
+            'comment7_3': comment7_3,
+            'exception7_3': exception7_3,
+            'f7_4': f7_4,
+            'comment7_4': comment7_4,
+            'exception7_4': exception7_4,
+            'f7_5': f7_5,
+            'comment7_5': comment7_5,
+            'exception7_5': exception7_5,
+            'f8_1': f8_1,
+            'comment8_1': comment8_1,
+            'exception8_1': exception8_1,
+            'f8_2': f8_2,
+            'comment8_2': comment8_2,
+            'exception8_2': exception8_2,
+            'f8_3': f8_3,
+            'comment8_3': comment8_3,
+            'exception8_3': exception8_3,
+            'f8_4': f8_4,
+            'comment8_4': comment8_4,
+            'exception8_4': exception8_4,
+            'f8_5': f8_5,
+            'comment8_5': comment8_5,
+            'exception8_5': exception8_5,
+            'f8_6': f8_6,
+            'comment8_6': comment8_6,
+            'exception8_6': exception8_6,
+            'f9_1':f9_1,
+            'comment9_1': comment9_1,
+            'exception9_1': exception9_1,
+            'f9_2': f9_2,
+            'comment9_2': comment9_2,
+            'exception9_2': exception9_2,
+            'f9_3': f9_3,
+            'comment9_3': comment9_3,
+            'exception9_3': exception9_3,
+            'f9_4': f9_4,
+            'comment9_4': comment9_4,
+            'exception9_4': exception9_4,
+            'f9_5': f9_5,
+            'comment9_5': comment9_5,
+            'exception9_5': exception9_5,
+            'f9_6': f9_6,
+            'comment9_6': comment9_6,
+            'exception9_6': exception9_6,
+            'f9_7': f9_7,
+            'comment9_7': comment9_7,
+            'exception9_7': exception9_7,
+            'f10_1': f10_1,
+            'comment10_1': comment10_1,
+            'exception10_1': exception10_1,
+            'f10_2': f10_2,
+            'comment10_2': comment10_2,
+            'exception10_2': exception10_2,
+            'f10_3': f10_3,
+            'comment10_3': comment10_3,
+            'exception10_3': exception10_3,
+        }
+
+        context = {
+            'input_data': input_data,
+        }
+        return render(request, 'social_screening.html', context)
+    return render(request, 'social_1_select.html')
 
 
 @login_required
@@ -783,6 +1896,7 @@ def environment1_2(request):
     return render(request, 'environment1_2.html')
 
 
+@login_required
 def environment1_3(request):
     if request.method == 'POST':
         set_of_policies_water = request.POST.get("set_of_policies_water")
@@ -826,6 +1940,7 @@ def environment1_3(request):
     return render(request, 'environment1_3.html')
 
 
+@login_required
 def environment1_4(request):
     if request.method == 'POST':
         land_clearance = request.POST.get("land_clearance")
@@ -863,6 +1978,7 @@ def environment1_4(request):
     return render(request, 'environment1_4.html')
 
 
+@login_required
 def environment1_5(request):
     if request.method == 'POST':
         set_policies_waste = request.POST.get("set_policies_waste")
@@ -906,6 +2022,7 @@ def environment1_5(request):
     return render(request, 'environment1_5.html')
 
 
+@login_required
 def environment1_6(request):
     if request.method == 'POST':
         carbon_intensive = request.POST.get("carbon_intensive")
@@ -973,6 +2090,7 @@ def environment1_6(request):
     return render(request, 'environment1_6.html')
 
 
+@login_required
 def environment1_7(request):
     if request.method == 'POST':
         set_policies_biodiversity = request.POST.get("set_policies_biodiversity")
@@ -1016,6 +2134,7 @@ def environment1_7(request):
     return render(request, 'environment1_7.html')
 
 
+@login_required
 def environment1_8(request):
     if request.method == 'POST':
         set_policies_circular_economy = request.POST.get("set_policies_circular_economy")
@@ -1065,6 +2184,7 @@ def environment1_8(request):
     return render(request, 'environment1_8.html')
 
 
+@login_required
 def environment1_9(request):
     if request.method == 'POST':
         local_laws_regulations = request.POST.get("local_laws_regulations")
@@ -1120,6 +2240,7 @@ def environment1_9(request):
     return render(request, 'environment1_9.html')
 
 
+@login_required
 def environment1_10(request):
     if request.method == 'POST':
         management_approach = request.POST.get("management_approach")
@@ -1455,8 +2576,9 @@ class environmentscore:
         f2_10 = self.f2_10()
 
         total_score = f2_1 + f2_2 + f2_3 + f2_4 + f2_5 + f2_6 + f2_7 + f2_8 + f2_9 + f2_10
-        avg_score = total_score/10
+        avg_score = round(total_score/10)
         return [total_score, avg_score]
+
 
 @login_required
 def social_1(request):
@@ -1808,59 +2930,60 @@ def social_1(request):
     return render(request, 'social_1.html')
 
 
-def social_screening(request):
-    if request.method == 'POST':
-        inequality = request.POST.get("inequality")
-        comment1 = request.POST.get("comment1")
-        exception1 = request.POST.get("exception1")
-        social_cohesion = request.POST.get("social_cohesion")
-        comment2 = request.POST.get("comment2")
-        exception2 = request.POST.get("exception2")
-        social_integration = request.POST.get("social_integration")
-        comment3 = request.POST.get("comment3")
-        exception3 = request.POST.get("exception3")
-        labour_relations = request.POST.get("labour_relations")
-        comment4 = request.POST.get("comment4")
-        exception4 = request.POST.get("exception4")
-        investment_human_capital = request.POST.get("investment_human_capital")
-        comment5 = request.POST.get("comment5")
-        exception5 = request.POST.get("exception5")
-        economically_socially_communities = request.POST.get("economically_socially_communities")
-        comment6 = request.POST.get("comment6")
-        exception6 = request.POST.get("exception6")
-        supply_chain_management_s = request.POST.get("supply_chain_management_s")
-        comment7 = request.POST.get("comment7")
-        exception7 = request.POST.get("exception7")
-
-        input_data = {
-            'inequality': inequality,
-            'comment1': comment1,
-            'exception1': exception1,
-            'social_cohesion': social_cohesion,
-            'comment2': comment2,
-            'exception2': exception2,
-            'social_integration': social_integration,
-            'comment3': comment3,
-            'exception3': exception3,
-            'labour_relations': labour_relations,
-            'comment4': comment4,
-            'exception4': exception4,
-            'investment_human_capital': investment_human_capital,
-            'comment5': comment5,
-            'exception5': exception5,
-            'economically_socially_communities': economically_socially_communities,
-            'comment6': comment6,
-            'exception6': exception6,
-            'supply_chain_management_s': supply_chain_management_s,
-            'comment7': comment7,
-            'exception7': exception7,
-        }
-
-        context = {
-            'input_data': input_data,
-        }
-        return render(request, 'governance.html', context)
-    return render(request, 'social_screening.html')
+# @login_required
+# def social_screening(request):
+#     if request.method == 'POST':
+#         inequality = request.POST.get("inequality")
+#         comment1 = request.POST.get("comment1")
+#         exception1 = request.POST.get("exception1")
+#         social_cohesion = request.POST.get("social_cohesion")
+#         comment2 = request.POST.get("comment2")
+#         exception2 = request.POST.get("exception2")
+#         social_integration = request.POST.get("social_integration")
+#         comment3 = request.POST.get("comment3")
+#         exception3 = request.POST.get("exception3")
+#         labour_relations = request.POST.get("labour_relations")
+#         comment4 = request.POST.get("comment4")
+#         exception4 = request.POST.get("exception4")
+#         investment_human_capital = request.POST.get("investment_human_capital")
+#         comment5 = request.POST.get("comment5")
+#         exception5 = request.POST.get("exception5")
+#         economically_socially_communities = request.POST.get("economically_socially_communities")
+#         comment6 = request.POST.get("comment6")
+#         exception6 = request.POST.get("exception6")
+#         supply_chain_management_s = request.POST.get("supply_chain_management_s")
+#         comment7 = request.POST.get("comment7")
+#         exception7 = request.POST.get("exception7")
+#
+#         input_data = {
+#             'inequality': inequality,
+#             'comment1': comment1,
+#             'exception1': exception1,
+#             'social_cohesion': social_cohesion,
+#             'comment2': comment2,
+#             'exception2': exception2,
+#             'social_integration': social_integration,
+#             'comment3': comment3,
+#             'exception3': exception3,
+#             'labour_relations': labour_relations,
+#             'comment4': comment4,
+#             'exception4': exception4,
+#             'investment_human_capital': investment_human_capital,
+#             'comment5': comment5,
+#             'exception5': exception5,
+#             'economically_socially_communities': economically_socially_communities,
+#             'comment6': comment6,
+#             'exception6': exception6,
+#             'supply_chain_management_s': supply_chain_management_s,
+#             'comment7': comment7,
+#             'exception7': exception7,
+#         }
+#
+#         context = {
+#             'input_data': input_data,
+#         }
+#         return render(request, 'governance.html', context)
+#     return render(request, 'social_screening.html')
 
 
 @login_required
@@ -1915,6 +3038,7 @@ def social_screening(request):
         table = socialCalculations(input_data, request)
         s_total_score = table.s1_all()[0]
         s_avg_score = table.s1_all()[1]
+
         request.session['s1_1'] = inequality
         request.session['s1_2'] = social_cohesion
         request.session['s1_3'] = social_integration
@@ -1965,7 +3089,7 @@ class socialCalculations:
     def s1_1(self):
         self.score = 0
         if self.input_data.get('inequality') == '0':
-            self.score= 0
+            self.score = 0
         elif self.input_data.get('inequality') == '1':
             self.score = 1
         elif self.input_data.get('inequality') == '2':
