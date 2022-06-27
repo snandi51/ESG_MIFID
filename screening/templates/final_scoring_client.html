@@ -12,48 +12,14 @@
 <link href="static/assets/css/style.css" rel="stylesheet">
 <main id="main">
   <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
-  <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
   <center><h2 style="color:black;"><b>Final Score - {{company_name}}</b></h2></center>
 
 
   <!-- Form Name -->
   <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
     <div class="container text-white; rounded">
-      <center><h4 style="color:black;"><b>Interpretation of Average Scoring for Environment, Social and Governance questionnaire</b></h4></center>
-      <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black" >
-        <tbody>
-        <tr>
-          <th scope="row" class="table-active">Average Score</th>
-          <th scope="row" class="table-active">Interpretation</th>
-          <th scope="row" class="table-active">Recommendation</th>
-        </tr>
-        <tr>
-          <td style="vertical-align: middle;" align="center">0</td>
-          <td>The investment management firm is not considering sustainability into its internal systems, policies and procedures</td>
-          <td>Needs immediate action </td>
-        </tr>
-        <tr>
-          <td style="vertical-align: middle;" align="center">1</td>
-          <td>The investment management firm has identified various areas to integrate sustainability factors into its internal systems, policies and procedures</td>
-          <td>Needs improvement</td>
-        </tr>
-        <tr>
-          <td style="vertical-align: middle;" align="center">2</td>
-          <td>The investment management firm has started the process of integrating sustainability factors into its strategies, internal systems, policies and procedures</td>
-          <td>Good compliance</td>
-        </tr>
-        <tr>
-          <td style="vertical-align: middle;" align="center">3</td>
-          <td>The investment management firm has fully integrated sustainability factors into its strategies, internal systems, policies and procedures</td>
-          <td>Great compliance</td>
-        </tr>
-        <tr>
-          <td style="vertical-align: middle;" align="center">4</td>
-          <td>The investment management firm has not only fully integrated sustainability factors into its strategies, internal systems,  policies and procedures across the organisation's value chain, but also has evolved its own policies and procedures for tackling sustainability related issues. The ESG non-compliance risk is minimal.</td>
-          <td>Outstanding compliance</td>
-        </tr>
-        </tbody>
-      </table>
+
       <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black">
         <tbody>
         <tr>
@@ -205,6 +171,41 @@
           <td>Governance Other</td>
           <td style="vertical-align: middle;" align="center">{{g1_6}}</td>
           <td >{{g_comment6}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <center><h4 style="color:black;"><b>Interpretation of Average Scoring for Environment, Social and Governance questionnaire</b></h4></center>
+      <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black" >
+        <tbody>
+        <tr>
+          <th scope="row" class="table-active">Average Score</th>
+          <th scope="row" class="table-active">Interpretation</th>
+          <th scope="row" class="table-active">Recommendation</th>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">0</td>
+          <td>The investee company is at a very high risk as it has not delved into the ESG path at all.  It needs to consider and integrate sustainability into its strategies, internal policies and procedures and reduce ESG related risk.</td>
+          <td>Not Recommended</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">1</td>
+          <td>The investee company has the elementary information to comply with ESG factors but they do not have any strategies for sustainability. </td>
+          <td>Risky investment</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">2</td>
+          <td>The investee company is working towards integrating sustainability in its value chain, by bringing in changes across the organization and coming up with strategies to handle ESG factors. The investee company has greater chance to improve by including several International standards in their value chain for achieving due compliance. Currently, the investee company is placed in the medium risk category</td>
+          <td>Good to invest</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">3</td>
+          <td>The investee company has integrated sustainability in their value chain and has initiated the process of including international standards in their value chain.  It is serious in achieving maximum compliance in ESG space. The ESG risk is low.</td>
+          <td>Great to invest</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;" align="center">4</td>
+          <td>The investee company has fully integrated sustainability factors into its strategies, policies and procedures across the organisation's value chain.  It has adopted  relevant National and International standards towards achieving ESG compliance and has evolved its own policies and procedures for tackling ESG related issues. The ESG risk is minimal.</td>
+          <td>Highly recommended </td>
         </tr>
         </tbody>
       </table>

@@ -1,0 +1,822 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+<main id="main">
+    <button type="button" onclick="history.back()" style="display: none; color:white" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
+    <a href="#" ><i style="font-size:12px; color:red; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
+    <center><h2 style="color:black;"><b>Governance</b></h2></center>
+    <!-- Form Name -->
+    <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+            </div>
+            <div class="row mb-1" style="padding:5px;  width:51%;">
+                <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Employee Relations</b></h2></center>
+            </div>
+        </div>
+        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+            <div  style="padding:2px">
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+            </div>
+        </div>
+        <form method="POST" class="form-horizontal" action="only_governance">
+            {% csrf_token %}
+            <div class="form-group" style="padding-top:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company has an organisational policy laying down guidelines on determination of composition of Board of Directors, appointment of independent directors, qualifications and experience criteria, sitting fees of the Board of Directors, various Board committees and functions of these committees, role of Board of Directors,re-election of Board of Directors</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_1" name="f1_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_1" placeholder="Exceptions if any" name="exception1_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have an internal policy in place with respect to  code of conduct, sexual harassment policy, anti-bribery policy,  policy on diversity and inclusion </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_2" name="f1_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_2" placeholder="Comments / Risks / Opportunities identified" name="comment1_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_2" placeholder="Exceptions if any" name="exception1_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have a grievance redressal mechanism for its employees</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_3" name="f1_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_3" placeholder="Comments / Risks / Opportunities identified" name="comment1_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_3" placeholder="Exceptions if any" name="exception1_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have any serious violation incidents by employees reported during last 5 years and whether the same were effectively addressed </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_4" name="f1_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_4" placeholder="Comments / Risks / Opportunities identified" name="comment1_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_4" placeholder="Exceptions if any" name="exception1_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company conduct various employee health programmes and welfare activities during last 5 years </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_5" name="f1_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_5" placeholder="Comments / Risks / Opportunities identified" name="comment1_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_5" placeholder="Exceptions if any" name="exception1_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have a good relationship with the local community ?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_6" name="f1_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_6" placeholder="Comments / Risks / Opportunities identified" name="comment1_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_6" placeholder="Exceptions if any" name="exception1_6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have good labour relations (e.g. have there been strikes)?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_7" name="f1_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_7" placeholder="Comments / Risks / Opportunities identified" name="comment1_7"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_7" placeholder="Exceptions if any" name="exception1_7"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have a good safety record? Have there been accidents? Were issues subsequently addressed?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_8" name="f1_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_8" placeholder="Comments / Risks / Opportunities identified" name="comment1_8"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_8" placeholder="Exceptions if any" name="exception1_8"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Training: Does the investee company organise training for its staff on ESG?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f1_9" name="f1_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment1_9" placeholder="Comments / Risks / Opportunities identified" name="comment1_9"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception1_9" placeholder="Exceptions if any" name="exception1_9"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+                </div>
+                <div class="row mb-1" style="padding:5px;  width:51%;">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Sound Management Structures</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div  style="padding:2px">
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding-top:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Policy: Does the investee company have formal policies and systems to manage ESG </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f2_1" name="f2_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment2_1" placeholder="Comments / Risks / Opportunities identified" name="comment2_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2_1" placeholder="Exceptions if any" name="exception2_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Identifying opportunities: Does the investee company pro-actively identify opportunities for ESG improvements</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f2_2" name="f2_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment2_2" placeholder="Comments / Risks / Opportunities identified" name="comment2_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2_2" placeholder="Exceptions if any" name="exception2_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Monitoring: Are there defined processes in place in investee company to manage /monitor ESG matters and the implementation of action plans</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f2_3" name="f2_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment2_3" placeholder="Comments / Risks / Opportunities identified" name="comment2_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2_#" placeholder="Exceptions if any" name="exception2_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Top level responsibility: Does the investee company has ESG responsibility been established at all levels up to the company’s board</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f2_4" name="f2_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment2_4" placeholder="Comments / Risks / Opportunities identified" name="comment2_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2_4" placeholder="Exceptions if any" name="exception2_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Are any of the company promoters, management, staff or Board members of the investee company associated with money laundering activities?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f2_5" name="f2_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment2_5" placeholder="Comments / Risks / Opportunities identified" name="comment2_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception2_5" placeholder="Exceptions if any" name="exception2_5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+                </div>
+                <div class="row mb-1" style="padding:5px;  width:51%;">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Remuneration of Staff</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div  style="padding:2px">
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding-top:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have a sound remuneration and reimburesement policy for its staff ?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f3_1" name="f3_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment3_1" placeholder="Comments / Risks / Opportunities identified" name="comment3_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception3_1" placeholder="Exceptions if any" name="exception3_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, is this policy in line with the local laws and regulations ?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f3_2" name="f3_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment3_2" placeholder="Comments / Risks / Opportunities identified" name="comment3_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception3_2" placeholder="Exceptions if any" name="exception3_2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Whether there were any incidents of remuneration issues reported by employees during last 5 years and whether the same were addressed effectively by the investee company</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f3_3" name="f3_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment3_3" placeholder="Comments / Risks / Opportunities identified" name="comment3_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception3_3" placeholder="Exceptions if any" name="exception3_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Specialists: Does the investee company have  specialist consultants / external technical experts to assess and monitor ESG issues (particularly for high risk companies)? If yes, when and who?</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f3_4" name="f3_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment3_4" placeholder="Comments / Risks / Opportunities identified" name="comment3_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception3_4" placeholder="Exceptions if any" name="exception3_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have a Rewards & Recognition policy as part of  empoyee welfare and recognition for exceptional talent.</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f3_5" name="f3_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment3_5" placeholder="Comments / Risks / Opportunities identified" name="comment3_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception3_5" placeholder="Exceptions if any" name="exception3_5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+                </div>
+                <div class="row mb-1" style="padding:5px;  width:51%;">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Tax Compliance</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div  style="padding:2px">
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Whether any of the company promoters, management, staff or Board members of the investee company under legal scrutiny by regulators or law enforcement authorities</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f4_1" name="f4_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment4_1" placeholder="Comments / Risks / Opportunities identified" name="comment4_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception4_1" placeholder="Exceptions if any" name="exception4_1"></textarea>
+                    </div>.
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company follows local laws and regulations with respect to payment of taxes and provide complete information to the tax authorities </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f4_2" name="f4_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment4_2" placeholder="Comments / Risks / Opportunities identified" name="comment4_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception4_2" placeholder="Exceptions if any" name="exception4_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Whether there have been any instances of tax evasion by the investee company during the last 5 years</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f4_3" name="f4_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment4_3" placeholder="Comments / Risks / Opportunities identified" name="comment4_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception4_3" placeholder="Exceptions if any" name="exception4_3"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+                </div>
+                <div class="row mb-1" style="padding:5px;  width:51%;">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Commitment to Good Corporate Governance</b></h2></center>
+                </div>
+            </div>
+            <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                <div  style="padding:2px">
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                </div>
+            </div>
+            <div class="form-group" style="padding-top:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Risks : Does the investee company provide an appropriate risk assessment for its operations which can be used as a basis for on-going monitoring </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_1" name="f5_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_1" placeholder="Comments / Risks / Opportunities identified" name="comment5_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_1" placeholder="Exceptions if any" name="exception5_1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Action plans: Does the Investee conpany have formal action plans drawn up to address ESG issues</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_2" name="f5_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_2" placeholder="Comments / Risks / Opportunities identified" name="comment5_2"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_2" placeholder="Exceptions if any" name="exception5_2"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">NGOs: Does the investee company have a constructive dialogue with NGOs (where NGOs are interested in engagement)</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_3" name="f5_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_3" placeholder="Comments / Risks / Opportunities identified" name="comment5_3"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_3" placeholder="Exceptions if any" name="exception5_3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company has a comprehensive corporate governance policy with respect to protection of shareholder rights, minority interests and equitable treatment of shareholders.</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_4" name="f5_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_4" placeholder="Comments / Risks / Opportunities identified" name="comment5_4"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_4" placeholder="Exceptions if any" name="exception5_4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have a whistleblower policy and procedures in place </b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_5" name="f5_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_5" placeholder="Comments / Risks / Opportunities identified" name="comment5_5"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_5" placeholder="Exceptions if any" name="exception5_5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company have a designated official entrusted with the responsibility for ensuring compliance with the company's corporate governance policy</b></label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-select" id="f5_6" name="f5_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="comment5_6" placeholder="Comments / Risks / Opportunities identified" name="comment5_6"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" class="form-control" id="exception5_6" placeholder="Exceptions if any" name="exception5_6"></textarea>
+                    </div>
+                </div>
+
+                <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                    <div class="row mb-1" style="padding:5px; float:left; width:51%;">
+                        <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
+                    </div>
+                    <div class="row mb-1" style="padding:5px;  width:51%;">
+                        <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR) <b>Governance Other</b></h2></center>
+                    </div>
+                </div>
+                <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+                    <div  style="padding:2px">
+                        <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes/No/NA</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    </div>
+                </div>
+                <div class="form-group" style="padding-top:10px">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">ESG resources: Does the investee company have an allocated
+                            ESG professional on staff </b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_1" name="f6_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_1" placeholder="Comments / Risks / Opportunities identified" name="comment6_1"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_1" placeholder="Exceptions if any" name="exception6_1"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Performance indicators: Does the investee company has key performance indicators in place to measure and track ESG performance </b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_2" name="f6_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_2" placeholder="Comments / Risks / Opportunities identified" name="comment6_2"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_2" placeholder="Exceptions if any" name="exception6_2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Whether there were any incidents of regulatory penalties,  fraud/scam being reported during past 5 years and whether the same were addressed effectively by the investee company </b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_3" name="f6_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_3" placeholder="Comments / Risks / Opportunities identified" name="comment6_3"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_3" placeholder="Exceptions if any" name="exception6_3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Sector initiatives (if applicable): Is the Investee company involved in relevant sector initiatives, e.g. the Extractive Industries Transparency Initiative (EITI) for mining</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_4" name="f6_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_4" placeholder="Comments / Risks / Opportunities identified" name="comment6_4"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_4" placeholder="Exceptions if any" name="exception6_4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Communication lines: Are there defined lines of communication in place in investee company to report ESG issues to the company’s management and board</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_5" name="f6_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_5" placeholder="Comments / Risks / Opportunities identified" name="comment6_5"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_5" placeholder="Exceptions if any" name="exception6_5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Whether the management / board of directors of the investee company approve the annual corporate events such as board meetings, shareholder meetings)</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_'6" name="f6_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_6" placeholder="Comments / Risks / Opportunities identified" name="comment6_6"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_6" placeholder="Exceptions if any" name="exception6_6"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company follows transparency of activities undertaken by the company and disclosure information for investors.</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_7" name="f6_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_7" placeholder="Comments / Risks / Opportunities identified" name="comment6_7"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_7" placeholder="Exceptions if any" name="exception6_7"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Do the Financial Instruments of the investee company cover ESG factors through ESG thematic approach ?</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_8" name="f6_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_8" placeholder="Comments / Risks / Opportunities identified" name="comment6_8"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_8" placeholder="Exceptions if any" name="exception6_8"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Reporting to investors: Does the investee company report ESG performance to investors at least annually?</b></label>
+                        <div class="col-sm-2">
+                            <select type="text" class="form-select" id="f6_9" name="f6_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                                <option value=""></option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                                <option value="NA">NA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="comment6_9" placeholder="Comments / Risks / Opportunities identified" name="comment6_9"></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea rows="2" class="form-control" id="exception6_9" placeholder="Exceptions if any" name="exception6_9"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom:4px">
+                    <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
+                </div>
+                <!--            </div>-->
+        </form>
+    </div>
+    </div>
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>
