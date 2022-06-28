@@ -9,45 +9,148 @@
 
 <body >
 <main id="main">
-  <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
-  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
-  <style>
-        .form-select {
-            width: 600px;
-            height: 35px;
-          }
+  <div style="padding-top:20px">
+    <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+  </div>
+
+  <div style="padding-top:50px">
+    <script type="text/javascript">
+      function change1() {
+            console.log('1 clicked')
+            window.location.href = "{% url 'environment1_1' %}"
+      }
+
+      function change2() {
+            console.log('2 clicked')
+            window.location.href = "{% url 'environment1_2' %}"
+      }
+
+      function change3() {
+            console.log('3 clicked')
+            window.location.href = "{% url 'environment1_3' %}"
+      }
+
+      function change4() {
+            console.log('4 clicked')
+            window.location.href = "{% url 'environment1_4' %}"
+      }
+
+      function change5() {
+            console.log('5 clicked')
+            window.location.href = "{% url 'environment1_5' %}"
+      }
+
+      function change6() {
+            console.log('6 clicked')
+            window.location.href = "{% url 'environment1_6' %}"
+      }
+
+      function change7() {
+            console.log('7 clicked')
+            window.location.href = "{% url 'environment1_7' %}"
+      }
+
+      function change8() {
+            console.log('8 clicked')
+            window.location.href = "{% url 'environment1_8' %}"
+      }
+
+      function change9() {
+            console.log('9 clicked')
+            window.location.href = "{% url 'environment1_9' %}"
+      }
+
+      function change10() {
+            console.log('10 clicked')
+            window.location.href = "{% url 'environment1_10' %}"
+      }
+
+      function change11() {
+            console.log('11 clicked')
+            window.location.href = "{% url 'environment1_1' %}"
+      }
+
+    </script>
+    <style>
+        input.largerCheckbox {
+            width: 70px;
+            height: 70px;
+        }
     </style>
-  <center>
-    <div style="padding-top:180px">
-      <form >
-        {% csrf_token %}
-        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select option Environment page</Governance> </strong></label>
-        <select type="select" class="form-select" id="multiselect" name="s1" onchange="window.location = this.options[this.selectedIndex].value">
-          <option value="0"></option>
-          <option value="{% url 'environment1_1' %}">Energy and Renewable Energy</option>
-          <option value="{% url 'environment1_2' %}">Raw materials</option>
-          <option value="{% url 'environment1_3' %}">Water </option>
-          <option value="{% url 'environment1_4' %}">Land</option>
-          <option value="{% url 'environment1_5' %}">Waste</option>
-          <option value="{% url 'environment1_6' %}">Greenhouse Gas Emissions</option>
-          <option value="{% url 'environment1_7' %}">Biodiversity</option>
-          <option value="{% url 'environment1_8' %}">Circular Economy</option>
-          <option value="{% url 'environment1_9' %}">Environment (Others) - Environmental Compliance</option>
-          <option value="{% url 'environment1_10' %}">Supply Chain Management</option>
-          <option value="{% url 'environment1_1' %}">All</option>
-        </select>
-        <div style="padding:10px">
-          <input type="button" onclick="multipleFunc()" value="Select options">
-        </div>
-      </form>
-      <!--            <script>-->
-      <!--            function multipleFunc() {-->
-      <!--            document.getElementById("multiselect").multiple = true;-->
-      <!--            }-->
-      <!--            </script>-->
-    </div>
+    <center>
+    <form action="" method="post">
+      <label style="margin-left:50px"><b>Select option in environment page </b></label>
+      <div style="margin-left:100px; color:white">
+      <input type="checkbox" id="one" onclick="change1()" name="tip1" value="1" /> Energy and Renewable Energy
+      </div>
+      <div style="margin-left:-20px; color:white">
+      <input type="checkbox" id="two" onclick="change2()" name="tip2" value="2" /> Raw materials
+      </div>
+      <div style="margin-left:-80px; color:white">
+      <input type="checkbox" id="three" onclick="change3()" name="tip3" value="3" /> Water
+      </div>
+      <div style="margin-left:-87px; color:white">
+      <input type="checkbox" id="four" onclick="change4()" name="tip4" value="4" /> Land
+      </div>
+      <div style="margin-left:-77px; color:white">
+      <input type="checkbox" id="five" onclick="change5()" name="tip5" value="5" /> Waste
+      </div>
+      <div style="margin-left:79px; color:white">
+      <input type="checkbox" id="six" onclick="change6()" name="tip6" value="6" /> Greenhouse Gas Emissions
+      </div>
+      <div style="margin-left:-37px; color:white">
+      <input type="checkbox" id="seven" onclick="change7()" name="tip7" value="7" /> Biodiversity
+      </div>
+      <div style="margin-left:5px; color:white">
+      <input type="checkbox" id="eight" onclick="change8()" name="tip8" value="8" /> Circular Economy
+      </div>
+      <div style="margin-left:250px; color:white">
+      <input type="checkbox" id="nine" onclick="change9()" name="tip9" value="9" /> Environment (Others) - Environmental Compliance
+      </div>
+      <div style="margin-left:75px; color:white">
+      <input type="checkbox" id="ten" onclick="change10()" name="tip10" value="10" /> Supply Chain Management
+      </div>
+      <div style="margin-left:-105px; color:white">
+        <input type="checkbox" id="all" onclick="change11()" name="tip11" value="11" /> All
+      </div>
+    </form>
   </center>
   </div>
+<!--  <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>-->
+<!--  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>-->
+<!--  <style>-->
+<!--        .form-select {-->
+<!--            width: 600px;-->
+<!--            height: 35px;-->
+<!--          }-->
+<!--    </style>-->
+<!--  <center>-->
+<!--    <div style="padding-top:180px">-->
+<!--      <form >-->
+<!--        {% csrf_token %}-->
+<!--        <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select option Environment page</Governance> </strong></label>-->
+<!--        <select type="select" class="form-select" id="multiselect" name="s1" onchange="window.location = this.options[this.selectedIndex].value">-->
+<!--          <option value="0"></option>-->
+<!--          <option value="{% url 'environment1_1' %}">Energy and Renewable Energy</option>-->
+<!--          <option value="{% url 'environment1_2' %}">Raw materials</option>-->
+<!--          <option value="{% url 'environment1_3' %}">Water </option>-->
+<!--          <option value="{% url 'environment1_4' %}">Land</option>-->
+<!--          <option value="{% url 'environment1_5' %}">Waste</option>-->
+<!--          <option value="{% url 'environment1_6' %}">Greenhouse Gas Emissions</option>-->
+<!--          <option value="{% url 'environment1_7' %}">Biodiversity</option>-->
+<!--          <option value="{% url 'environment1_8' %}">Circular Economy</option>-->
+<!--          <option value="{% url 'environment1_9' %}">Environment (Others) - Environmental Compliance</option>-->
+<!--          <option value="{% url 'environment1_10' %}">Supply Chain Management</option>-->
+<!--          <option value="{% url 'environment1_1' %}">All</option>-->
+<!--        </select>-->
+<!--        <div style="padding:10px">-->
+<!--          <input type="button" onclick="multipleFunc()" value="Select options">-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </center>-->
+<!--  </div>-->
 
 </main>
 <!-- End #main -->
