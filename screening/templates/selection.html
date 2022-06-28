@@ -9,14 +9,10 @@
 
 <body >
 <main id="main">
-    <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
-    <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
-    <link href="https://unpkg.com/bootstrap@3.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/bootstrap@3.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-multiselect@0.9.13/dist/js/bootstrap-multiselect.js"></script>
-    <link href="https://unpkg.com/bootstrap-multiselect@0.9.13/dist/css/bootstrap-multiselect.css" rel="stylesheet"/>
-
+    <div style="padding-top:20px">
+        <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+        <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+    </div>
     <style>
         .form-select {
             width: 500px;
@@ -24,25 +20,28 @@
           }
     </style>
 
-    <form class="form-horizontal" method="POST" >
-        {% csrf_token %}
-        <center>
-        <div style="padding-top:60px">
-        <select type="select" class="form-select" id="multiselect" name="s1" onchange="window.location = this.options[this.selectedIndex].value">
-            <option value="0"></option>
-            <option value="{% url 'environment_selection' %}">Environment</option>
-            <option value="{% url 'social_1_scoring' %}">Social</option>
-            <option value="{% url 'only_governance' %}">Governance</option>
-            <option value="4">Environment and Social</option>
-            <option >Environment and Governance</option>
-            <option value="{% url 'social_1_select' %}">Social and Governance</option>
-            <option value="{% url 'environment1_1' %}">Environment and Social and Governance</option>
-        </select>
-        <div style="padding:10px">
-            <input type="button" onclick="multipleFunc()" value="Select options">
-        </div>
-        </center>
-    </form>
+    <center>
+        <div style="padding-top:50px">
+        <form class="form-horizontal" method="POST" >
+            {% csrf_token %}
+                <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select option between Environment Social and Governance</Governance> </strong></label>
+                <select type="select" class="form-select" id="multiselect" name="s1" onchange="window.location = this.options[this.selectedIndex].value">
+                    <option value="0"></option>
+                    <option value="{% url 'environment_selection' %}">Environment</option>
+                    <option value="{% url 'social_1_scoring' %}">Social</option>
+                    <option value="{% url 'only_governance' %}">Governance</option>
+                    <option value="{% url 'environment_selection' %}">Environment and Social</option>
+                    <option value="{% url 'environment_selection' %}">Environment and Governance</option>
+                    <option value="{% url 'social_1_select' %}">Social and Governance</option>
+                    <option value="{% url 'environment1_1' %}">Environment and Social and Governance</option>
+                </select>
+            <div style="padding:10px">
+                <input type="button" onclick="multipleFunc()" value="Select options">
+            </div>
+         </form>
+    </div>
+    </center>
+
 
 
 <!--    <center>-->
