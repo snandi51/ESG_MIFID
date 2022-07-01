@@ -34,25 +34,25 @@
         </div>
         <form method="POST" class="form-horizontal" action="environment1_1">
             {% csrf_token %}
-                <div class="form-group" style="padding-top:10px">
-                    <div class="row mb-4">
-                        <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the energy used?</b></label>
-                        <div class="col-sm-2">
-                            <select  type="text" class="form-select" id="set_of_policies" name="set_of_policies" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
-                                <option value=""></option>
-                                <option value="0">Yes</option>
-                                <option value="1">No</option>
-                                <option value="NA">N/A</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <textarea rows="2" type="text" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
-                        </div>
-                        <div class="col-sm-3">
-                            <textarea rows="2" type="text" class="form-control" id="exception1.1" placeholder="Exceptions if any" name="exception1_1"></textarea>
-                        </div>
+            <div class="form-group" style="padding-top:10px">
+                <div class="row mb-4">
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the energy used?</b></label>
+                    <div class="col-sm-2">
+                        <select  type="text" class="form-select" id="set_of_policies" name="set_of_policies" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                            <option value=""></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                            <option value="NA">N/A</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="comment1.1" placeholder="Comments / Risks / Opportunities identified" name="comment1_1"></textarea>
+                    </div>
+                    <div class="col-sm-3">
+                        <textarea rows="2" type="text" class="form-control" id="exception1.1" placeholder="Exceptions if any" name="exception1_1"></textarea>
                     </div>
                 </div>
+            </div>
             <div class="form-group">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company keep records of its usage of energy and other resources for evaluation purpose?</b></label>
@@ -112,7 +112,7 @@
             </div>
             <div class="form-group" >
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px ">Has the Investee company  Investee in renewable sources of energy. If yes, provide details of investment made and outcome?</b></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px ">Has the Investee company  Invested in renewable sources of energy. If yes, provide details of investment made and outcome?</b></label>
                     <div class="col-sm-2">
                         <select type="text" class="form-select" id="Investee_renewable_sources" name="Investee_renewable_sources" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
@@ -133,7 +133,7 @@
             <div style="margin-bottom:4px">
                 <button class="btn btn-primary" type="reset" style="margin-left:950px">Reset</button><a href="#"><button style="margin-left:20px" type="submit" class="btn btn-primary">Next</button></a>
             </div>
-<!--            </div>-->
+            <!--            </div>-->
         </form>
     </div>
     </div>
