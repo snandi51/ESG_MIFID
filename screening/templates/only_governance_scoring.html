@@ -13,7 +13,7 @@
 <main id="main">
     <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
     <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
-    <a href="#" ><i style="font-size:12px; color:red; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
+    <a href="#" ><i style="font-size:12px; color:white; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
 
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
@@ -23,7 +23,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; font-size:18px">Evaluation Criteria </strong><strong style="color:Black; margin-left:250px; font-size:18px">Score</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
+                <h4><strong  style="color:Black; font-size:18px">Evaluation Criteria </strong><strong style="color:Black; margin-left:260px; font-size:18px">Score*</strong><strong  style="color:Black; margin-left:160px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
             </div>
         </div>
 
@@ -163,14 +163,14 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Employee Relations</b></label>
                     <div class="col-sm-2">
-                        <select  type="text" class="form-select" id="employee_relations" name="employee_relations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select  type="text" class="form-select" id="employee_relations" name="employee_relations" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -180,7 +180,7 @@
                         <textarea rows="2" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
                     </div>
                     <div>
-                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"><i style="font-size:12px">To understand score interpretations click down arrow button</i></a>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
                     </div>
                     <div id="info" style="display:none">
                         <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
@@ -209,14 +209,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Sound Management Structures</b></label>
                     <div class="col-sm-2" >
-                        <select type="text" class="form-select" id="sound_management_structures" name="sound_management_structures" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sound_management_structures" name="sound_management_structures" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -256,14 +256,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Remuneration of Staff</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="remuneration_staff" name="remuneration_staff" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="remuneration_staff" name="remuneration_staff" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -305,14 +305,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Tax Compliance</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="tax" name="tax" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="tax" name="tax" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -352,14 +352,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Commitment to Good Corporate Governance</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="corporate_governance" name="corporate_governance" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="corporate_governance" name="corporate_governance" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -399,14 +399,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Governance Other</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="governance_other" name="governance_other" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="governance_other" name="governance_other" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">

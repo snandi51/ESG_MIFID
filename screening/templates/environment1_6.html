@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
 
@@ -117,7 +117,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is the Investee  company  into carbon intensive industry such as petrochemicals, aviation, power generation, transportation, construction?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="carbon_intensive" name="carbon_intensive" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="carbon_intensive" name="carbon_intensive" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -136,7 +136,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the emissions they produce?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_policies_gas_emission" name="set_policies_gas_emission" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="set_policies_gas_emission" name="set_policies_gas_emission" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -155,7 +155,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether it has undertaken evaluation exercise of its harmful emissions / ozone depleting substances and its impact on environment and documented the same?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="impact_environment_documented" name="impact_environment_documented" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="impact_environment_documented" name="impact_environment_documented" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -174,7 +174,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Direct GHG emissions (Scope 1)?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="direct_ghg_emissions" name="direct_ghg_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="direct_ghg_emissions" name="direct_ghg_emissions" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -206,7 +206,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Energy Indirect GHG emissions (Scope 2) like?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="ghg_emissions" name="ghg_emissions" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="ghg_emissions" name="ghg_emissions" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -239,7 +239,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="indirect_ghg_emissions_scope3" name="indirect_ghg_emissions_scope3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="indirect_ghg_emissions_scope3" name="indirect_ghg_emissions_scope3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -272,7 +272,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company calculate the information related to Other Indirect GHG emissions (Scope 3) like?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="indirect_ghg_emissions_scope4" name="indirect_ghg_emissions_scope4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="indirect_ghg_emissions_scope4" name="indirect_ghg_emissions_scope4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -305,7 +305,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the Investee  company Investee in technologies to improve the air quality of the area in which it operates?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="air_quality" name="air_quality" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="air_quality" name="air_quality" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -324,7 +324,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, provide details of investment made in efficient technologies and its outcome?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="provide_detail_investment_technology" name="provide_detail_investment_technology" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="provide_detail_investment_technology" name="provide_detail_investment_technology" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

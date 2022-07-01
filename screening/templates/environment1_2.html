@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_2">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the company have any set policies/strategies/goals/responsibilities for handling the materials used in their primary production?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_of_strategies" name="set_of_strategies" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="set_of_strategies" name="set_of_strategies" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company evaluate its approach towards handling raw materials used in its production process?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="handling_raw_materials" name="handling_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="handling_raw_materials" name="handling_raw_materials" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is there a dependence on raw materials that may become scarce?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="dependence_raw_materials" name="dependence_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="dependence_raw_materials" name="dependence_raw_materials" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -88,7 +88,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, is the Investee company exploring other options of sourcing raw materials or changing its production process methods efficiently?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sourcing_raw_materials" name="sourcing_raw_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sourcing_raw_materials" name="sourcing_raw_materials" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -107,7 +107,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company make use of recycled materials in its production process?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="use_recycled_materials" name="use_recycled_materials" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="use_recycled_materials" name="use_recycled_materials" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -126,7 +126,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is the Investee company using reusable/recyclable packaging for its products /services?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="recyclable_packaging" name="recyclable_packaging" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="recyclable_packaging" name="recyclable_packaging" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

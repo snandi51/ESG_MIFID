@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_3">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Water related impacts?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_of_policies_water" name="set_of_policies_water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="set_of_policies_water" name="set_of_policies_water" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>s
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company evaluate whether it consume water on a large scale?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="consume_water" name="consume_water" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="consume_water" name="consume_water" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether the Investee  company will have to face risk of water scarcity which will also affect water supply to other consumers including local communities?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="face_risk_water_scarcity" name="face_risk_water_scarcity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="face_risk_water_scarcity" name="face_risk_water_scarcity" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -88,7 +88,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether Investee  company is exploring other sources of water / other techniques such that dependence on water supplied by local authorities is reduced (such as rain water harvesting, recycling water used by the organisation, waste water from other organisation)?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="recycling_water_used_by_organisation" name="recycling_water_used_by_organisation" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="recycling_water_used_by_organisation" name="recycling_water_used_by_organisation" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -107,7 +107,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investee company has recycled/reused water from different sources, does it calculate and mention the amount of water being recycled or reused out of the total amount of water used from different sources?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="mention_amount_of_water_recycle" name="mention_amount_of_water_recycle" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="mention_amount_of_water_recycle" name="mention_amount_of_water_recycle" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

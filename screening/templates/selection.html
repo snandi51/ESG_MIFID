@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+jm {% extends 'base2.html' %}
 {% block content %}
 {% load static %}
 
@@ -24,14 +24,14 @@
         <div style="padding-top:50px">
         <form class="form-horizontal" method="POST" >
             {% csrf_token %}
-                <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select option between Environment Social and Governance</Governance> </strong></label>
+                <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select sector between Environment Social and Governance </strong></label>
                 <select type="select" class="form-select" id="multiselect" name="s1" onchange="window.location = this.options[this.selectedIndex].value">
                     <option value="0"></option>
                     <option value="{% url 'environment_selection' %}">Environment</option>
                     <option value="{% url 'social_1_scoring' %}">Social</option>
                     <option value="{% url 'only_governance' %}">Governance</option>
-                    <option value="{% url 'environment_selection' %}">Environment and Social</option>
-                    <option value="{% url 'environment_selection' %}">Environment and Governance</option>
+                    <option value="{% url 'env_social_selection' %}">Environment and Social</option>
+                    <option value="{% url 'env_gov_selection' %}">Environment and Governance</option>
                     <option value="{% url 'social_1_select' %}">Social and Governance</option>
                     <option value="{% url 'environment1_1' %}">Environment and Social and Governance</option>
                 </select>
@@ -41,42 +41,6 @@
          </form>
     </div>
     </center>
-
-
-
-<!--    <center>-->
-<!--        <div style="padding-top:180px">-->
-<!--            <form id="form1">-->
-<!--                <div style="padding:20px">-->
-<!--                    <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; font-size:20px ">Select within Environment, Social , and Governance</Governance> </strong></label>-->
-<!--                    <select id="select_pages" multiple="multiple">-->
-<!--                        <option>Select an option</option>-->
-<!--                        <input type="checkbox" id="one" value="{% url 'environment_selection' %}">Environment</input>-->
-<!--                        <input type="checkbox" id="two" value="{% url 'social_1_scoring' %}">Social</input>-->
-<!--&lt;!&ndash;                        <option value="{% url 'only_governance' %}">Governance</option>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <option value="4">Environment and Social</option>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <option >Environment and Governance</option>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <option value="{% url 'social_1_select' %}">Social and Governance</option>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <option value="{% url 'environment1_1' %}">Environment and Social and Governance</option>&ndash;&gt;-->
-<!--                    </select>-->
-
-<!--                    <br /><br />-->
-<!--                    <input type="button" id="btnget" value="select value" />-->
-<!--                </div>-->
-<!--            </form>-->
-<!--            <form >-->
-
-
-
-<!--            <script>-->
-<!--            function multipleFunc() {-->
-<!--            document.getElementById("multiselect").multiple = true;-->
-<!--            }-->
-<!--            </script>-->
-        </div>
-    </center>
-    </div>
-
 </main>
 <!-- End #main -->
 {% endblock %}

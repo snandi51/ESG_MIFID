@@ -3,6 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+
+from fpdf import FPDF
 
 
 # Create your views here.
@@ -116,7 +123,7 @@ def home2(request):
         context = {
             'input_data': input_data,
         }
-        return render(request, 'environment1_1.html', context)
+        return render(request, 'selection.html', context)
     # return HttpResponse('<h1> Screening home </h1>')
     return render(request, 'index_client.html')
 
@@ -177,6 +184,14 @@ def selection(request):
 @login_required
 def environment_selection(request):
     return render(request, 'environment_selection.html')
+
+@login_required
+def env_social_selection(request):
+    return render(request, 'env_social_selection.html')
+
+@login_required
+def env_gov_selection(request):
+    return render(request, 'env_gov_selection.html')
 
 
 # if client select only social option:
@@ -530,6 +545,8 @@ def social_1_scoring(request):
     return render(request, 'social_1_scoring.html')
 
 
+
+
 @login_required
 def social_score(request):
     if request.method == 'POST':
@@ -579,13 +596,36 @@ def social_score(request):
             'exception7': exception7,
         }
 
-        table = socialCalculations(input_data, request)
-        s_total_score = table.s1_all()[0]
-        s_avg_score = table.s1_all()[1]
+        table = s_socialCalculations(input_data, request)
+        s_total_score = table.s_all_score()
+        s_na_count = table.s_all_na()
+        s_avg_score = round(s_total_score/(7 - s_na_count))
 
         context = {
             'input_data': input_data,
             'company_name': request.session.get('company_name'),
+            'e2_1': request.session.get('e2_1'),
+            'e2_2': request.session.get('e2_2'),
+            'e2_3': request.session.get('e2_3'),
+            'e2_4': request.session.get('e2_4'),
+            'e2_5': request.session.get('e2_5'),
+            'e2_6': request.session.get('e2_6'),
+            'e2_7': request.session.get('e2_7'),
+            'e2_8': request.session.get('e2_8'),
+            'e2_9': request.session.get('e2_9'),
+            'e2_10': request.session.get('e2_10'),
+            'comment1': request.session.get('comment1'),
+            'comment2': request.session.get('comment2'),
+            'comment3': request.session.get('comment3'),
+            'comment4': request.session.get('comment4'),
+            'comment5': request.session.get('comment5'),
+            'comment6': request.session.get('comment6'),
+            'comment7': request.session.get('comment7'),
+            'comment8': request.session.get('comment8'),
+            'comment9': request.session.get('comment9'),
+            'comment10': request.session.get('comment10'),
+            'total_score': request.session.get('total_score'),
+            'avg_score': request.session.get('avg_score'),
             's1_1': inequality,
             's1_2': social_cohesion,
             's1_3': social_integration,
@@ -602,9 +642,200 @@ def social_score(request):
             's_comment7': s_comment7,
             's_total_score': s_total_score,
             's_avg_score': s_avg_score,
+
         }
         return render(request, 'final_scoring_client.html', context)
     return render(request, 'social_score.html')
+
+
+class s_socialCalculations:
+    def __init__(self, input_data, request):
+        self.input_data = input_data
+        self.score = 0
+        self.value = 0
+        self.na_count_s = 0
+        self.request = request
+
+    # Social Final Scoring calculation
+    def s1_1(self):
+        self.value = 0
+        if self.input_data.get('inequality') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('inequality') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('inequality') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('inequality') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('inequality') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('inequality') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_2(self):
+        self.score = 0
+        self.value = 0
+        if self.input_data.get('social_cohesion') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('social_cohesion') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('social_cohesion') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('social_cohesion') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('social_cohesion') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('social_cohesion') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_3(self):
+        self.score = 0
+        self.value = 0
+        if self.input_data.get('social_integration') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('social_integration') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('social_integration') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('social_integration') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('social_integration') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('social_integration') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_4(self):
+        self.score = 0
+        self.value = 0
+        if self.input_data.get('labour_relations') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('labour_relations') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('labour_relations') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('labour_relations') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('labour_relations') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('labour_relations') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_5(self):
+        self.score = 0
+        self.value = 0
+        if self.input_data.get('investment_human_capital') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('investment_human_capital') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('investment_human_capital') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('investment_human_capital') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('investment_human_capital') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('investment_human_capital') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_6(self):
+        self.score = 0
+        self.value = 0
+        if self.input_data.get('economically_socially_communities') == '0':
+            self.score = 0
+            self.value = 0
+        elif self.input_data.get('economically_socially_communities') == '1':
+            self.score = 1
+            self.value = 1
+        elif self.input_data.get('economically_socially_communities') == '2':
+            self.score = 2
+            self.value = 2
+        elif self.input_data.get('economically_socially_communities') == '3':
+            self.score = 3
+            self.value = 3
+        elif self.input_data.get('economically_socially_communities') == '4':
+            self.score = 4
+            self.value = 4
+        elif self.input_data.get('economically_socially_communities') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s1_7(self):
+        self.score = 0
+        if self.input_data.get('supply_chain_management_s') == '0':
+            self.score = 0
+        elif self.input_data.get('supply_chain_management_s') == '1':
+            self.score = 1
+        elif self.input_data.get('supply_chain_management_s') == '2':
+            self.score = 2
+        elif self.input_data.get('supply_chain_management_s') == '3':
+            self.score = 3
+        elif self.input_data.get('supply_chain_management_s') == '4':
+            self.score = 4
+        elif self.input_data.get('supply_chain_management_s') == 'NA':
+            self.score = 0
+            self.value = 'NA'
+            self.na_count_s += 1
+        return [self.score, self.value, self.na_count_s]
+
+    def s_all_na(self):
+        s1_7 = self.s1_7()[2]
+        return s1_7
+
+    def s_all_score(self):
+        s1_1_score = self.s1_1()[0]
+        s1_2_score = self.s1_2()[0]
+        s1_3_score = self.s1_3()[0]
+        s1_4_score = self.s1_4()[0]
+        s1_5_score = self.s1_5()[0]
+        s1_6_score = self.s1_6()[0]
+        s1_7_score = self.s1_7()[0]
+
+        s_total_score = s1_1_score + s1_2_score + s1_3_score + s1_4_score + s1_5_score + s1_6_score + s1_7_score
+        s_na_count = self.s_all_na()
+        # s_avg_score = round(s_total_score/(7 - na_count_s))
+        return s_total_score
+
 
 
 # if client select only Governance and Governance scoring :
@@ -888,33 +1119,34 @@ def only_governance_scoring(request):
         }
 
         table = governanceCalculations(input_data, request)
-        g_total_score = table.g1_all()[0]
-        g_avg_score = table.g1_all()[1]
+        g_total_score = table.g1_all_score()
+        na_count_g = table.g1_all_na()
+        g_avg_score = round(g_total_score / (6 - na_count_g))
 
         context = {
             'input_data': input_data,
-            # 'e2_1': request.session.get('e2_1'),
-            # 'e2_2': request.session.get('e2_2'),
-            # 'e2_3': request.session.get('e2_3'),
-            # 'e2_4': request.session.get('e2_4'),
-            # 'e2_5': request.session.get('e2_5'),
-            # 'e2_6': request.session.get('e2_6'),
-            # 'e2_7': request.session.get('e2_7'),
-            # 'e2_8': request.session.get('e2_8'),
-            # 'e2_9': request.session.get('e2_9'),
-            # 'e2_10': request.session.get('e2_10'),
-            # 'comment1': request.session.get('comment1'),
-            # 'comment2': request.session.get('comment2'),
-            # 'comment3': request.session.get('comment3'),
-            # 'comment4': request.session.get('comment4'),
-            # 'comment5': request.session.get('comment5'),
-            # 'comment6': request.session.get('comment6'),
-            # 'comment7': request.session.get('comment7'),
-            # 'comment8': request.session.get('comment8'),
-            # 'comment9': request.session.get('comment9'),
-            # 'comment10': request.session.get('comment10'),
-            # 'total_score': request.session.get('total_score'),
-            # 'avg_score': request.session.get('avg_score'),
+            'e2_1': request.session.get('e2_1'),
+            'e2_2': request.session.get('e2_2'),
+            'e2_3': request.session.get('e2_3'),
+            'e2_4': request.session.get('e2_4'),
+            'e2_5': request.session.get('e2_5'),
+            'e2_6': request.session.get('e2_6'),
+            'e2_7': request.session.get('e2_7'),
+            'e2_8': request.session.get('e2_8'),
+            'e2_9': request.session.get('e2_9'),
+            'e2_10': request.session.get('e2_10'),
+            'comment1': request.session.get('comment1'),
+            'comment2': request.session.get('comment2'),
+            'comment3': request.session.get('comment3'),
+            'comment4': request.session.get('comment4'),
+            'comment5': request.session.get('comment5'),
+            'comment6': request.session.get('comment6'),
+            'comment7': request.session.get('comment7'),
+            'comment8': request.session.get('comment8'),
+            'comment9': request.session.get('comment9'),
+            'comment10': request.session.get('comment10'),
+            'total_score': request.session.get('total_score'),
+            'avg_score': request.session.get('avg_score'),
             'company_name': request.session.get('company_name'),
             # 's1_1': request.session.get('s1_1'),
             # 's1_2': request.session.get('s1_2'),
@@ -946,6 +1178,7 @@ def only_governance_scoring(request):
             'g_comment6': g_comment6,
             'g_total_score': g_total_score,
             'g_avg_score': g_avg_score,
+
         }
         return render(request, 'final_scoring_client.html', context)
     return render(request, 'only_governance_scoring.html')
@@ -3253,9 +3486,9 @@ def environment_2(request):
         }
 
         table = environmentscore(input_data, request)
-        total_score = table.f2_all_score()[0]
-        s_na_count = table.f2_all_na()
-        avg_score = round(total_score/(10 - s_na_count))
+        total_score = table.f2_all_score()
+        e_na_count = table.f2_all_na()
+        avg_score = round(total_score/(10 - e_na_count))
         # avg_score = table.f2_all_score()[1]
 
         request.session['e2_1'] = energy_and_renewable_energy
@@ -3587,9 +3820,383 @@ class environmentscore:
         f2_10_score = self.f2_10()[0]
 
         total_score = f2_1_score + f2_2_score + f2_3_score + f2_4_score + f2_5_score + f2_6_score + f2_7_score + f2_8_score + f2_9_score + f2_10_score
-        na_count = self.f2_all_na()
-        return [total_score, na_count]
+        return total_score
 
+@login_required
+def env_score(request):
+    if request.method == 'POST':
+        energy_and_renewable_energy = request.POST.get("energy_and_renewable_energy")
+        comment1 = request.POST.get("comment1")
+        exception1 = request.POST.get("exception1")
+        raw_materials = request.POST.get("raw_materials")
+        comment2 = request.POST.get("comment2")
+        exception2 = request.POST.get("exception2")
+        water = request.POST.get("water")
+        comment3 = request.POST.get("comment3")
+        exception3 = request.POST.get("exception3")
+        land = request.POST.get("land")
+        comment4 = request.POST.get("comment4")
+        exception4 = request.POST.get("exception4")
+        waste = request.POST.get("waste")
+        comment5 = request.POST.get("comment5")
+        exception5 = request.POST.get("exception5")
+        greenhouse_gas_emissions = request.POST.get("greenhouse_gas_emissions")
+        comment6 = request.POST.get("comment6")
+        exception6 = request.POST.get("exception6")
+        biodiversity = request.POST.get("biodiversity")
+        comment7 = request.POST.get("comment7")
+        exception7 = request.POST.get("exception7")
+        circular_economy = request.POST.get("circular_economy")
+        comment8 = request.POST.get("comment8")
+        exception8 = request.POST.get("exception8")
+        environmental_compliance = request.POST.get("environmental_compliance")
+        comment9 = request.POST.get("comment9")
+        exception9 = request.POST.get("exception9")
+        supply_chain_management= request.POST.get("supply_chain_management")
+        comment10 = request.POST.get("comment10")
+        exception10 = request.POST.get("exception10")
+
+        input_data = {
+            'energy_and_renewable_energy': energy_and_renewable_energy,
+            'comment1': comment1,
+            'exception1': exception1,
+            'raw_materials': raw_materials,
+            'comment2': comment2,
+            'exception2': exception2,
+            'water': water,
+            'comment3': comment3,
+            'exception3': exception3,
+            'land': land,
+            'comment4': comment4,
+            'exception4': exception4,
+            'waste': waste,
+            'comment5': comment5,
+            'exception5': exception5,
+            'greenhouse_gas_emissions': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'exception6': exception6,
+            'biodiversity': biodiversity,
+            'comment7': comment7,
+            'exception7': exception7,
+            'circular_economy':circular_economy,
+            'comment8': comment8,
+            'exception8': exception8,
+            'environmental_compliance': environmental_compliance,
+            'comment9': comment9,
+            'exception9': exception9,
+            'supply_chain_management': supply_chain_management,
+            'comment10': comment10,
+            'exception10': exception10,
+        }
+
+        table = environmentscore(input_data, request)
+        total_score = table.f2_all_score()
+        e_na_count = table.f2_all_na()
+        avg_score = round(total_score/(10 - e_na_count))
+        # avg_score = table.f2_all_score()[1]
+
+        request.session['e2_1'] = energy_and_renewable_energy
+        request.session['e2_2'] = raw_materials
+        request.session['e2_3'] = water
+        request.session['e2_4'] = land
+        request.session['e2_5'] = waste
+        request.session['e2_6'] = greenhouse_gas_emissions
+        request.session['e2_7'] = biodiversity
+        request.session['e2_8'] = circular_economy
+        request.session['e2_9'] = environmental_compliance
+        request.session['e2_10'] = supply_chain_management
+        request.session['comment1'] = comment1
+        request.session['comment2'] = comment2
+        request.session['comment3'] = comment3
+        request.session['comment4'] = comment4
+        request.session['comment5'] = comment5
+        request.session['comment6'] = comment6
+        request.session['comment7'] = comment7
+        request.session['comment8'] = comment8
+        request.session['comment9'] = comment9
+        request.session['comment10'] = comment10
+        request.session['total_score'] = total_score
+        request.session['avg_score'] = avg_score
+
+
+        context = {
+            'input_data': input_data,
+            'e2_1': energy_and_renewable_energy,
+            'comment1': comment1,
+            'e2_2': raw_materials,
+            'comment2': comment2,
+            'e2_3': water,
+            'comment3': comment3,
+            'e2_4': land,
+            'comment4': comment4,
+            'e2_5': waste,
+            'comment5': comment5,
+            'e2_6': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'e2_7': biodiversity,
+            'comment7': comment7,
+            'e2_8':circular_economy,
+            'comment8': comment8,
+            'e2_9': environmental_compliance,
+            'comment9': comment9,
+            'e2_10': supply_chain_management,
+            'comment10': comment10,
+            'total_score': total_score,
+            'avg_score': avg_score,
+        }
+        return render(request, 'final_scoring_client.html', context)
+    return render(request, 'env_score.html')
+
+
+
+@login_required
+def only_env_score(request):
+    if request.method == 'POST':
+        energy_and_renewable_energy = request.POST.get("energy_and_renewable_energy")
+        comment1 = request.POST.get("comment1")
+        exception1 = request.POST.get("exception1")
+        raw_materials = request.POST.get("raw_materials")
+        comment2 = request.POST.get("comment2")
+        exception2 = request.POST.get("exception2")
+        water = request.POST.get("water")
+        comment3 = request.POST.get("comment3")
+        exception3 = request.POST.get("exception3")
+        land = request.POST.get("land")
+        comment4 = request.POST.get("comment4")
+        exception4 = request.POST.get("exception4")
+        waste = request.POST.get("waste")
+        comment5 = request.POST.get("comment5")
+        exception5 = request.POST.get("exception5")
+        greenhouse_gas_emissions = request.POST.get("greenhouse_gas_emissions")
+        comment6 = request.POST.get("comment6")
+        exception6 = request.POST.get("exception6")
+        biodiversity = request.POST.get("biodiversity")
+        comment7 = request.POST.get("comment7")
+        exception7 = request.POST.get("exception7")
+        circular_economy = request.POST.get("circular_economy")
+        comment8 = request.POST.get("comment8")
+        exception8 = request.POST.get("exception8")
+        environmental_compliance = request.POST.get("environmental_compliance")
+        comment9 = request.POST.get("comment9")
+        exception9 = request.POST.get("exception9")
+        supply_chain_management= request.POST.get("supply_chain_management")
+        comment10 = request.POST.get("comment10")
+        exception10 = request.POST.get("exception10")
+
+        input_data = {
+            'energy_and_renewable_energy': energy_and_renewable_energy,
+            'comment1': comment1,
+            'exception1': exception1,
+            'raw_materials': raw_materials,
+            'comment2': comment2,
+            'exception2': exception2,
+            'water': water,
+            'comment3': comment3,
+            'exception3': exception3,
+            'land': land,
+            'comment4': comment4,
+            'exception4': exception4,
+            'waste': waste,
+            'comment5': comment5,
+            'exception5': exception5,
+            'greenhouse_gas_emissions': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'exception6': exception6,
+            'biodiversity': biodiversity,
+            'comment7': comment7,
+            'exception7': exception7,
+            'circular_economy':circular_economy,
+            'comment8': comment8,
+            'exception8': exception8,
+            'environmental_compliance': environmental_compliance,
+            'comment9': comment9,
+            'exception9': exception9,
+            'supply_chain_management': supply_chain_management,
+            'comment10': comment10,
+            'exception10': exception10,
+        }
+
+        table = environmentscore(input_data, request)
+        total_score = table.f2_all_score()
+        e_na_count = table.f2_all_na()
+        avg_score = round(total_score/(10 - e_na_count))
+        # avg_score = table.f2_all_score()[1]
+
+        request.session['e2_1'] = energy_and_renewable_energy
+        request.session['e2_2'] = raw_materials
+        request.session['e2_3'] = water
+        request.session['e2_4'] = land
+        request.session['e2_5'] = waste
+        request.session['e2_6'] = greenhouse_gas_emissions
+        request.session['e2_7'] = biodiversity
+        request.session['e2_8'] = circular_economy
+        request.session['e2_9'] = environmental_compliance
+        request.session['e2_10'] = supply_chain_management
+        request.session['comment1'] = comment1
+        request.session['comment2'] = comment2
+        request.session['comment3'] = comment3
+        request.session['comment4'] = comment4
+        request.session['comment5'] = comment5
+        request.session['comment6'] = comment6
+        request.session['comment7'] = comment7
+        request.session['comment8'] = comment8
+        request.session['comment9'] = comment9
+        request.session['comment10'] = comment10
+        request.session['total_score'] = total_score
+        request.session['avg_score'] = avg_score
+
+        context = {
+            'input_data': input_data,
+            'e2_1': energy_and_renewable_energy,
+            'comment1': comment1,
+            'e2_2': raw_materials,
+            'comment2': comment2,
+            'e2_3': water,
+            'comment3': comment3,
+            'e2_4': land,
+            'comment4': comment4,
+            'e2_5': waste,
+            'comment5': comment5,
+            'e2_6': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'e2_7': biodiversity,
+            'comment7': comment7,
+            'e2_8':circular_economy,
+            'comment8': comment8,
+            'e2_9': environmental_compliance,
+            'comment9': comment9,
+            'e2_10': supply_chain_management,
+            'comment10': comment10,
+            'total_score': total_score,
+            'avg_score': avg_score,
+        }
+        return render(request, 'social_1_scoring.html', context)
+    return render(request, 'only_env_score.html')
+
+
+@login_required
+def env_gov_score(request):
+    if request.method == 'POST':
+        energy_and_renewable_energy = request.POST.get("energy_and_renewable_energy")
+        comment1 = request.POST.get("comment1")
+        exception1 = request.POST.get("exception1")
+        raw_materials = request.POST.get("raw_materials")
+        comment2 = request.POST.get("comment2")
+        exception2 = request.POST.get("exception2")
+        water = request.POST.get("water")
+        comment3 = request.POST.get("comment3")
+        exception3 = request.POST.get("exception3")
+        land = request.POST.get("land")
+        comment4 = request.POST.get("comment4")
+        exception4 = request.POST.get("exception4")
+        waste = request.POST.get("waste")
+        comment5 = request.POST.get("comment5")
+        exception5 = request.POST.get("exception5")
+        greenhouse_gas_emissions = request.POST.get("greenhouse_gas_emissions")
+        comment6 = request.POST.get("comment6")
+        exception6 = request.POST.get("exception6")
+        biodiversity = request.POST.get("biodiversity")
+        comment7 = request.POST.get("comment7")
+        exception7 = request.POST.get("exception7")
+        circular_economy = request.POST.get("circular_economy")
+        comment8 = request.POST.get("comment8")
+        exception8 = request.POST.get("exception8")
+        environmental_compliance = request.POST.get("environmental_compliance")
+        comment9 = request.POST.get("comment9")
+        exception9 = request.POST.get("exception9")
+        supply_chain_management= request.POST.get("supply_chain_management")
+        comment10 = request.POST.get("comment10")
+        exception10 = request.POST.get("exception10")
+
+        input_data = {
+            'energy_and_renewable_energy': energy_and_renewable_energy,
+            'comment1': comment1,
+            'exception1': exception1,
+            'raw_materials': raw_materials,
+            'comment2': comment2,
+            'exception2': exception2,
+            'water': water,
+            'comment3': comment3,
+            'exception3': exception3,
+            'land': land,
+            'comment4': comment4,
+            'exception4': exception4,
+            'waste': waste,
+            'comment5': comment5,
+            'exception5': exception5,
+            'greenhouse_gas_emissions': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'exception6': exception6,
+            'biodiversity': biodiversity,
+            'comment7': comment7,
+            'exception7': exception7,
+            'circular_economy':circular_economy,
+            'comment8': comment8,
+            'exception8': exception8,
+            'environmental_compliance': environmental_compliance,
+            'comment9': comment9,
+            'exception9': exception9,
+            'supply_chain_management': supply_chain_management,
+            'comment10': comment10,
+            'exception10': exception10,
+        }
+
+        table = environmentscore(input_data, request)
+        total_score = table.f2_all_score()
+        e_na_count = table.f2_all_na()
+        avg_score = round(total_score/(10 - e_na_count))
+        # avg_score = table.f2_all_score()[1]
+
+        request.session['e2_1'] = energy_and_renewable_energy
+        request.session['e2_2'] = raw_materials
+        request.session['e2_3'] = water
+        request.session['e2_4'] = land
+        request.session['e2_5'] = waste
+        request.session['e2_6'] = greenhouse_gas_emissions
+        request.session['e2_7'] = biodiversity
+        request.session['e2_8'] = circular_economy
+        request.session['e2_9'] = environmental_compliance
+        request.session['e2_10'] = supply_chain_management
+        request.session['comment1'] = comment1
+        request.session['comment2'] = comment2
+        request.session['comment3'] = comment3
+        request.session['comment4'] = comment4
+        request.session['comment5'] = comment5
+        request.session['comment6'] = comment6
+        request.session['comment7'] = comment7
+        request.session['comment8'] = comment8
+        request.session['comment9'] = comment9
+        request.session['comment10'] = comment10
+        request.session['total_score'] = total_score
+        request.session['avg_score'] = avg_score
+
+        context = {
+            'input_data': input_data,
+            'e2_1': energy_and_renewable_energy,
+            'comment1': comment1,
+            'e2_2': raw_materials,
+            'comment2': comment2,
+            'e2_3': water,
+            'comment3': comment3,
+            'e2_4': land,
+            'comment4': comment4,
+            'e2_5': waste,
+            'comment5': comment5,
+            'e2_6': greenhouse_gas_emissions,
+            'comment6': comment6,
+            'e2_7': biodiversity,
+            'comment7': comment7,
+            'e2_8':circular_economy,
+            'comment8': comment8,
+            'e2_9': environmental_compliance,
+            'comment9': comment9,
+            'e2_10': supply_chain_management,
+            'comment10': comment10,
+            'total_score': total_score,
+            'avg_score': avg_score,
+        }
+        return render(request, 'only_governance.html', context)
+    return render(request, 'env_gov_score.html')
 
 @login_required
 def social_1(request):
@@ -4047,7 +4654,7 @@ def social_screening(request):
         }
 
         table = socialCalculations(input_data, request)
-        s_total_score = table.s1_all_score()[0]
+        s_total_score = table.s1_all_score()
         s_na_count = table.s1_all_na()
         s_avg_score = round(s_total_score/(7 - s_na_count))
 
@@ -4276,10 +4883,8 @@ class socialCalculations:
         s1_7_score = self.s1_7()[0]
 
         s_total_score = s1_1_score + s1_2_score + s1_3_score + s1_4_score + s1_5_score + s1_6_score + s1_7_score
-        s_na_count = self.s1_all_na()
         # s_avg_score = round(s_total_score/(7 - na_count_s))
-        return [s_total_score, s_na_count]
-
+        return s_total_score
 
 @login_required
 def governance(request):
@@ -4807,4 +5412,242 @@ def final_scoring_client(request):
     return render(request, 'final_scoring_client.html')
 
 
+@login_required
+def user_pdf(request):
+    return render(request, 'final_scoring.html')
 
+
+@login_required
+def client_pdf(request):
+    return render(request, 'final_scoring_client.html')
+
+
+# @login_required
+# def report_pdf(request):
+#     #bytestream
+#     buf = io.BytesIO()
+#     #canvas
+#     c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+#     #textobject
+#     textob = c.beginText()
+#     textob.setTextOrigin(inch, inch)
+#     textob.setFont("Helvetica", 12)
+#
+#     #Add some lines to text
+#     lines = [
+#         "This is line 1"
+#         "This is line 2"
+#     ]
+#
+#     #loop
+#     for line in lines:
+#         textob.textLine(line)
+#
+#     #finish
+#     c.drawText(textob)
+#     c.showPage()
+#     c.save()
+#     buf.seek(0)
+#
+#     return FileResponse(buf, as_attachment=True, filename='report.pdf')
+
+
+@login_required
+def report_pdf(request):
+    context = {
+
+    }
+    return render(request, 'report_pdf.html')
+
+
+@login_required
+def status(request):
+    value = request.GET.get('search')
+    context = {
+        'status': value,
+    }
+    return render(request, 'status.html', context)
+
+
+@login_required
+def pdf_button(request):
+    if request.method=='POSt':
+        recommendations = request.POST.get("recommendations")
+        comment1 = request.POST.get("comment1")
+        exception1 = request.POST.get("exception1")
+        general = request.POST.get("general")
+        comment2 = request.POST.get("comment2")
+        exception2 = request.POST.get("exception2")
+        sources_and_types = request.POST.get("sources_and_types")
+        comment3 = request.POST.get("comment3")
+        exception3 = request.POST.get("exception3")
+        systematic = request.POST.get("systematic")
+        comment4 = request.POST.get("comment4")
+        exception4 = request.POST.get("exception4")
+        universe = request.POST.get("universe")
+        comment5 = request.POST.get("comment5")
+        exception5 = request.POST.get("exception5")
+        screening = request.POST.get("screening")
+        comment6 = request.POST.get("comment6")
+        exception6 = request.POST.get("exception6")
+        characteristics = request.POST.get("characteristics")
+        comment7 = request.POST.get("comment7")
+        exception7 = request.POST.get("exception7")
+        targets = request.POST.get("targets")
+        comment8 = request.POST.get("comment8")
+        exception8 = request.POST.get("exception8")
+        stewardship_activities = request.POST.get("stewardship_activities")
+        comment9 = request.POST.get("comment9")
+        exception9 = request.POST.get("exception9")
+        social_impact = request.POST.get("social_impact")
+        comment10 = request.POST.get("comment10")
+        exception10 = request.POST.get("exception10")
+        organisational_requirements = request.POST.get("organisational_requirements")
+        comment11 = request.POST.get("comment11")
+        exception11 = request.POST.get("exception11")
+        risk_management = request.POST.get("risk_management")
+        comment12 = request.POST.get("comment12")
+        exception12 = request.POST.get("exception12")
+        conflicts_of_interest = request.POST.get("conflicts_of_interest")
+        comment13 = request.POST.get("comment13")
+        exception13 = request.POST.get("exception13")
+        product_governance = request.POST.get("product_governance")
+        comment14 = request.POST.get("comment14")
+        exception14 = request.POST.get("exception14")
+        cost = request.POST.get("cost")
+        comment15 = request.POST.get("comment15")
+        exception15 = request.POST.get("exception15")
+        provided = request.POST.get("provided")
+        comment16 = request.POST.get("comment16")
+        exception16 = request.POST.get("exception16")
+        gathered = request.POST.get("gathered")
+        comment17 = request.POST.get("comment17")
+        exception17 = request.POST.get("exception17")
+        sustainability = request.POST.get("sustainability")
+        comment18 = request.POST.get("comment18")
+        exception18 = request.POST.get("exception18")
+
+
+        input_data = {
+            'recommendations': recommendations,
+            'comment1': comment1,
+            'exception1': exception1,
+            'general': general,
+            'comment2': comment2,
+            'exception2': exception2,
+            'sources_and_types': sources_and_types,
+            'comment3': comment3,
+            'exception3': exception3,
+            'systematic': systematic,
+            'comment4': comment4,
+            'exception4': exception4,
+            'universe': universe,
+            'comment5': comment5,
+            'exception5': exception5,
+            'screening': screening,
+            'comment6': comment6,
+            'exception6': exception6,
+            'characteristics': characteristics,
+            'comment7': comment7,
+            'exception7': exception7,
+            'targets': targets,
+            'comment8': comment8,
+            'exception8': exception8,
+            'stewardship_activities': stewardship_activities,
+            'comment9': comment9,
+            'exception9': exception9,
+            'social_impact': social_impact,
+            'comment10': comment10,
+            'exception10': exception10,
+            'organisational_requirements': organisational_requirements,
+            'comment11': comment11,
+            'exception11': exception11,
+            'risk_management': risk_management,
+            'comment12': comment12,
+            'exception12': exception12,
+            'conflicts_of_interest': conflicts_of_interest,
+            'comment13': comment13,
+            'exception13': exception13,
+            'product_governance': product_governance,
+            'comment14': comment14,
+            'exception14': exception14,
+            'cost': cost,
+            'comment15': comment15,
+            'exception15': exception15,
+            'provided': provided,
+            'comment16': comment16,
+            'exception16': exception16,
+            'gathered': gathered,
+            'comment17': comment17,
+            'exception17': exception17,
+            'sustainability': sustainability,
+            'comment18': comment18,
+            'exception18': exception18,
+        }
+
+        table = selfCalculations(input_data, request)
+        total_score = table.f1_all_score()[0]
+        na_count = table.f1_all_na()
+        avg_score = round(total_score / (18 - na_count))
+
+        context = {
+            'input_data': input_data,
+            'f1': recommendations,
+            # 'score1': table.f1_all(),
+            'comment1': comment1,
+            'f2': general,
+            'comment2': comment2,
+            'f3': sources_and_types,
+            'comment3': comment3,
+            'f4': systematic,
+            'comment4': comment4,
+            'f5': universe,
+            'comment5': comment5,
+            'f6': screening,
+            'comment6': comment6,
+            'f7': characteristics,
+            'comment7': comment7,
+            'f8': targets,
+            'comment8': comment8,
+            'f9': stewardship_activities,
+            'comment9': comment9,
+            'f10': social_impact,
+            'comment10': comment10,
+            'f11': organisational_requirements,
+            'comment11': comment11,
+            'f12': risk_management,
+            'comment12': comment12,
+            'f13': conflicts_of_interest,
+            'comment13': comment13,
+            'f14': product_governance,
+            'comment14': comment14,
+            'f15': cost,
+            'comment15': comment15,
+            'f16': provided,
+            'comment16': comment16,
+            'f17': gathered,
+            'comment17': comment17,
+            'f18': sustainability,
+            'comment18': comment18,
+            'total_score': total_score,
+            'avg_score': avg_score,
+        }
+
+    return render(request, 'final_scoring.html', context)
+
+
+class PDF(FPDF):
+    pass
+    # nothing happens when it is executed.
+
+def get_pdf(request):
+    pdf = PDF(orientation='P', unit='mm', format='A4') # landscape
+    pdf.add_page()
+    pdf.set_font('Arial', 'B', 12)
+
+    title = 'SELF ASSESSMENT'
+    image = 'media/cg_logo.png'
+    pdf.image(image, x=5, y=5, w=42, h=12)
+    pdf.cell(ln=1, h=30, align='C', w=0, txt=title,  border=0)
+    pdf.output('pdf/output.pdf', 'F')
+    return HttpResponse(open('pdf/final_scoring_selfassessment.pdf', 'rb'), content_type='application/pdf')

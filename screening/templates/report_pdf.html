@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+
+<script type ="text/javascript">
+  function rejectClick(){
+    var value = 0
+    window.location.href = "{% url 'status' %}" + "?search="+value;
+    console.log('Rejected')
+  }
+
+  function approveClick(){
+      var value = 1
+      window.location.href = "{% url 'status' %}" + "?search="+value;
+      console.log('Approved')
+  }
+</script>
+
+<main id="main">
+<!--  <div style="position: absolute;-->
+<!--    height: 26px;-->
+<!--    left: 11.39%;-->
+<!--    right: 38.75%;-->
+<!--    top: 40%;-->
+
+<!--    font-family: 'Ubuntu';-->
+<!--    font-style: normal;-->
+<!--    font-weight: 500;-->
+<!--    font-size: 20px;-->
+<!--    line-height: 28px;-->
+<!--    /* or 117% */-->
+
+<!--    font-feature-settings: 'pnum' on, 'lnum' on;-->
+
+<!--    /* Typography/On Surface/High Emphasis */-->
+
+<!--    color: rgba(39, 41, 54, 0.85);">-->
+<!--        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>-->
+<!--        <a href="#"><button onclick="rejectClick()" class="gdpr-button1">Reject</button></a>-->
+<!--        <a href="#"><button onclick="approveClick()" class="gdpr-button2">Approve</button></a>-->
+<!--        Report-->
+<!--   </div>-->
+
+
+<!--     <div style="position: absolute;-->
+<!--    height: 26px;-->
+<!--    left: 11.39%;-->
+<!--    right: 38.75%;-->
+<!--    top: 40%;-->
+
+<!--    font-family: 'Ubuntu';-->
+<!--    font-style: normal;-->
+<!--    font-weight: 500;-->
+<!--    font-size: 20px;-->
+<!--    line-height: 28px;-->
+<!--    /* or 117% */-->
+
+<!--    font-feature-settings: 'pnum' on, 'lnum' on;-->
+
+<!--    /* Typography/On Surface/High Emphasis */-->
+
+<!--    color: rgba(39, 41, 54, 0.85);">-->
+<!--        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>-->
+<!--        <button onclick="pdf_page()" disabled id="pdf_button" class="summary-button1">Generate PDF</button>-->
+<!--        <a href="{% url 'report_pdf' %}"><button class="summary-button2">Create Summary Report</button></a>-->
+<!--    </div>-->
+
+  <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
+  <center><h2 style="color:black;"><b>Final Scoring - Self Assessment</b></h2></center>
+  <!-- Form Name -->
+      <div style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: 300px; width:35%; margin-left:450px">
+<!--        <div style="position: absolute;-->
+<!--        height: 26px;-->
+<!--        left: 11.39%;-->
+<!--        right: 38.75%;-->
+<!--        top: 40%;-->
+
+<!--        font-family: 'Ubuntu';-->
+<!--        font-style: normal;-->
+<!--        font-weight: 500;-->
+<!--        font-size: 20px;-->
+<!--        line-height: 28px;-->
+<!--        /* or 117% */-->
+
+<!--        font-feature-settings: 'pnum' on, 'lnum' on;-->
+
+<!--        /* Typography/On Surface/High Emphasis */-->
+
+<!--        color: rgba(39, 41, 54, 0.85);">-->
+      <center>
+            <h2>Generate Report</h2>
+                <a href="#"><button onclick="rejectClick()" class="gdpr-button1">Reject</button></a>
+                <a href="#"><button onclick="approveClick()" class="gdpr-button2">Approve</button></a>
+      </center>
+       </div>
+
+</main>
+<!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

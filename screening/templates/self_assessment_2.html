@@ -23,7 +23,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_2">
@@ -32,7 +32,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4"><b style="color:#2B0A3D; font-size:12px">General:If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide details like name of the investment product and name of the investment manager</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_1" name="sa3_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_1" name="sa3_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -51,7 +51,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, except for any disclosures prohibited by law or regulation</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_2" name="sa3_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_2" name="sa3_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -70,7 +70,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide the period covered by the ESG disclosure statement</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_3" name="sa3_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_3" name="sa3_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -89,7 +89,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made during the period covered by the ESG disclosure statement that are relevant to the applicable disclosures required by the Global ESG Disclosure Standards for Investment Products, along with the effective dates of those changes</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_4" name="sa3_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_4" name="sa3_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -108,7 +108,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager chooses to apply the Global ESG Disclosure Standards for Investment Products to a specific investment product, does it provide a description of any changes made to the ESG disclosure statement within the past year to correct a significant error</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_5" name="sa3_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_5" name="sa3_5" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -127,7 +127,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is an investment manager prohibited by law or regulation from making a required disclosure in the ESG disclosure statement.</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_6" name="sa3_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_6" name="sa3_6" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -146,7 +146,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment manager is prohibited by law or regulation from making a required disclosure in the ESG disclosure statement, then does the investment manager disclose a description of the required disclosure that cannot be included and explain why it cannot be included</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_7" name="sa3_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_7" name="sa3_7" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -165,7 +165,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager disclose a summary description of the ESG approaches used in the investment product.</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_8" name="sa3_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_8" name="sa3_8" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -184,7 +184,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues.</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_9" name="sa3_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_9" name="sa3_9" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -203,7 +203,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product’s investment process, stewardship activities, or objectives systematically address one or more specific ESG issues, then does the investment manager disclose a summary description of those specific ESG issues</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_10" name="sa3_10" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_10" name="sa3_10" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -222,7 +222,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investment manager disclose any third-party ESG-related labels and certifications with which the investment product complies</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa3_11" name="sa3_11" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa3_11" name="sa3_11" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

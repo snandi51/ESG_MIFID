@@ -23,7 +23,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px">
-                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
+                <h6><strong  style="color:Black; margin-left:10px">Mandates</strong><strong  style="color:Black; margin-left:320px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:150px">Comments</strong><strong  style="color:Black; margin-left:150px">Exception</strong></h6>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="self_assessment_7">
@@ -32,7 +32,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the portfolio-level ESG characteristic that is evaluated</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_1" name="sa8_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_1" name="sa8_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -51,7 +51,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, how the portfolio-level ESG characteristic is measured</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_2" name="sa8_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_2" name="sa8_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -70,7 +70,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the target value or range for the portfolio-level ESG characteristic></b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_3" name="sa8_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_3" name="sa8_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -89,7 +89,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, how the target portfolio-level ESG characteristic is expected to be attained</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_4" name="sa8_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_4" name="sa8_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -108,7 +108,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, the risks that could significantly hinder the attainment of the target portfolio-level ESG characteristic, should they occur</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_5" name="sa8_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_5" name="sa8_5" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -127,7 +127,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose for each target, a reference, where applicable, to any law, regulation, or third-party standard, guideline, or framework used to measure the portfolio-level ESG characteristic or set the target</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_6" name="sa8_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_6" name="sa8_6" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -146,7 +146,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose the portfolio-level ESG characteristics that are compared with the ESG index</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_7" name="sa8_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_7" name="sa8_7" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -165,7 +165,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose either the significant ESG characteristics of the ESG index or, if the ESG index is a readily recognized index, the name of the ESG index</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_8" name="sa8_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_8" name="sa8_8" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -184,7 +184,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product uses an ESG index as a point of comparison for portfolio-level ESG characteristics, then does the investment manager disclose how an investor can obtain information about the definitions of and calculation methodologies for the ESG characteristics of the ESG index</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_9" name="sa8_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_9" name="sa8_9" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -203,7 +203,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If the investment product has targets for portfolio-level ESG characteristics, then does the investment manager disclose how progress toward, or attainment of, those targets is reported to investors.</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="sa8_10" name="sa8_10" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="sa8_10" name="sa8_10" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

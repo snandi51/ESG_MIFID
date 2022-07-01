@@ -68,8 +68,9 @@
 
       function change11() {
             console.log('11 clicked')
-            window.location.href = "{% url 'env_score' %}"
+            window.location.href = "{% url 'only_env_score' %}"
       }
+
 
     </script>
     <style>
@@ -78,45 +79,6 @@
             height: 70px;
         }
     </style>
-<!--    <center>-->
-<!--    <form action="" method="post">-->
-<!--      <label style="margin-left:50px"><b>Select Sector</b></label>-->
-<!--      <div style="margin-left:100px; color:white">-->
-<!--      <input type="checkbox" id="one" onclick="change1()" name="tip1" value="1" /> Energy and Renewable Energy-->
-<!--      </div>-->
-<!--      <div style="margin-left:-20px; color:white">-->
-<!--      <input type="checkbox" id="two" onclick="change2()" name="tip2" value="2" /> Raw materials-->
-<!--      </div>-->
-<!--      <div style="margin-left:-80px; color:white">-->
-<!--      <input type="checkbox" id="three" onclick="change3()" name="tip3" value="3" /> Water-->
-<!--      </div>-->
-<!--      <div style="margin-left:-87px; color:white">-->
-<!--      <input type="checkbox" id="four" onclick="change4()" name="tip4" value="4" /> Land-->
-<!--      </div>-->
-<!--      <div style="margin-left:-77px; color:white">-->
-<!--      <input type="checkbox" id="five" onclick="change5()" name="tip5" value="5" /> Waste-->
-<!--      </div>-->
-<!--      <div style="margin-left:79px; color:white">-->
-<!--      <input type="checkbox" id="six" onclick="change6()" name="tip6" value="6" /> Greenhouse Gas Emissions-->
-<!--      </div>-->
-<!--      <div style="margin-left:-37px; color:white">-->
-<!--      <input type="checkbox" id="seven" onclick="change7()" name="tip7" value="7" /> Biodiversity-->
-<!--      </div>-->
-<!--      <div style="margin-left:5px; color:white">-->
-<!--      <input type="checkbox" id="eight" onclick="change8()" name="tip8" value="8" /> Circular Economy-->
-<!--      </div>-->
-<!--      <div style="margin-left:250px; color:white">-->
-<!--      <input type="checkbox" id="nine" onclick="change9()" name="tip9" value="9" /> Environment (Others) - Environmental Compliance-->
-<!--      </div>-->
-<!--      <div style="margin-left:75px; color:white">-->
-<!--      <input type="checkbox" id="ten" onclick="change10()" name="tip10" value="10" /> Supply Chain Management-->
-<!--      </div>-->
-<!--      <div style="margin-left:-105px; color:white">-->
-<!--        <input type="checkbox" id="all" onclick="change11()" name="tip11" value="11" />Environment Scoring-->
-<!--      </div>-->
-<!--    </form>-->
-<!--  </center>-->
-
     <form action="" method="post">
       <div style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: 360px; width:35%; margin-left:450px">
         <div style="margin-left:10px;">
@@ -131,12 +93,10 @@
           <input type="checkbox" id="eight" onclick="change8()" name="tip8" value="8" /> Circular Economy <br>
           <input type="checkbox" id="nine" onclick="change9()" name="tip9" value="9" /> Environment (Others) - Environmental Compliance <br>
           <input type="checkbox" id="ten" onclick="change10()" name="tip10" value="10" /> Supply Chain Management <br>
-          <input type="checkbox" id="eleven" onclick="change11()" name="tip11" value="11" /> Environment Scoring <br>
+          <input type="checkbox" id="eleven" onclick="change11()" name="tip11" value="11" /> Environment and Social Scoring <br>
         </div>
       </div>
     </form>
-
-
   </div>
 <!--  <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>-->
 <!--  <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>-->

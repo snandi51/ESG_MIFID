@@ -15,6 +15,37 @@
     <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()"  alt="Back"/>Back</a>
     <center><h2 style="color:black; font-size:30px"><b>Social</b></h2></center>
     <!-- Form Name -->
+
+    <script>
+        window.onload = function(){
+                console.log('inside the function')
+                var value_dict = {{value_dict|safe}}
+                console.log(value_dict)
+
+                if(document.getElementsByName('f1_4').value == null){
+                document.forms['social_screening']['f1_4'].value = value_dict.f1_4;
+                }
+                console.log("Value replaced successfully")
+        }
+
+        function toggleInput1() {
+                            var f1_4 = document.getElementById("f1_4");
+                            var Asset1 = document.getElementById("Asset1");
+                            Asset1.style.display = f1_4.value == "0" ? "block" : "none";
+                        }
+
+        function toggleText(){
+            var myText=document.getElementById("info");
+            var displaySetting=myText.style.display;
+
+            if(displaySetting == 'none'){
+                myText.style.display='block';
+            }
+            else{
+                myText.style.display='none';
+            }
+        }
+    </script>
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div class="row mb-1" style="padding:5px; float:left; width:51%;">
@@ -26,7 +57,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="social_1_scoring">
@@ -35,11 +66,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company consider Non-discrimination as a material topic?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f1_1" name="f1_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="f1_1" name="f1_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
 
@@ -55,11 +86,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company consider Non-discrimination as a material topic?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f1_2" name="f1_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_2" name="f1_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -74,11 +105,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Has the investee company dealt with any inequality issues arising due to local customs?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f1_3" name="f1_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_3" name="f1_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -89,23 +120,15 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group" >
-                <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">"Does the investee company have diversity policies and report following information:<br>
-                        a. Percentage of individuals within the organization’s governance bodies in each of the following diversity categories:<br>
-                        i. Gender;<br>
-                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
-                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups).<br>
-                        b. Percentage of employees per employee category in each of the following diversity categories:
-                        i. Gender;<br>
-                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
-                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups)."</b></label>
+            <div class="form-group" id="Asset1">
+                <div class="row mb-4" >
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">"Does the investee company have diversity policies and report following information:</b><a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"><i style="font-size:12px">click more</i></a></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f1_4" name="f1_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_4" name="f1_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -115,16 +138,26 @@
                         <textarea rows="2" style="" class="form-control" id="exception1_4" placeholder="Exceptions if any" name="exception1_4"></textarea>
                     </div>
                 </div>
+                <div id="info" style="display:none">
+                    <i  style="font-size:12px">a. Percentage of individuals within the organization’s governance bodies in each of the following diversity categories:<br>
+                        i. Gender;<br>
+                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
+                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups).<br>
+                        b. Percentage of employees per employee category in each of the following diversity categories:
+                        i. Gender;<br>
+                        ii. Age group: under 30 years old, 30-50 years old, over 50 years old;<br>
+                        iii. Other indicators of diversity where relevant (such as minority or vulnerable groups)."</i>
+                </div>
             </div>
             <div class="form-group">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company  conduct mandatory health checks for its workers?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f1_5" name="f1_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f1_5" name="f1_5" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -137,27 +170,24 @@
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Social cohesion</b></h2></center>
+                <div class="row mb-1" >
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Social Cohesion</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company consider Social Cohesion as a material topic and has an explanation  for it?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f2_1" name="f2_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f2_1" name="f2_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -172,11 +202,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Social Cohesion?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f2_2" name="f2_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f2_2" name="f2_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -193,11 +223,11 @@
                         a. Type and scope of programs implemented and assistance provided to upgrade employee skills.<br>
                         b. Social awareness programs conducted and assistance provided to them for Region development, Green transition "</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f2_3" name="f2_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f2_3" name="f2_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -209,26 +239,24 @@
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Social integration</b></h2></center>
+                <div class="row mb-1">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Social Integratio</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company consider Social Integration activties as a material topic and has an explanation  for it?</b></label>
                     <div class="col-sm-2">
-                        <select type="text"  style="" class="form-select" id="f3_1" name="f3_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text"  style="" class="form-select" id="f3_1" name="f3_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -243,10 +271,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Social Integration activities?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f3_2" name="f3_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f3_2" name="f3_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -259,27 +288,24 @@
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Labour relations</b></h2></center>
+                <div class="row mb-1" >
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Labour Relations</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company consider Labor/Management Relations as a material topic and has an explanation  for it?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_1" name="f4_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_1" name="f4_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -294,11 +320,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have any set policies/strategies/goals/responsibilities for handling the Labor/Management Relations related impacts like minimum wage laws?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_2" name="f4_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_2" name="f4_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -313,11 +339,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company use any mechanisms or any procedures and related adjustments to evaluate their management approach towards Labor/Management Relations and ensure adherence of local labour laws?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_3" name="f4_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_3" name="f4_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -332,11 +358,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have any incident reported for labour unrest in last 5 years?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_4" name="f4_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_4" name="f4_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -351,11 +377,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If Yes, was the incident appropriately handled and was in agreement with both parties?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_5" name="f4_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_5" name="f4_5" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -370,11 +396,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">"Does the investee company provide safe working conditions for their labour </b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_6" name="f4_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_6" name="f4_6" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -389,11 +415,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does investee company report information whether it ensures regular servicing of proper safety equipments  </b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_7" name="f4_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_7" name="f4_7" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -408,11 +434,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does investee company report information whether employee awareness programs are conducted to teach them about usage of safety measures </b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_8" name="f4_8" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_8" name="f4_8" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -427,11 +453,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does investee company report information about total number of incidents of non-compliance with regulations and/or voluntary codes concerning the health and safety impacts of products and services within the reporting period</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_9" name="f4_9" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_9" name="f4_9" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -446,11 +472,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does investee company report information about incidents of non-compliance with regulations resulting in a fine or penalty</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_10" name="f4_10" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_10" name="f4_10" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -465,11 +491,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does investee company report information about incidents of non-compliance with regulations resulting in a warning</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f4_11" name="f4_11" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f4_11" name="f4_11" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -482,27 +508,24 @@
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Investment in human capital</b></h2></center>
+                <div class="row mb-1" >
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Investment in Human Capital</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px;">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company has a HR policy with clearly defined roles and responsibility of workers/employees and conditions of employment?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_1" name="f5_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_1" name="f5_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -517,11 +540,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If Yes, does the  investee company have human resources education and training policy?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_2" name="f5_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_2" name="f5_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -536,11 +559,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Have they collected records of capital investment made towards education and training during last 5 years?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_3" name="f5_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_3" name="f5_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -555,11 +578,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Have they maintained records of placement of human resources to work areas due to their upskilling?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_4" name="f5_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_4" name="f5_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -574,11 +597,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Have they maintained records of grievance redressal mechanism?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_5" name="f5_5" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_5" name="f5_5" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -593,11 +616,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If Yes, have they recorded any such instance in last 5 years?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_6" name="f5_6" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_6" name="f5_6" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -612,11 +635,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have adequal policies on overtime, maternity/paternity leave, sick leave and other disabilities?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f5_7" name="f5_7" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f5_7" name="f5_7" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -629,27 +652,24 @@
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Economically or socially disadvantaged communities</b></h2></center>
+                <div class="row mb-1">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Economically or Socially Disadvantaged Communities</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have any health and safety risks for local communities located in the place of establishment or consumers who are located in the place of establishment or consumers using company's products?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f6_1" name="f6_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_1" name="f6_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -664,11 +684,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, have they managed this satisfactorily without any disputes?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f6_2" name="f6_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_2" name="f6_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -683,11 +703,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Have they promoted social causes for communities residing in the place of establishment?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f6_3" name="f6_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f6_3" name="f6_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -702,11 +722,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Have they worked towards creating employment generation for disadvantaged communities?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="f6_4" name="f6_4" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="f6_4" name="f6_4" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -719,27 +739,24 @@
             </div>
 
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
-                <div class="row mb-1" style="padding:5px; float:left; width:51%;">
-                    <center><h2 style="color:red; font-size:15px">ESG thematic investing description ( This part describes investment strategy, and is not linked to Taxonomy)</h2></center>
-                </div>
-                <div class="row mb-1" style="padding:5px;  width:51%;">
-                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Others - Supply chain management</b></h2></center>
+                <div class="row mb-1">
+                    <center><h2 style="color:Black; font-size:17px">Evaluation Criteria (as per Article 2(17) of SFDR): <b>Others - Supply Chain Management</b></h2></center>
                 </div>
             </div>
             <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
                 <div  style="padding:2px">
-                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                    <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
                 </div>
             </div>
             <div class="form-group" style="padding-top:10px">
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company ensure that their supplier follows health and safety standards for its workers/employees from which they pprocure raw materials?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f7_1" name="f7_1" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_1" name="f7_1" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -754,11 +771,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, have they influenced their supplier for promoting good health and safety measures for their employees?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f7_2" name="f7_2" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_2" name="f7_2" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -773,11 +790,11 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, can the results of this be quantified and reported?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" style="" class="form-select" id="f7_3" name="f7_3" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" style="" class="form-select" id="f7_3" name="f7_3" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
