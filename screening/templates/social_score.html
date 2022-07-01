@@ -13,7 +13,7 @@
 <main id="main">
     <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
     <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
-    <a href="#" ><i style="font-size:12px; color:red; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
+    <a href="#" ><i style="font-size:12px; color:white; margin-left:760px">To understand score interpretations click down arrow <img src="static/assets/img/icon-right-inside.png" > button</i></a>
     <!-- Form Name -->
     <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
@@ -23,7 +23,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black;  font-size:18px">Evaluation Criteria</strong><strong style="color:Black; margin-left:250px; font-size:18px">Score</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
+                <h4><strong  style="color:Black;  font-size:18px">Evaluation Criteria</strong><strong style="color:Black; margin-left:240px; font-size:18px">Score*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exceptions</strong></h4>
             </div>
         </div>
 
@@ -177,16 +177,16 @@
             {% csrf_token %}
             <div class="form-group" style="padding-top:10px" id="Asset1">
                 <div class="row mb-4">
-                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D;">Inequality</b></label>
+                    <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Inequality</b></label>
                     <div class="col-sm-2">
-                        <select  type="text" class="form-select" id="inequality" name="inequality" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select  type="text" class="form-select" id="inequality" name="inequality" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -196,7 +196,7 @@
                         <textarea rows="2" class="form-control" id="exception1" placeholder="Exceptions if any" name="exception1"></textarea>
                     </div>
                     <div>
-                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"><i style="font-size:12px">To understand score interpretations click down arrow button</i></a>
+                        <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
                     </div>
                     <div id="info" style="display:none">
                         <table class="table table-bordered" style="margin-bottom: 10px; border: 1px solid black; font-size: 12px">
@@ -225,14 +225,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Social cohesion</b></label>
                     <div class="col-sm-2" >
-                        <select type="text" class="form-select" id="social_cohesion" name="social_cohesion" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="social_cohesion" name="social_cohesion" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -272,14 +272,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Social integration</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="social_integration" name="social_integration" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="social_integration" name="social_integration" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -319,14 +319,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Labour relations</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="labour_relations" name="labour_relations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="labour_relations" name="labour_relations" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -366,14 +366,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Investment in human capital</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="investment_human_capital" name="investment_human_capital" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="investment_human_capital" name="investment_human_capital" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -413,14 +413,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Economically or socially disadvantaged communities</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="economically_socially_communities" name="economically_socially_communities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="economically_socially_communities" name="economically_socially_communities" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
@@ -460,14 +460,14 @@
                 <div class="row mb-4" >
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Others - Supply chain management</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="supply_chain_management_s" name="supply_chain_management_s" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="supply_chain_management_s" name="supply_chain_management_s" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="NA">NA</option>
+                            <option value="NA">N/A</option>
                         </select>
                     </div>
                     <div class="col-sm-3">

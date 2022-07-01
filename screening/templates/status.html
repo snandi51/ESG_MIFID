@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div style="margin-top:40px">
+</div>
+<link href="static/assets/css/style.css" rel="stylesheet">
+
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 1240px;
+height: 577px;">
+
+<div style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: 300px; width:35%; margin-left:450px">
+    <div class="status-box">
+            {% if status == '1' %}
+            <p class="status-text" style="margin-left: 50px"><b>Approved !</b></p>
+                    <div class="status-msg">
+                        <p>Your final Report is approved & is ready for download</p>
+                    </div>
+                    <a href="{% url 'self_assessment_1' %}"><button class="status-button1">Back to Assessments</button></a>
+                    <a href="{% url 'pdf' %}"><button class="status-button2">Download PDF Report</button></a>
+    <!--                <div>-->
+    <!--                    <img class="status-png" src="static/assets/img/approve.png"/>-->
+    <!--                </div>-->
+            {% else %}
+                    <p class="status-text" style="margin-left: 50px">Sorry !</p>
+                    <div class="status-msg">
+                        <p>Your final GDPR Report is rejected. We request you to take the assessment again.</p>
+                    </div>
+                    <a href="{% url 'self_assessment_1' %}"><button class="status-button3">Back to Assessments</button></a>
+    <!--                <div>-->
+    <!--                    <img class="status-png" src="static/assets/img/reject.png"/>-->
+    <!--                </div>-->
+            {% endif %}
+    </div >
+</div>
+{% endblock %}
+
+</body>
+
+</html>

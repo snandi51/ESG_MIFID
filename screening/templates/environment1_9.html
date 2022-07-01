@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_9">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Is the Investee  company  in compliance with the local laws and regulations ?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="local_laws_regulations" name="local_laws_regulations" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="local_laws_regulations" name="local_laws_regulations" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, has the Investee  company obtained all necessary permits, licenses from the concerned local authorities for its operations ?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="licenses_concerned_local_authorities" name="licenses_concerned_local_authorities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="licenses_concerned_local_authorities" name="licenses_concerned_local_authorities" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company consider Principle Adverse Impacts of its operations on environment and undertaken mitigation measures?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="principle_adverse_impacts" name="principle_adverse_impacts" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="principle_adverse_impacts" name="principle_adverse_impacts" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -88,7 +88,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company maintain records of any serious incidents of negative impact of its operations on environment during the last 5 years and its consequential action faced ?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="consequential_action" name="consequential_action" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="consequential_action" name="consequential_action" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -107,7 +107,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether the Investee company was subjected to significant fines and non-monetary sanctions for non-compliance with environmental laws and/or regulations ?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="non_compliance_environmental_laws" name="non_compliance_environmental_laws" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="non_compliance_environmental_laws" name="non_compliance_environmental_laws" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -126,7 +126,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company take corrective measures and evaluate and document its consequent positive environmental impact?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="consequent_positive_environmental_impact" name="consequent_positive_environmental_impact" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="consequent_positive_environmental_impact" name="consequent_positive_environmental_impact" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -145,7 +145,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company monitor risks and opportunities for its business operations on a continual basis and implements appropriate action plan?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="monitor_risks_opportunities" name="monitor_risks_opportunities" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="monitor_risks_opportunities" name="monitor_risks_opportunities" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

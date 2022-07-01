@@ -10,10 +10,60 @@
 <div style="margin-top:40px">
 </div>
 <link href="static/assets/css/style.css" rel="stylesheet">
+
+<script type ="text/javascript">
+    window.onload = function() {
+        var value = {{value|safe}}
+        console.log(value)
+
+        if(value == 1){
+         var pdf_button = document.getElementById('pdf_button')
+         pdf_button.style.background = '#0E88AF';
+         pdf_button.style.color = '#FFFFFF';
+         pdf_button.disabled = false;
+        }
+
+    }
+
+    function pdf_page(){
+        window.location.href = "{% url 'pdf' %}"
+        console.log('Opening PDF')
+    }
+</script>
+
 <main id="main">
+<!--  <div style="position: absolute;-->
+<!--    height: 26px;-->
+<!--    left: 11.39%;-->
+<!--    right: 38.75%;-->
+<!--    top: 40%;-->
+
+<!--    font-family: 'Ubuntu';-->
+<!--    font-style: normal;-->
+<!--    font-weight: 500;-->
+<!--    font-size: 20px;-->
+<!--    line-height: 28px;-->
+<!--    /* or 117% */-->
+
+<!--    font-feature-settings: 'pnum' on, 'lnum' on;-->
+
+<!--    /* Typography/On Surface/High Emphasis */-->
+
+<!--    color: rgba(39, 41, 54, 0.85);">-->
+<!--        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>-->
+<!--        <button onclick="pdf_page()" disabled id="pdf_button" class="summary-button1">Generate PDF</button>-->
+<!--        <a href="{% url 'report_pdf' %}"><button class="summary-button2">Create Summary Report</button></a>-->
+<!--        Risk Summary-->
+<!--    </div>-->
+
   <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
   <a href="#" style="color:white"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/>Back</a>
   <center><h2 style="color:black;"><b>Final Scoring - Self Assessment</b></h2></center>
+<!--  <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>-->
+  <div style="margin-left: 850px">
+    <button onclick="pdf_page()" disabled id="pdf_button" class="summary-button1">Generate PDF</button>
+    <a href="{% url 'report_pdf' %}"><button class="summary-button2">Create Summary Report</button></a>
+  </div>
   <!-- Form Name -->
   <div class="container" style="background-color: rgba(245, 245, 248, 0.7); padding:10px; height: auto">
     <!--        <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">-->

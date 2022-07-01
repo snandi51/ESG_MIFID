@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_7">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the Biodiversity across the organization?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_policies_biodiversity" name="set_policies_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="set_policies_biodiversity" name="set_policies_biodiversity" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee  company assess the negative impact of its business operations on biodiversity?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="operations_biodiversity" name="operations_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="operations_biodiversity" name="operations_biodiversity" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If yes, whether the Investee company has documented the negative impact on local flora and fauna, different types of species, pests and pathogens due to its operations?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="different_types_species" name="different_types_species" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="different_types_species" name="different_types_species" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -88,7 +88,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If so, does the Investee company have an action plan to mitigate/control the biodiversity loss due to its operations?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="control_biodiversity" name="control_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="control_biodiversity" name="control_biodiversity" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -107,7 +107,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If mitigation measures are already undertaken, whether there is a positive effect on biodiversity in terms of habitat conservation and restoration?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="positive_biodiversity" name="positive_biodiversity" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="positive_biodiversity" name="positive_biodiversity" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

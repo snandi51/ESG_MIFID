@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_10">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any management approach in environmental assessment of its supply chain.?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="management_approach" name="management_approach" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="management_approach" name="management_approach" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company evaluate whether the supplier from whom it procures raw materials and other inputs follows environmental best practices?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="environmental_best_practices" name="environmental_best_practices" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="environmental_best_practices" name="environmental_best_practices" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">If not, whether the Investee company can influence its supply chain to adopt environmental best practices and make it their mission ?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="supply_chain" name="supply_chain" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="supply_chain" name="supply_chain" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>

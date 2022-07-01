@@ -22,7 +22,7 @@
         </div>
         <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
             <div  style="padding:2px">
-                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:250px; font-size:18px">Yes | No | N/A</strong><strong  style="color:Black; margin-left:150px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
+                <h4><strong  style="color:Black; margin-left:80px; font-size:18px">Question</strong><strong  style="color:Black; margin-left:240px; font-size:18px">Yes | No | N/A*</strong><strong  style="color:Black; margin-left:140px; font-size:18px">Comments</strong><strong  style="color:Black; margin-left:170px; font-size:18px">Exception</strong></h4>
             </div>
         </div>
         <form method="POST" class="form-horizontal" action="environment1_5">
@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company have any set policies/strategies/goals/responsibilities for handling the waste generation?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="set_policies_waste" name="set_policies_waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="set_policies_waste" name="set_policies_waste" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -50,7 +50,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company evaluate the kind of waste it generates and whether in large quantities and document its outcome?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="waste_generates" name="waste_generates" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="waste_generates" name="waste_generates" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -69,7 +69,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company also evaluate if the waste generated is toxic and whether such waste can be treated adequately and document outcome of its evaluation exercise?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="waste_generated_toxic" name="waste_generated_toxic" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="waste_generated_toxic" name="waste_generated_toxic" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -88,7 +88,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the investee company have an action plan to use appropriate methods to reduce waste not impacting the ecosystem?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="method_reduce_waste" name="method_reduce_waste" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="method_reduce_waste" name="method_reduce_waste" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
@@ -107,7 +107,7 @@
                 <div class="row mb-4">
                     <label class="control-label col-sm-4" ><b style="color:#2B0A3D; font-size:12px">Does the Investee company recycle the waste generated and provide calculation of recycled waste vis-à-vis total waste generated?</b></label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-select" id="total_waste_generated" name="total_waste_generated" ><i data-tags="arrow right-angle" data-categories="arrows"></i>
+                        <select type="text" class="form-select" id="total_waste_generated" name="total_waste_generated" required><i data-tags="arrow right-angle" data-categories="arrows"></i>
                             <option value=""></option>
                             <option value="0">Yes</option>
                             <option value="1">No</option>
