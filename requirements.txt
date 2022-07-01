@@ -8,3 +8,4 @@ matplotlib
 mysqlclient
 whitenoise==6.0.0
 fpdf
+reportlab
